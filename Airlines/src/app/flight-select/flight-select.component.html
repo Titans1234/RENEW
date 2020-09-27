@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h1>Select Your Flight</h1>
+
+  <table class="table table-striped">
+
+    <thead>
+
+      <tr>
+
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Flight no</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Duration</th>
+        <th>Economy Price</th>
+        <th>Business Price</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+      <!--   
+        <tr *ngFor="let student of flights"> -->
+      <tr>
+        <td>{{ flight.DepartureTime}}</td>
+        <td>{{ flight.ArrivalTime}}</td>
+        <td>{{ flight.flightno }}</td>
+        <td>{{ flight.From }}</td>
+        <td>{{ flight.To}}</td>
+        <td>{{ flight.Duration}}</td>
+        <td>Rs. {{ flight.EconomyPrice}}</td>
+        <td>Rs. {{ flight.BusinessPrice}}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

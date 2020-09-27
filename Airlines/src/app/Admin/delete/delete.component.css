@@ -1,0 +1,27 @@
+.from-group
+{
+    align-content: center;
+}
+.box
+{
+    margin-top:3em;
+    margin-left:4em;
+}
+.box1
+{
+    margin-top:3em;
+    margin-left:5em;
+}
+.new-delete
+{
+    border: solid;
+   margin-left:50px;
+   margin-top:50px;
+   margin-bottom:50px;
+   margin-right:25em;
+}
+.submit-button
+{ margin-left:11em;
+   margin-top:4em;
+  margin-bottom: 2em;
+}

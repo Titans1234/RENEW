@@ -1,0 +1,55 @@
+<nav>
+
+    
+</nav>
+<forms>
+    <tr>
+        <td> <button type="submit">USER LOGIN</button></td>
+        <td> <button type="submit">ADMIN LOGIN</button></td>
+    </tr>
+    <tr>
+        <td> <label for="username">USERNAME</label></td>
+        <td> <input id="username" type="text" [(ngModel)]="usn"></td>
+    </tr>
+    <tr>
+        <td> <label for="password">PASSWORD</label></td>
+        <td> <input id="password" type="password" [(ngModel)]="psw"></td>
+    </tr>
+    <tr>
+        <td> <button type="submit">LOGIN</button></td>
+        <td> <button type="submit">SIGN UP</button></td>
+        <br>
+        <td></td><span><a> Forgot password</a></td></span>
+    </tr>
+</forms>
+<footer>
+
+</footer>
+
+
+
+ORRRRRR
+
+
+<nav></nav>
+<forms>
+    <div>
+        <button type="submit">USER LOGIN</button>
+        <button type="submit">ADMIN LOGIN</button>
+    </div>
+    <div>
+        <label for="username">USERNAME</label>
+        <input id="username" type="text" [(ngModel)]="usn">
+    </div>
+    <div>
+        <label for="password">PASSWORD</label>
+        <input id="password" type="password" [(ngModel)]="psw">
+    </div>
+    <div>
+        <button type="submit">LOGIN</button>
+        <button type="submit">SIGN UP</button>
+        <br>
+        <span><a> Forgot password</a></span>
+    </div>
+</forms>
+<footer></footer>

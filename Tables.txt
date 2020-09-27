@@ -1,0 +1,28 @@
+table1= User
+
+title  FirstName LastName Password EmailId Phone DOB PhoneNo  
+
+
+
+
+table 2=Flight
+
+flightNo Source  Destination TravellingDay DepartureTime TravellingDate Duration NoOfSeats Class[B/E]  ReturnDate NoOfPassengers  TypesOfTickets TicketPrice[B/E]
+
+
+
+table 3=Booking
+BookingId[PK]  UserId[FK] FlightNo  SourceDestination  Source Date Time Price Class  Status 
+
+
+
+table 4=Passenger
+BookingId firstName LastName SeatNo  
+
+
+
+
+table 5=Payment 
+
+
+

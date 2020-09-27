@@ -1,0 +1,49 @@
+ CREATE USER ****** IDENTIFIED BY *****;
+
+    grant dba to mayank;
+    connect mayank;
+    
+    drop user mayank cascade;
+    
+    
+    select * from cat;
+    
+    ALTER USER hr ACCOUNT UNLOCK
+    
+    select system,account_status from system;
+    
+    select username,account_status from dba_users order by username;
+    
+    alter user HR account unlock;
+
+    
+    
+    
+///// OTHER COMMANDS
+ALTER TABLE person RENAME TO persons;
+
+ALTER TABLE persons
+MODIFY age INT;
+
+
+ALTER TABLE persons
+MODIFY id INT;
+
+insert into persons values ( 'mayank', '2','21');
+
+ALTER TABLE persons
+MODIFY pname varchar2(20);
+
+select * from persons;
+
+UPDATE persons  
+SET age= 27 ,pname='gon'
+WHERE id = 5;  
+
+ALTER TABLE persons
+drop name varchar2(20);
+
+ALTER TABLE persons
+DROP COLUMN name;
+
+select * from persons ;
