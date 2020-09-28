@@ -21,12 +21,11 @@ const routes: Routes = [
   {path:'FlightSearch', component:FlightSearchComponent},
   {path:'Add',component:AddComponent},
   {path:'Delete',component:DeleteComponent},
-  {path:'Payment',component:PaymentComponent}
+  {path:'Payment',component:PaymentComponent},
 
 //  {path:'FlightSearch', redirectTo:'/add', pathMatch :'full'},
- // {path:'**', redirectTo:'/list', pathMatch :'full'}
+  {path:'', redirectTo:'/FlightSearch', pathMatch :'full'}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
