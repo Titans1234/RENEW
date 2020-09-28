@@ -1,46 +1,64 @@
 <nav>
 
 </nav>
+<div class="Inside">
 <div class="container"> 
-
+    <div class="row">
+        <div class="col col-11.5">
       <div class="form-section">
        <form (ngSubmit)="addFlight()" #addForm="ngForm">
         <div class="form-group">
         <table>
          <tr>
             <td><label for="flight_no" class="box1">Flight Number</label></td>
-            <td><input type="number"  class="box" name="flight_no" [(ngModel)]="flight.flight_no"></td>
+            <td><input type="number"  class="form-control" name="flight_no" [(ngModel)]="flight.flight_no"></td>
         </tr>
         <tr class="box">
             <td><label for="source" class="box1">From</label></td>
-            <td><input type="text" class="box" name="source" [(ngModel)]="flight.source"></td>
+            <td><select name="source" [(ngModel)]="flight.source"class="form-control">
+                <option selected>Choose...</option>
+                <option>Agartala,India</option>
+                <option>Agra,India</option>
+                <option>Ahmedabaad,India</option>
+                <option>Banglore,India</option>
+                <option>Delhi,India</option>
+                
+                <option>Mumbai,India</option>
+                <option>Patna,India</option>
+              </select></td>
         </tr>
         <tr>
             <td><label for="destination" class="box1" >To</label></td>
-            <td><input type="text" class="box" name="destination" [(ngModel)]="flight.destination"></td>
+            <td><input type="text" class="form-control" name="destination" [(ngModel)]="flight.destination"></td>
         </tr>
         <tr>
             <td><label for="d_time" class="box1">Depart</label></td>
-            <td><input type="text" class="box" name="d_time" [(ngModel)]="flight.depart"></td>
+            <td><input type="datetime" class="form-control" name="d_time" [(ngModel)]="flight.depart" min="2020-01-01" max="2025-01-01"></td>
         </tr>
         <tr>
             <td><label for="arr_time" class="box1">Arrive</label></td>
-            <td><input type="text" class="box" name="arr_time" [(ngModel)]="flight.arrive"></td>
+            <td><input type="date" class="form-control" name="arr_time" [(ngModel)]="flight.arrive"></td>
         </tr>
         <tr>
             <td><label for="duration" class="box1">Duration</label></td>
-            <td><input type="text" class="box" name="duration" [(ngModel)]="flight.duration"></td>
+            <td><input type="text" class="form-control" name="duration" [(ngModel)]="flight.duration"></td>
         </tr>
         <tr>
             <td><label for="source" class="box1">Cabin</label></td>
-            <td><input type="text" class="box" name="source" [(ngModel)]="flight.cabin"></td>
+            <td><input type="text" class="form-control" name="source" [(ngModel)]="flight.cabin"></td>
         </tr>
         <tr rowspan="2">
-            <td colspan="2"><button class="button1">ADD</button></td>
+            <td colspan="2"><button type="button" class="btn btn-primary">ADD</button></td>
         </tr>
     </table>
     </div>
     
     </form>
   </div>
+    </div>
 </div>
+</div>
+</div>
+<!--
+    <input type="text" class="form-control" name="source" [(ngModel)]="flight.source">
+-->

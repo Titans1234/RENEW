@@ -1,12 +1,16 @@
+.container
+{
+   margin-top:0%;
+   margin-left:20em;
+}
+.form-in
+{
+   margin-top: 20px;
+}
 .form-group
 {
    align-content: center;
    border-radius:1em;
-}
-.button1
-{
-   margin-left:12em;margin-top:2em;
-   margin-bottom:1em;
 }
 .box
 {
@@ -17,13 +21,51 @@
 {
    margin-left:2em;
    margin-top:2em;
-   
+   font-family: 'Times New Roman', Times, serif;
+   font-size:1.2em;
+   font-weight: bolder;
+   color: #173e43;
+   background-color: transparent;
+   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1); 
+}
+.form-control
+{
+   margin-left:2em;
+   margin-top:2em; 
+   min-width:100px;
+   max-width:240px;
+   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); 
+}
+.col
+{
+   margin-top:5%;
 }
 .form-section
 {
-   border: solid;
+   align-content: center;
+   border:#fae596;
+   
    margin-left:50px;
-   margin-top:50px;
+   margin-top:0%;
    margin-bottom:50px;
-   margin-right: 40em;
+   margin-right:38em;
+   background-color:#e3e0cf;
+   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); 
+   /*background-image: url("add.jpg");*/
+}
+.Inside
+{
+    background-color: #bccbde;
+}
+.btn
+{
+   margin-left:11em;margin-top:2em;
+   margin-bottom:1em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: larger;
+    color:snow;
+    padding-left:40px;
+    padding-right:40px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); 
 }

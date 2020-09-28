@@ -1,26 +1,33 @@
 <nav>
  
 </nav>
+<div class="Inside">
 <div class="container">
+  <div class="row">
+    <div class="col col-10">
       <div class="new-delete">
         <form (ngSubmit)="onSubmit()" #delForm="ngForm">
-           <div class="form-group">
+            <div class="form-group">
                   <table>
                        <tr>
-                           <td><label for="flight_no" class="box1">Flight</label></td>
-                          <td><input type="number" class="box" name="flight_no" [(ngModel)]="flight.flight_no" pattern="[0-9]{5,}"  #flight1="ngModel"></td>
+                           <td><label for="flight_no" class="box1">Flight Number</label></td>
+                          <td><input type="number" class="form-control" name="flight_no" [(ngModel)]="flight.flight_no" placeholder="e.g 22378"pattern="[0-9]{5,}"  #flight1="ngModel"></td>
                           <td><span *ngif="flight1.invalid || flight1.touched"
                             class="alert alert-danger">Invalid Flight number</span></td>
                         </tr>
                     </table>
-           </div> 
-           <div class="submit-button">
-                    <button>Delete</button>
+            </div> 
+            <div class="submit-button">
+              <button type="button" class="btn btn-danger">Delete</button>
             </div>
-    </form>
+        </form>
 
+      </div>
+    </div>
+    <div class="col col-2">
+   
+   </div>
+ </div>
 </div>
 </div>
-<footer>
 
-</footer>
