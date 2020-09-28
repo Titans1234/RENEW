@@ -22,7 +22,6 @@ public class AdminRegistration {
 		return username;
 	}
 	
-	
 
 	public AdminRegistration(String username, String adminName, String password) {
 		super();
