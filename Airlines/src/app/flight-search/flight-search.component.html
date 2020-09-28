@@ -1,146 +1,190 @@
-
-<!DOCTYPE HTML>
-<html>
-
-<head>
-	<title>Airline Booking Form</title>
-	<!-- Meta tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Airline Booking Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
-	/>
+<div>
+	<div id="fs">
+	  <div class="container">
+		<div class="row py-5 mt-4 align-items-center">
+			<!-- For Demo Purpose -->
+			<div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+				<img src="../assets/girl.jpg" alt="" class="img-fluid mb-3 d-none d-md-block">
+				<h1>Find Best Flights!</h1>
+				<p class="font-italic text-muted mb-0">Find out best flights at best fares</p>
+				<!-- <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
+					<u>Bootstrapious</u></a>
+				</p> -->
+			</div>
 	
-</head>
-
-<body>
-	
-	<h1>Flight Search</h1>
-	<div class="booking-form">
-		<!-- Form starts here -->
-		<form (ngSubmit)="next()">
+			<!-- Registeration Form -->
 			
-			<div class="radio-section">
-				<h6>Select your Fare</h6>
-				<ul class="radio-buttons-w3-agileits">
-					<li>
-						<input type="radio" id="a-option" name="selector1">
-						<label for="a-option">One Way</label>
-						<div class="check"></div>
-					</li>
-					<li>
-						<input type="radio" id="b-option" name="selector1">
-						<label for="b-option">Round-Trip</label>
-						<div class="check">
-							<div class="inside"></div>
+			<div class="col-md-7 col-lg-6 ml-auto">
+				<form action="#">
+					<div class="row">
+	
+						<!-- First Name -->
+						<!-- <div class="input-group col-lg-6 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-user text-muted"></i>
+								</span>
+							</div>
+							<input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+						</div> -->
+						<div id="b1">
+						<button type="button" class="btn btn-primary btn-lg">One way</button></div>
+						<!-- Last Name -->
+						<!-- <div class="input-group col-lg-6 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-user text-muted"></i>
+								</span>
+							</div>
+							<input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+						</div> -->
+						<div id="b2">
+						<button type="button" class="btn btn-warning btn-lg">Return Trip</button></div>
+						<!-- Email Address -->
+						<!-- <div class="input-group col-lg-12 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-envelope text-muted"></i>
+								</span>
+							</div>
+							<input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+						</div> -->
+	
+						<!-- Phone Number -->
+						<!-- <div class="input-group col-lg-12 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-phone-square text-muted"></i>
+								</span>
+							</div> -->
+							<!-- <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+								<option value="">+12</option>
+								<option value="">+10</option>
+								<option value="">+15</option>
+								<option value="">+18</option>
+							</select>
+							<input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+						</div>. -->
+	
+	
+						<!-- Job -->
+						<div class="row">
+						<div class="input-group col-lg-6 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-black-tie text-muted"></i>
+								</span>
+							</div>
+							<select id="job" name="Source" class="form-control custom-select bg-white border-left-0 border-md">
+								<option value="">Mumbai</option>
+								<option value="">Hyderabad</option>
+								<option value="">Bangalore</option>
+								<option value="">Delhi</option>
+								<option value="">Chennai</option>
+							</select>
 						</div>
-					</li>
-				</ul>
-				<div class="clear"></div>
-			</div>
-			<br>
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<select class="form-control">
-										<option>From</option>
-										<option value="Mumbai">Mumbai</option>
-										<option value="Chennai">Chennai</option>
-										<option value="Hyderabad">Hyderabad</option>
-										<option value="Delhi">Delhi</option>
-										<option value="Goa">Goa</option>
-										<option value="Bangalore">Bangalore</option>
-										
-									</select>
-				</div>
-				<div class="field-agileinfo-spc form-w3-agile-text2">
-					<select class="form-control">
-										<option>To</option>
-										<option>From</option>
-										<option value="Mumbai">Mumbai</option>
-										<option value="Chennai">Chennai</option>
-										<option value="Hyderabad">Hyderabad</option>
-										<option value="Delhi">Delhi</option>
-										<option value="Goa">Goa</option>
-										<option value="Bangalore">Bangalore</option>
-										
-									</select>
-				</div>
-			</div>
-			
-			<br>
-			 <div class="main-flex-w3ls-sectns">
-				 <div class="field-agileinfo-spc form-w3-agile-text1">
-					 <input id="datepicker" name="Text" type="text" placeholder="Departure Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-						required=""> 
-						
-				</div>  
-				
-					
-		
-			
-			</div> 
-			<br>
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input id="datepicker1" name="Text" type="text" placeholder="Return Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-					    required="">
-				</div>
-			</div>
-			<br>
-			
-			<div class="main-flex-w3ls-sectns">
-				<div class="field-agileinfo-spc form-w3-agile-text1">
-					<input type="text" name="Passanger" placeholder="Passanger(s)" required="">
-				</div>
-				
-			</div>
-
-			<br>
-			<div class="triple-wthree">
-				<div class="field-agileinfo-spc form-w3-agile-text11">
-					<select class="form-control">
-												<option value="">Adult(12+ Yrs)</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>         
-												<option value="4">4</option>
-												<option value="5">5+</option>
-											</select>
-				</div>
-				<div class="field-agileinfo-spc form-w3-agile-text22">
-					<select class="form-control">
-												<option value="">Children(2-11 Yrs)</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>         
-												<option value="4">4</option>
-												<option value="5">5+</option>     
-											</select>
-				</div>
-				<div class="field-agileinfo-spc form-w3-agile-text33">
-					<select class="form-control">
-												<option value="">Infant(under 2Yrs)</option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>         
-												<option value="4">4</option>
-												<option value="5">5+</option>    
-											</select>
-				</div>
-			</div>
-			
-			
-			<div class="clear"></div>
-			<input type="submit" value="Search">
-			<input type="reset" value="Clear Form">
-			<div class="clear"></div>
-		</form>
-		
+						<div class="input-group col-lg-6 mb-4">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text bg-white px-4 border-md border-right-0">
+								  <i class="fa fa-black-tie text-muted"></i>
+							  </span>
+						  </div>
+						  <select id="job" name="Destination" class="form-control custom-select bg-white border-left-0 border-md">
+							  <option value="">Mumbai</option>
+							  <option value="">Hyderabad</option>
+							  <option value="">Bangalore</option>
+							  <option value="">Delhi</option>
+							  <option value="">Chennai</option>
+						  </select>
+					  </div>
 	</div>
-	<!--copyright-->
-	<div class="copyright">
-		<p>&copy; Titans - Project Gladiator 2020 </p>
-		</div>
 	
-</body>
-
-</html>
+	 <div class="row">                 
+		<!-- Password -->
+						<div class="input-group col-lg-6 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-lock text-muted"></i>
+								</span>
+							</div>
+							<input id="dated" type="date" name="depdate" placeholder="Departure Date" class="form-control bg-white border-left-0 border-md">
+						</div>
+						
+					   
+						<div class="input-group col-lg-6 mb-4">
+							<div class="input-group-prepend">
+								<span class="input-group-text bg-white px-4 border-md border-right-0">
+									<i class="fa fa-lock text-muted"></i>
+								</span>
+							</div>
+							<input id="rdate" type="date" name="returndate" placeholder="Return Date" class="form-control bg-white border-left-0 border-md">
+						</div>
+	</div>
+						<!--PASS-->
+	<div class="row">
+						<div class="input-group col-lg-4 mb-4">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text bg-white px-4 border-md border-right-0">
+								  <i class="fa fa-lock text-muted"></i>
+							  </span>
+						  </div>
+						  <input id="dated" type="text" name="adult" placeholder="Adult" class="form-control bg-white border-left-0 border-md">
+					  </div>
+					 
+					  <div class="input-group col-lg-4 mb-4">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text bg-white px-4 border-md border-right-0">
+								  <i class="fa fa-lock text-muted"></i>
+							  </span>
+						  </div>
+						  <input id="rdate" type="text" name="child" placeholder="Children" class="form-control bg-white border-left-0 border-md">
+					  </div>
+	
+					  <div class="input-group col-lg-4 mb-4">
+						<div class="input-group-prepend">
+							<span class="input-group-text bg-white px-4 border-md border-right-0">
+								<i class="fa fa-lock text-muted"></i>
+							</span>
+						</div>
+						<input id="rdate" type="text" name="infant" placeholder="Infant" class="form-control bg-white border-left-0 border-md">
+					</div>
+	</div>
+						<!-- Submit Button -->
+						<div class="form-group col-lg-12 mx-auto mb-0">
+							<a href="#" class="btn btn-primary btn-block py-2">
+								<span class="font-weight-bold">Search your flight</span>
+							</a>
+						</div>
+	
+						<!-- Divider Text -->
+						<div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+							<div class="border-bottom w-100 ml-5"></div>
+							<span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+							<div class="border-bottom w-100 mr-5"></div>
+						</div>
+	
+						<!-- Social Login -->
+						 <div class="form-group col-lg-12 mx-auto">
+						  <!-- <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
+								<i class="fa fa-facebook-f mr-2"></i>
+								<span class="font-weight-bold">Continue with Facebook</span>
+							</a> -->
+							<a href="#" class="btn btn-primary btn-block py-2 btn-twitter">
+								<i class="fa fa-twitter mr-2"></i>
+								<span class="font-weight-bold">Register now to get best offers!</span>
+							</a>
+						</div>
+	
+						<!-- Already Registered -->
+						<div class="text-center w-100">
+							<p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+						</div>
+	
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	</div>
