@@ -6,19 +6,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "admin")
+@SequenceGenerator(name = "seq_adminid", initialValue = 1, allocationSize = 1)
 public class Admin {
 
 	@Id
-	@SequenceGenerator(name = "seq_adminid", initialValue = 1111, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminid")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminid")
 	private int adminId;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String userName;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String password;
 
 	public int getAdminId() {
@@ -44,5 +46,5 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 }

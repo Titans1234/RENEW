@@ -30,8 +30,7 @@ public class Plane {
 	@Column
 	private String planeName;
 
-	@Column
-	private String planeType;
+	
 
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
 	private List<Routes> routes;
@@ -69,13 +68,6 @@ public class Plane {
 		this.planeName = planeName;
 	}
 
-	public String getPlaneType() {
-		return planeType;
-	}
-
-	public void setPlaneType(String planeType) {
-		this.planeType = planeType;
-	}
 
 	public List<Routes> getRoutes() {
 		return routes;

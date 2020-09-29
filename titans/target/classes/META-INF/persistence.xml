@@ -22,5 +22,21 @@
 			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
 		</properties>
 	</persistence-unit>
+		<persistence-unit name="SpringREST1"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			<property name="javax.persistence.jdbc.user" value="Saurav" />
+			<property name="javax.persistence.jdbc.password" value="Sonu_3097" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
+		</properties>
+	</persistence-unit>
 	
 </persistence>
