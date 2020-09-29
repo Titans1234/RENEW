@@ -95,14 +95,21 @@ select.form-control {
     padding-bottom: 1rem;
 }
 .btn-primary{
-    background-color: #6648b1;
-    border: 1px solid #6648b1;
+    background-color:  #20c39a;
+    border: 1px solid #20c39a;
+}
+.btn-info{
+      background-color:  #20c39a;
+    border: 1px solid #20c39a;
 }
 .btn-primary:hover{
-    background-color: #563d7c;
-    border:1px solid  #563d7c;
+    background-color: #20c36b;
+    border:1px solid  #20c36b;
 }
-
+.btn-info:hover{
+    background-color: #20c36b;
+    border:1px solid  #20c36b;
+}
 .c-img{
     height: 250px;
     

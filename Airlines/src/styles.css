@@ -2,3 +2,14 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 
+body{
+    
+    
+    margin:0px;
+    padding:0px;
+    overflow-x: hidden !important;
+    
+    
+    /* font-family:'Poppins' , sans-serif; */
+    /* color:#222; */
+}
