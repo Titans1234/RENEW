@@ -61,6 +61,4 @@ public class Transaction {
 		this.ticket = ticket;
 	}
 	
-	
-	
 }

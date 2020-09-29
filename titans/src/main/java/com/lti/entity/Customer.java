@@ -39,8 +39,7 @@ public class Customer {
 	@Column
 	private String gender;
 	
-	@Column
-	private double walletBalance;
+	
 	
 	@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
 	private List<Ticket> ticket;
@@ -101,13 +100,7 @@ public class Customer {
 		this.gender = gender;
 	}
 
-	public double getWalletBalance() {
-		return walletBalance;
-	}
 
-	public void setWalletBalance(double walletBalance) {
-		this.walletBalance = walletBalance;
-	}
 
 	public List<Ticket> getTicket() {
 		return ticket;

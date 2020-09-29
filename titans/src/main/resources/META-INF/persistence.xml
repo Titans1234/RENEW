@@ -8,13 +8,6 @@
 		transaction-type="RESOURCE_LOCAL">
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		
-		<class>com.lti.entity.Employee</class>
-		<class>com.lti.entity.User</class>
-		
-		
-
-
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="oracle.jdbc.OracleDriver" />
@@ -29,4 +22,5 @@
 			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
 		</properties>
 	</persistence-unit>
+	
 </persistence>

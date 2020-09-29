@@ -41,18 +41,16 @@ public class Routes {
 	private String duration;
 	
 	@ManyToOne
-	@JoinColumn(name="bus_id")
-	private Bus bus;
+	@JoinColumn(name="planeid")
+	private Plane plane;
 
 	
-	
-	
-	public Bus getBus() {
-		return bus;
+	public Plane getPlane() {
+		return plane;
 	}
 
-	public void setBus(Bus bus) {
-		this.bus = bus;
+	public void setPlane(Plane plane) {
+		this.plane = plane;
 	}
 
 	public int getRouteId() {

@@ -18,15 +18,15 @@ public class OperationalDays {
 
 	@Id
 	@SequenceGenerator(name = "seq_operational", initialValue = 1010100, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_operational")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_operational")
 	private int operationalId;
-	
+
 	@Column
 	private String operationalDays;
-	
+
 	@ManyToOne
-	@JoinColumn(name="bus_id")
-	private Bus bus;
+	@JoinColumn(name = "planeid")
+	private Plane plane;
 
 	public int getOperationalId() {
 		return operationalId;
@@ -44,18 +44,17 @@ public class OperationalDays {
 		this.operationalDays = operationalDays;
 	}
 
-	public Bus getBus() {
-		return bus;
+	public Plane getPlane() {
+		return plane;
 	}
 
-	public void setBus(Bus bus) {
-		this.bus = bus;
+	public void setPlane(Plane plane) {
+		this.plane = plane;
 	}
 
 	@Override
 	public String toString() {
 		return "OperationalDays [operationalId=" + operationalId + ", operationalDays=" + operationalDays + "]";
 	}
-	
-	
+
 }

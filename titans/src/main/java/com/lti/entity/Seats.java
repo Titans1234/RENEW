@@ -16,36 +16,36 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_seats")
+@Table(name = "tbl_seats")
 public class Seats {
-	
+
 	@Id
 	@SequenceGenerator(name = "seq_seats", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_seats")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_seats")
 	private int seatId;
-	
+
 	@Column
 	private LocalDate dateOfJourney;
-	
+
 	@Column
 	private int seats;
-	
+
 	@Column
 	private String gender;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="ticket_id")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ticket_id")
 	private Ticket ticket;
-	
+
 	@Override
 	public String toString() {
 		return "Seats [seatId=" + seatId + ", dateOfJourney=" + dateOfJourney + ", seats=" + seats + ", gender="
-				+ gender + ", ticket=" + ticket + ", bus=" + bus + "]";
+				+ gender + ", ticket=" + ticket + ", plane=" + plane + "]";
 	}
 
 	@ManyToOne
-	@JoinColumn(name="bus_id")
-	private Bus bus;
+	@JoinColumn(name = "planeid")
+	private Plane plane;
 
 	public int getSeatId() {
 		return seatId;
@@ -87,20 +87,12 @@ public class Seats {
 		this.ticket = ticket;
 	}
 
-	public Bus getBus() {
-		return bus;
+	public Plane getPlane() {
+		return plane;
 	}
 
-	public void setBus(Bus bus) {
-		this.bus = bus;
+	public void setPlane(Plane plane) {
+		this.plane = plane;
 	}
-
-	
-	
-	
-	
-
-	
-	
 
 }

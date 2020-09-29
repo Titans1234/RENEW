@@ -1,4 +1,5 @@
 package com.lti.entity;
+
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -19,47 +20,40 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Ticket {
 
-	
 	@Id
 	@SequenceGenerator(name = "seq_ticketid", initialValue = 1010100, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ticketid")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ticketid")
 	private int ticketId;
-	
+
 	@Column
 	private int noOfSeatsBooked;
-	
+
 	@Column
 	private LocalDate dateOfJourney;
-	
+
 	@Column
 	private LocalDate dateOfBooking;
-	
+
 	@Column
 	private double totalCost;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="bus_id")
-	private Bus bus;
-	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "planeid")
+	private Plane plane;
+
 	@ManyToOne
-	@JoinColumn(name="cutomer_id")
+	@JoinColumn(name = "cutomer_id")
 	private Customer customer;
-	
-	@OneToMany(mappedBy="ticket",cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
 	private List<Seats> seats;
 
-	@OneToMany(mappedBy="ticket",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
 	private List<Passenger> passenger;
-	
-	@OneToOne(mappedBy="ticket",cascade=CascadeType.ALL)
+
+	@OneToOne(mappedBy = "ticket", cascade = CascadeType.ALL)
 	private Transaction transaction;
 
-	
-	
-	
-	
-	
-	
 	public List<Seats> getSeats() {
 		return seats;
 	}
@@ -67,10 +61,6 @@ public class Ticket {
 	public void setSeats(List<Seats> seats) {
 		this.seats = seats;
 	}
-
-
-
-	
 
 	public List<Passenger> getPassenger() {
 		return passenger;
@@ -120,12 +110,12 @@ public class Ticket {
 		this.totalCost = totalCost;
 	}
 
-	public Bus getBus() {
-		return bus;
+	public Plane getPlane() {
+		return plane;
 	}
 
-	public void setBus(Bus bus) {
-		this.bus = bus;
+	public void setPlane(Plane plane) {
+		this.plane = plane;
 	}
 
 	public Customer getCustomer() {
@@ -135,7 +125,6 @@ public class Ticket {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-
 
 	public Transaction getTransaction() {
 		return transaction;
@@ -148,10 +137,9 @@ public class Ticket {
 	@Override
 	public String toString() {
 		return "Ticket [ticketId=" + ticketId + ", noOfSeatsBooked=" + noOfSeatsBooked + ", dateOfJourney="
-				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", bus=" + bus
+				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", plane=" + plane
 				+ ", customer=" + customer + ", seats=" + seats + ", passenger=" + passenger + ", transaction="
 				+ transaction + "]";
 	}
-	
-	
+
 }
