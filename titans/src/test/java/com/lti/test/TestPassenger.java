@@ -44,8 +44,10 @@ public class TestPassenger {
 
 	@Test
 	public void testFetch() {
-		Passenger p = repo.fetch(10100);
+
+		Passenger p = repo.fetch(10101);
 		System.out.println(p.getName() + "\t" + p.getAge());
+
 	}
 
 }
