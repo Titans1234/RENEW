@@ -31,6 +31,30 @@ public class Flight {
 
 	@Column
 	private String flightName;
+	
+	@Column
+	private String flightStatus;
+	
+	
+	@Column
+	private String fromCity;
+	
+	
+	@Column
+	private String toCity;
+	
+	@Column
+	private String departureTime;
+	
+	@Column
+	private String arrivalTime;
+	
+	@Column
+	private double Fare;
+	
+	@Column
+	private String duration;
+	
 
 	
 
@@ -70,6 +94,61 @@ public class Flight {
 		this.flightName = flightName;
 	}
 
+	public String getFlightStatus() {
+		return flightStatus;
+	}
+
+	public void setFlightStatus(String flightStatus) {
+		this.flightStatus = flightStatus;
+	}
+
+	public String getFromCity() {
+		return fromCity;
+	}
+
+	public void setFromCity(String fromCity) {
+		this.fromCity = fromCity;
+	}
+
+	public String getToCity() {
+		return toCity;
+	}
+
+	public void setToCity(String toCity) {
+		this.toCity = toCity;
+	}
+
+	public String getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public double getFare() {
+		return Fare;
+	}
+
+	public void setFare(double fare) {
+		Fare = fare;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
 
 	public List<Route> getRoutes() {
 		return routes;

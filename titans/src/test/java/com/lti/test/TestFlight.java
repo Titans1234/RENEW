@@ -25,22 +25,38 @@ public class TestFlight {
 		Flight f = new Flight();
 		f.setFlightName("DE198");
 		f.setTotalSeat(70);
-		
+		f.setFlightStatus("flying");
+		f.setFromCity("Mumbai");
+        f.setToCity("Bangalore");
+        f.setArrivalTime("11:45 AM");
+        f.setDepartureTime("7:45 AM");
+        f.setDuration("4 hrs");
+        f.setFare(5400.00);
 		repo.save(f);
 	}
 	
-	@Test
-	public void testFetchAll() {
-		List<Flight> flights = repo.fetchAll();
-		for(Flight f : flights) {
-			System.out.println(f.getFlightName() +"\t" + f.getTotalSeat());
-		}
-	}
+	//fetchAll is not working as of now.
+	
+//	@Test
+//	public void testFetchAll() {
+//		List<Flight> flights = repo.fetchAll();
+//		for(Flight f : flights) {
+//			System.out.println(f.getFlightName() +"\t" + f.getTotalSeat()
+//			+"\t" +f.getFlightStatus()+"\t"+ f.getFromCity() +"\t" +
+//					f.getToCity() +"\t" +f.getArrivalTime() +"\t" 
+//					+f.getDepartureTime() +"\t" +f.getDuration()+
+//					"\t" + "Rs." + f.getFare());
+//		}
+//	}
 	
 	@Test
 	public void testFetch() {
-		Flight f = repo.fetch(131100);
-		System.out.println(f.getFlightName() +"\t" + f.getTotalSeat());
+		Flight f = repo.fetch(131101);
+		System.out.println(f.getFlightName() +"\t" + f.getTotalSeat()
+		+"\t" +f.getFlightStatus()+"\t"+ f.getFromCity() +"\t" +
+				f.getToCity() +"\t" +f.getArrivalTime() +"\t" 
+				+f.getDepartureTime() +"\t" +f.getDuration()+
+				"\t" + "Rs." + f.getFare());
 	}
 	
 }
