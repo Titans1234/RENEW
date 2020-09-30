@@ -27,7 +27,7 @@ public class CustomerRepoImpl implements CustomerRepo{
 	@Override
 	public List<User> fetchAll() {
 		// TODO Auto-generated method stub
-		return em.createQuery("from Customer").getResultList();
+		return em.createQuery("from User").getResultList();
 	}
 
 	@Override

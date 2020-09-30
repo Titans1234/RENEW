@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name = "seq_flightid", initialValue = 131100, allocationSize = 1)
-@Table(name="flight")
+@Table(name = "flight")
 public class Flight {
 
 	@Id
@@ -31,35 +31,32 @@ public class Flight {
 
 	@Column
 	private String flightName;
-	
+
 	@Column
 	private String flightStatus;
-	
-	
+
 	@Column
 	private String fromCity;
-	
-	
+
 	@Column
 	private String toCity;
-	
+
 	@Column
 	private String departureTime;
-	
+
 	@Column
 	private String arrivalTime;
-	
+
 	@Column
 	private double Fare;
-	
+
 	@Column
 	private String duration;
-	
 
-	
-
-	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-	private List<Route> routes;
+	/*
+	 * @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL) private
+	 * List<Route> routes;
+	 */
 
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<OperationalDays> operationalDays;
@@ -67,7 +64,7 @@ public class Flight {
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<Booking> ticket;
 
-	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL) 
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<Seat> seats;
 
 	public int getFlightId() {
@@ -148,14 +145,6 @@ public class Flight {
 
 	public void setDuration(String duration) {
 		this.duration = duration;
-	}
-
-	public List<Route> getRoutes() {
-		return routes;
-	}
-
-	public void setRoutes(List<Route> routes) {
-		this.routes = routes;
 	}
 
 	public List<OperationalDays> getOperationalDays() {

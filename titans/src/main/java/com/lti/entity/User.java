@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name = "seq_cust", initialValue = 10101, allocationSize = 1)
-@Table(name = "user")
+@Table(name = "customer")
 public class User {
 
 	@Id
