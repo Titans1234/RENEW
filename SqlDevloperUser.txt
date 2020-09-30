@@ -47,3 +47,7 @@ ALTER TABLE persons
 DROP COLUMN name;
 
 select * from persons ;
+
+
+GITcommands
+git stash --include-intracked
