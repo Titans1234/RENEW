@@ -15,8 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
+@Table(name="passenger")
 @SequenceGenerator(name = "seq_passenger", initialValue = 10100, allocationSize = 1)
-@Table(name="passanger")
 public class Passenger {
 	
 	@Id
