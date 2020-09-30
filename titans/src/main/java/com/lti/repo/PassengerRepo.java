@@ -7,9 +7,8 @@ import com.lti.entity.Passenger;
 public interface PassengerRepo {
 
 	void save(Passenger pass);
-	
 
-        Passenger fetch(int passengerId);
-	
+	Passenger fetch(int passengerId);
+
 	List<Passenger> fetchAll();
 }

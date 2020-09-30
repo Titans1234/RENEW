@@ -34,13 +34,13 @@ public class Seat {
 	private String gender;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ticket_id")
-	private Booking ticket;
+	@JoinColumn(name = "bookingId")
+	private Booking booking;
 
 	@Override
 	public String toString() {
 		return "Seats [seatId=" + seatId + ", dateOfJourney=" + dateOfJourney + ", seats=" + seats + ", gender="
-				+ gender + ", ticket=" + ticket + ", flight=" + flight + "]";
+				+ gender + ", ticket=" + booking + ", flight=" + flight + "]";
 	}
 
 	@ManyToOne
@@ -79,12 +79,12 @@ public class Seat {
 		this.gender = gender;
 	}
 
-	public Booking getTicket() {
-		return ticket;
+	public Booking getBooking() {
+		return booking;
 	}
 
-	public void setTicket(Booking ticket) {
-		this.ticket = ticket;
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
 
 	public Flight getFlight() {

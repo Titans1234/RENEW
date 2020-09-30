@@ -12,45 +12,42 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@SequenceGenerator(name="seq_cust",initialValue=10101,allocationSize=1)
-@Table(name="user")
+@SequenceGenerator(name = "seq_cust", initialValue = 10101, allocationSize = 1)
+@Table(name = "user")
 public class User {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cust")
-	private int customerId;
-	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cust")
+	private int userId;
+
 	@Column
 	private String name;
-	
-	@Column(nullable=false,unique=true)
+
+	@Column(nullable = false, unique = true)
 	private String email;
-	
+
 	@Column
 	private String password;
-	
+
 	@Column
 	private String contact;
-	
+
 	@Column
 	private int age;
-	
+
 	@Column
 	private String gender;
-	
-	
-	
-	@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private List<Booking> ticket;
 
 	public int getCustomerId() {
-		return customerId;
+		return userId;
 	}
 
 	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+		this.userId = customerId;
 	}
 
 	public String getName() {
@@ -101,8 +98,6 @@ public class User {
 		this.gender = gender;
 	}
 
-
-
 	public List<Booking> getTicket() {
 		return ticket;
 	}
@@ -111,8 +106,4 @@ public class User {
 		this.ticket = ticket;
 	}
 
-	
-	
-	
-	
 }

@@ -14,23 +14,23 @@ import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name = "seq_transid", initialValue = 100100, allocationSize = 1)
-@Table(name="transaction")
+@Table(name = "transaction")
 public class Transaction {
-	
+
 	@Id
-	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_transid")
+
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_transid")
 	private int transactionId;
-	
+
 	@Column
 	private double amount;
-	
+
 	@Column
 	private LocalDate transactionDate;
-	
+
 	@OneToOne
-	@JoinColumn(name="ticket_id")
-	private Booking ticket;
+	@JoinColumn(name = "bookingId")
+	private Booking booking;
 
 	public int getTransactionId() {
 		return transactionId;
@@ -56,12 +56,12 @@ public class Transaction {
 		this.transactionDate = transactionDate;
 	}
 
-	public Booking getTicket() {
-		return ticket;
+	public Booking getBooking() {
+		return booking;
 	}
 
-	public void setTicket(Booking ticket) {
-		this.ticket = ticket;
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
-	
+
 }

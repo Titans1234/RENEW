@@ -10,8 +10,11 @@
 	<context:component-scan base-package="com.lti." />
 	
 	
-	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	<!-- <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="SpringMona" />
+	</bean> -->
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="SpringREST" />
 	</bean>
 	
 	<bean id="txnMgr" class="org.springframework.orm.jpa.JpaTransactionManager">

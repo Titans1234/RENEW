@@ -17,7 +17,7 @@ import com.lti.repo.CustomerRepo;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:applicationContext.xml")
+@ContextConfiguration("classpath:applicationContext.xml")
 public class TestCustomer {
 	@Autowired
 	private CustomerRepo repo;
@@ -25,7 +25,7 @@ public class TestCustomer {
 	@Test
 	public void testAdd()
 	{
-		//ApplicationContext context=new ClassPathXmlApplicationContext("stereotypeConfig.xml");
+	
 		User cust=new User();
 	     cust.setName("Saurabh");
 	     cust.setAge(22);

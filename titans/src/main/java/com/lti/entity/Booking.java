@@ -20,13 +20,12 @@ import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name = "seq_ticketid", initialValue = 1010100, allocationSize = 1)
-@Table(name="booking")
+@Table(name = "booking")
 public class Booking {
 
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ticketid")
-	private int ticketId;
+	private int bookingId;
 
 	@Column
 	private int noOfSeatsBooked;
@@ -48,13 +47,13 @@ public class Booking {
 	@JoinColumn(name = "cutomer_id")
 	private User customer;
 
-	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
 	private List<Seat> seats;
 
-	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
 	private List<Passenger> passenger;
 
-	@OneToOne(mappedBy = "ticket", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
 	private Transaction transaction;
 
 	public List<Seat> getSeats() {
@@ -74,11 +73,11 @@ public class Booking {
 	}
 
 	public int getTicketId() {
-		return ticketId;
+		return bookingId;
 	}
 
 	public void setTicketId(int ticketId) {
-		this.ticketId = ticketId;
+		this.bookingId = ticketId;
 	}
 
 	public int getNoOfSeatsBooked() {
@@ -139,7 +138,7 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + ", noOfSeatsBooked=" + noOfSeatsBooked + ", dateOfJourney="
+		return "Ticket [bookingId=" + bookingId + ", noOfSeatsBooked=" + noOfSeatsBooked + ", dateOfJourney="
 				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", flight=" + flight
 				+ ", customer=" + customer + ", seats=" + seats + ", passenger=" + passenger + ", transaction="
 				+ transaction + "]";

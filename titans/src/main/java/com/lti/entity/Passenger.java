@@ -15,28 +15,27 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="passenger")
+@Table(name = "passenger")
 @SequenceGenerator(name = "seq_passenger", initialValue = 10100, allocationSize = 1)
 public class Passenger {
-	
+
 	@Id
-	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_passenger")
+
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_passenger")
 	private int passengerId;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String name;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private int age;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String gender;
-	
+
 	@ManyToOne
-	@JoinColumn(name="ticket_id")
-	private Booking ticket;
-	
+	@JoinColumn(name = "bookingId")
+	private Booking booking;
 
 	public int getPassengerId() {
 		return passengerId;
@@ -70,14 +69,12 @@ public class Passenger {
 		this.gender = gender;
 	}
 
-	public Booking getTicket() {
-		return ticket;
+	public Booking getBooking() {
+		return booking;
 	}
 
-	public void setTicket(Booking ticket) {
-		this.ticket = ticket;
+	public void setBooking(Booking booking) {
+		this.booking = booking;
 	}
 
-	
-	
 }
