@@ -45,16 +45,16 @@ public class Route {
 	private String duration;
 	
 	@ManyToOne
-	@JoinColumn(name="planeid")
-	private Flight plane;
+	@JoinColumn(name="flightid")
+	private Flight flight;
 
 	
-	public Flight getPlane() {
-		return plane;
+	public Flight getFlight() {
+		return flight;
 	}
 
-	public void setPlane(Flight plane) {
-		this.plane = plane;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
 
 	public int getRouteId() {

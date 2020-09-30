@@ -40,12 +40,12 @@ public class Seat {
 	@Override
 	public String toString() {
 		return "Seats [seatId=" + seatId + ", dateOfJourney=" + dateOfJourney + ", seats=" + seats + ", gender="
-				+ gender + ", ticket=" + ticket + ", plane=" + plane + "]";
+				+ gender + ", ticket=" + ticket + ", flight=" + flight + "]";
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "planeid")
-	private Flight plane;
+	@JoinColumn(name = "flightid")
+	private Flight flight;
 
 	public int getSeatId() {
 		return seatId;
@@ -87,12 +87,12 @@ public class Seat {
 		this.ticket = ticket;
 	}
 
-	public Flight getPlane() {
-		return plane;
+	public Flight getFlight() {
+		return flight;
 	}
 
-	public void setPlane(Flight plane) {
-		this.plane = plane;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
 
 }

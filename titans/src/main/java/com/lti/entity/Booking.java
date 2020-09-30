@@ -41,8 +41,8 @@ public class Booking {
 	private double totalCost;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "planeid")
-	private Flight plane;
+	@JoinColumn(name = "flightid")
+	private Flight flight;
 
 	@ManyToOne
 	@JoinColumn(name = "cutomer_id")
@@ -113,12 +113,12 @@ public class Booking {
 		this.totalCost = totalCost;
 	}
 
-	public Flight getPlane() {
-		return plane;
+	public Flight getFlight() {
+		return flight;
 	}
 
-	public void setPlane(Flight plane) {
-		this.plane = plane;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
 
 	public User getCustomer() {
@@ -140,7 +140,7 @@ public class Booking {
 	@Override
 	public String toString() {
 		return "Ticket [ticketId=" + ticketId + ", noOfSeatsBooked=" + noOfSeatsBooked + ", dateOfJourney="
-				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", plane=" + plane
+				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", flight=" + flight
 				+ ", customer=" + customer + ", seats=" + seats + ", passenger=" + passenger + ", transaction="
 				+ transaction + "]";
 	}

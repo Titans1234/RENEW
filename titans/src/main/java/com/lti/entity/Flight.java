@@ -18,40 +18,40 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@SequenceGenerator(name = "seq_planeid", initialValue = 131100, allocationSize = 1)
+@SequenceGenerator(name = "seq_flightid", initialValue = 131100, allocationSize = 1)
 @Table(name="flight")
 public class Flight {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_planeid")
-	private int planeId;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_flightid")
+	private int flightId;
 
 	@Column
 	private int totalSeat;
 
 	@Column
-	private String planeName;
+	private String flightName;
 
 	
 
-	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<Route> routes;
 
-	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<OperationalDays> operationalDays;
 
-	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<Booking> ticket;
 
-	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL) 
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL) 
 	private List<Seat> seats;
 
-	public int getPlaneId() {
-		return planeId;
+	public int getFlightId() {
+		return flightId;
 	}
 
-	public void setPlaneId(int planeId) {
-		this.planeId = planeId;
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
 	}
 
 	public int getTotalSeat() {
@@ -62,12 +62,12 @@ public class Flight {
 		this.totalSeat = totalSeat;
 	}
 
-	public String getPlaneName() {
-		return planeName;
+	public String getFlightName() {
+		return flightName;
 	}
 
-	public void setPlaneName(String planeName) {
-		this.planeName = planeName;
+	public void setFlightName(String flightName) {
+		this.flightName = flightName;
 	}
 
 
