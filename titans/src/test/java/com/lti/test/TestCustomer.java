@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.lti.entity.Customer;
+import com.lti.entity.User;
 import com.lti.repo.CustomerRepo;
 
 
@@ -26,7 +26,7 @@ public class TestCustomer {
 	public void testAdd()
 	{
 		//ApplicationContext context=new ClassPathXmlApplicationContext("stereotypeConfig.xml");
-		Customer cust=new Customer();
+		User cust=new User();
 	     cust.setName("Saurabh");
 	     cust.setAge(22);
 	     cust.setEmail("sahisaurabh50@gmail.com");
@@ -40,7 +40,7 @@ public class TestCustomer {
 	public void testFetch()
 	{
 		
-	 Customer f=repo.Fetch(10103); 
+	 User f=repo.Fetch(10103); 
 	 System.out.println(f.toString());
 	
 	}
@@ -48,9 +48,9 @@ public class TestCustomer {
 	public void testList()
 	{
 		
-		  List<Customer> p=new ArrayList<Customer>();
+		  List<User> p=new ArrayList<User>();
 		  p=repo.fetchAll(); 
-		  for(Customer c:p) 
+		  for(User c:p) 
 		  { 
 			  System.out.println(c.toString()); 
 		  }

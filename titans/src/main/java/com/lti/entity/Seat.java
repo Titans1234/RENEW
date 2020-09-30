@@ -16,8 +16,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_seats")
-public class Seats {
+@Table(name = "seat")
+public class Seat {
 
 	@Id
 	@SequenceGenerator(name = "seq_seats", initialValue = 1, allocationSize = 1)
@@ -35,7 +35,7 @@ public class Seats {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ticket_id")
-	private Ticket ticket;
+	private Booking ticket;
 
 	@Override
 	public String toString() {
@@ -45,7 +45,7 @@ public class Seats {
 
 	@ManyToOne
 	@JoinColumn(name = "planeid")
-	private Plane plane;
+	private Flight plane;
 
 	public int getSeatId() {
 		return seatId;
@@ -79,19 +79,19 @@ public class Seats {
 		this.gender = gender;
 	}
 
-	public Ticket getTicket() {
+	public Booking getTicket() {
 		return ticket;
 	}
 
-	public void setTicket(Ticket ticket) {
+	public void setTicket(Booking ticket) {
 		this.ticket = ticket;
 	}
 
-	public Plane getPlane() {
+	public Flight getPlane() {
 		return plane;
 	}
 
-	public void setPlane(Plane plane) {
+	public void setPlane(Flight plane) {
 		this.plane = plane;
 	}
 

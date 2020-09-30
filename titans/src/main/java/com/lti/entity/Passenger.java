@@ -12,12 +12,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@SequenceGenerator(name = "seq_passenger", initialValue = 10100, allocationSize = 1)
+@Table(name="passanger")
 public class Passenger {
 	
 	@Id
-	@SequenceGenerator(name = "seq_passenger", initialValue = 10100, allocationSize = 1)
+	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_passenger")
 	private int passengerId;
 	
@@ -32,7 +35,7 @@ public class Passenger {
 	
 	@ManyToOne
 	@JoinColumn(name="ticket_id")
-	private Ticket ticket;
+	private Booking ticket;
 	
 
 	public int getPassengerId() {
@@ -67,11 +70,11 @@ public class Passenger {
 		this.gender = gender;
 	}
 
-	public Ticket getTicket() {
+	public Booking getTicket() {
 		return ticket;
 	}
 
-	public void setTicket(Ticket ticket) {
+	public void setTicket(Booking ticket) {
 		this.ticket = ticket;
 	}
 

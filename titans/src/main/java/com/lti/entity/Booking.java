@@ -16,12 +16,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class Ticket {
+@SequenceGenerator(name = "seq_ticketid", initialValue = 1010100, allocationSize = 1)
+@Table(name="booking")
+public class Booking {
 
 	@Id
-	@SequenceGenerator(name = "seq_ticketid", initialValue = 1010100, allocationSize = 1)
+	
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ticketid")
 	private int ticketId;
 
@@ -39,14 +42,14 @@ public class Ticket {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "planeid")
-	private Plane plane;
+	private Flight plane;
 
 	@ManyToOne
 	@JoinColumn(name = "cutomer_id")
-	private Customer customer;
+	private User customer;
 
 	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-	private List<Seats> seats;
+	private List<Seat> seats;
 
 	@OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
 	private List<Passenger> passenger;
@@ -54,11 +57,11 @@ public class Ticket {
 	@OneToOne(mappedBy = "ticket", cascade = CascadeType.ALL)
 	private Transaction transaction;
 
-	public List<Seats> getSeats() {
+	public List<Seat> getSeats() {
 		return seats;
 	}
 
-	public void setSeats(List<Seats> seats) {
+	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
 
@@ -110,19 +113,19 @@ public class Ticket {
 		this.totalCost = totalCost;
 	}
 
-	public Plane getPlane() {
+	public Flight getPlane() {
 		return plane;
 	}
 
-	public void setPlane(Plane plane) {
+	public void setPlane(Flight plane) {
 		this.plane = plane;
 	}
 
-	public Customer getCustomer() {
+	public User getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(User customer) {
 		this.customer = customer;
 	}
 

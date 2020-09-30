@@ -4,9 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 
-	<persistence-unit name="SpringREST"
-		transaction-type="RESOURCE_LOCAL">
-
+	<persistence-unit name="SpringREST" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
@@ -22,9 +20,8 @@
 			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
 		</properties>
 	</persistence-unit>
-		<persistence-unit name="SpringREST1"
-		transaction-type="RESOURCE_LOCAL">
-
+	
+		<persistence-unit name="SpringREST1" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
 			<property name="javax.persistence.jdbc.driver"
@@ -38,5 +35,18 @@
 			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
 		</properties>
 	</persistence-unit>
-	
+	<persistence-unit name="SpringAnant" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@localhost:1521:orcl" />
+			<property name="javax.persistence.jdbc.user" value="anant" />
+			<property name="javax.persistence.jdbc.password" value="arbariya" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" /> <!-- logging generated SQL -->
+		</properties>
+	</persistence-unit>
 </persistence>

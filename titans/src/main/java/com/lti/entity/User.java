@@ -14,10 +14,11 @@ import javax.persistence.Table;
 
 
 @Entity
-public class Customer {
+@SequenceGenerator(name="seq_cust",initialValue=10101,allocationSize=1)
+@Table(name="user")
+public class User {
 
 	@Id
-	@SequenceGenerator(name="seq_cust",initialValue=10101,allocationSize=1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cust")
 	private int customerId;
 	
@@ -42,7 +43,7 @@ public class Customer {
 	
 	
 	@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
-	private List<Ticket> ticket;
+	private List<Booking> ticket;
 
 	public int getCustomerId() {
 		return customerId;
@@ -102,11 +103,11 @@ public class Customer {
 
 
 
-	public List<Ticket> getTicket() {
+	public List<Booking> getTicket() {
 		return ticket;
 	}
 
-	public void setTicket(List<Ticket> ticket) {
+	public void setTicket(List<Booking> ticket) {
 		this.ticket = ticket;
 	}
 

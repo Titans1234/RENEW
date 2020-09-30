@@ -10,12 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
+@SequenceGenerator(name = "seq_transid", initialValue = 100100, allocationSize = 1)
+@Table(name="transaction")
 public class Transaction {
 	
 	@Id
-	@SequenceGenerator(name = "seq_transid", initialValue = 100100, allocationSize = 1)
+	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_transid")
 	private int transactionId;
 	
@@ -27,7 +30,7 @@ public class Transaction {
 	
 	@OneToOne
 	@JoinColumn(name="ticket_id")
-	private Ticket ticket;
+	private Booking ticket;
 
 	public int getTransactionId() {
 		return transactionId;
@@ -53,11 +56,11 @@ public class Transaction {
 		this.transactionDate = transactionDate;
 	}
 
-	public Ticket getTicket() {
+	public Booking getTicket() {
 		return ticket;
 	}
 
-	public void setTicket(Ticket ticket) {
+	public void setTicket(Booking ticket) {
 		this.ticket = ticket;
 	}
 	

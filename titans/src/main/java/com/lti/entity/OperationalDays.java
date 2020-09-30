@@ -14,10 +14,10 @@ import javax.persistence.SequenceGenerator;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
+@SequenceGenerator(name = "seq_operational", initialValue = 1010100, allocationSize = 1)
 public class OperationalDays {
 
 	@Id
-	@SequenceGenerator(name = "seq_operational", initialValue = 1010100, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_operational")
 	private int operationalId;
 
@@ -26,7 +26,7 @@ public class OperationalDays {
 
 	@ManyToOne
 	@JoinColumn(name = "planeid")
-	private Plane plane;
+	private Flight plane;
 
 	public int getOperationalId() {
 		return operationalId;
@@ -44,11 +44,11 @@ public class OperationalDays {
 		this.operationalDays = operationalDays;
 	}
 
-	public Plane getPlane() {
+	public Flight getPlane() {
 		return plane;
 	}
 
-	public void setPlane(Plane plane) {
+	public void setPlane(Flight plane) {
 		this.plane = plane;
 	}
 

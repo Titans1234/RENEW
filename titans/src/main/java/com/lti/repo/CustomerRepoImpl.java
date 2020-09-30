@@ -10,7 +10,7 @@ import javax.transaction.Transactional.TxType;
 
 import org.springframework.stereotype.Repository;
 
-import com.lti.entity.Customer;;
+import com.lti.entity.User;;
 
 @Repository
 public class CustomerRepoImpl implements CustomerRepo{
@@ -19,28 +19,28 @@ public class CustomerRepoImpl implements CustomerRepo{
 	private EntityManager em;
 	
 	@Transactional
-	public void Add(Customer cust) {
+	public void Add(User cust) {
 		// TODO Auto-generated method stub
 		em.persist(cust);
 	}
 
 	@Override
-	public List<Customer> fetchAll() {
+	public List<User> fetchAll() {
 		// TODO Auto-generated method stub
 		return em.createQuery("from Customer").getResultList();
 	}
 
 	@Override
-	public Customer Fetch(int custid) {
+	public User Fetch(int custid) {
 		// TODO Auto-generated method stub
-		Customer emp=em.find(Customer.class,custid);
+		User emp=em.find(User.class,custid);
 		return emp;
 	}
 
 	@Transactional(value=TxType.REQUIRED)
 	public void delete(int custid) {
 		// TODO Auto-generated method stub
-		Customer c1= em.find(Customer.class,custid);
+		User c1= em.find(User.class,custid);
 		 em.remove(c1);
 		
 	}

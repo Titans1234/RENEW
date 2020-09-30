@@ -14,11 +14,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 @Entity
-public class Routes {
+@SequenceGenerator(name = "seq_routeid", initialValue = 40001, allocationSize = 1)
+@Table(name="route")
+public class Route {
 
 	@Id
-	@SequenceGenerator(name = "seq_routeid", initialValue = 40001, allocationSize = 1)
+	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_routeid")
 	private int routeId;
 	
@@ -42,14 +46,14 @@ public class Routes {
 	
 	@ManyToOne
 	@JoinColumn(name="planeid")
-	private Plane plane;
+	private Flight plane;
 
 	
-	public Plane getPlane() {
+	public Flight getPlane() {
 		return plane;
 	}
 
-	public void setPlane(Plane plane) {
+	public void setPlane(Flight plane) {
 		this.plane = plane;
 	}
 

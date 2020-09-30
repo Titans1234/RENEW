@@ -15,12 +15,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class Plane {
+@SequenceGenerator(name = "seq_planeid", initialValue = 131100, allocationSize = 1)
+@Table(name="flight")
+public class Flight {
 
 	@Id
-	@SequenceGenerator(name = "seq_planeid", initialValue = 131100, allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_planeid")
 	private int planeId;
 
@@ -33,16 +35,16 @@ public class Plane {
 	
 
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
-	private List<Routes> routes;
+	private List<Route> routes;
 
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
 	private List<OperationalDays> operationalDays;
 
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
-	private List<Ticket> ticket;
+	private List<Booking> ticket;
 
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL) 
-	private List<Seats> seats;
+	private List<Seat> seats;
 
 	public int getPlaneId() {
 		return planeId;
@@ -69,11 +71,11 @@ public class Plane {
 	}
 
 
-	public List<Routes> getRoutes() {
+	public List<Route> getRoutes() {
 		return routes;
 	}
 
-	public void setRoutes(List<Routes> routes) {
+	public void setRoutes(List<Route> routes) {
 		this.routes = routes;
 	}
 
@@ -85,19 +87,19 @@ public class Plane {
 		this.operationalDays = operationalDays;
 	}
 
-	public List<Ticket> getTicket() {
+	public List<Booking> getTicket() {
 		return ticket;
 	}
 
-	public void setTicket(List<Ticket> ticket) {
+	public void setTicket(List<Booking> ticket) {
 		this.ticket = ticket;
 	}
 
-	public List<Seats> getSeats() {
+	public List<Seat> getSeats() {
 		return seats;
 	}
 
-	public void setSeats(List<Seats> seats) {
+	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
 
