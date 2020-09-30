@@ -19,7 +19,6 @@ public class FlightRepoImpl implements FlightRepo {
 	@Transactional
 	public void save(Flight flight) {
 		em.persist(flight);
-
 	}
 
 	

@@ -53,16 +53,11 @@ public class Flight {
 	@Column
 	private String duration;
 
-	/*
-	 * @OneToMany(mappedBy = "flight", cascade = CascadeType.ALL) private
-	 * List<Route> routes;
-	 */
-
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<OperationalDays> operationalDays;
 
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
-	private List<Booking> ticket;
+	private List<Booking> booking;
 
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
 	private List<Seat> seats;
@@ -155,12 +150,12 @@ public class Flight {
 		this.operationalDays = operationalDays;
 	}
 
-	public List<Booking> getTicket() {
-		return ticket;
+	public List<Booking> getBooking() {
+		return booking;
 	}
 
-	public void setTicket(List<Booking> ticket) {
-		this.ticket = ticket;
+	public void setBooking(List<Booking> booking) {
+		this.booking = booking;
 	}
 
 	public List<Seat> getSeats() {
