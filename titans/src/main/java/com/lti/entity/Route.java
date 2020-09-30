@@ -22,7 +22,6 @@ import javax.persistence.Table;
 public class Route {
 
 	@Id
-	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_routeid")
 	private int routeId;
 	
@@ -48,7 +47,6 @@ public class Route {
 	@JoinColumn(name="planeid")
 	private Flight plane;
 
-	
 	public Flight getPlane() {
 		return plane;
 	}

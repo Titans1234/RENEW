@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name = "seq_planeid", initialValue = 131100, allocationSize = 1)
-@Table(name="flight")
+@Table(name = "flight")
 public class Flight {
 
 	@Id
@@ -32,8 +32,6 @@ public class Flight {
 	@Column
 	private String planeName;
 
-	
-
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
 	private List<Route> routes;
 
@@ -43,7 +41,7 @@ public class Flight {
 	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
 	private List<Booking> ticket;
 
-	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL) 
+	@OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
 	private List<Seat> seats;
 
 	public int getPlaneId() {
@@ -69,7 +67,6 @@ public class Flight {
 	public void setPlaneName(String planeName) {
 		this.planeName = planeName;
 	}
-
 
 	public List<Route> getRoutes() {
 		return routes;

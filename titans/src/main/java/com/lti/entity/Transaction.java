@@ -18,7 +18,6 @@ import javax.persistence.Table;
 public class Transaction {
 	
 	@Id
-	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_transid")
 	private int transactionId;
 	

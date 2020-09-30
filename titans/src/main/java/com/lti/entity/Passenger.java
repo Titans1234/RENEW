@@ -20,7 +20,6 @@ import javax.persistence.Table;
 public class Passenger {
 	
 	@Id
-	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_passenger")
 	private int passengerId;
 	

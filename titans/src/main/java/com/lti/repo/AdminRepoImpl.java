@@ -28,7 +28,7 @@ public class AdminRepoImpl implements AdminRepo {
 	}
 
 	public List<Admin> fetchAll() {
-		return em.createQuery("from admin").getResultList();
+		return em.createQuery("from Admin").getResultList();
 	}
 
 }

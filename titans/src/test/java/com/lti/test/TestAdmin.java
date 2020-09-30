@@ -21,14 +21,14 @@ public class TestAdmin {
 	@Test
 	public void testSave() {
 		Admin a = new Admin();
-		a.setUserName("Saurabh");
+		a.setUserName("Ranbir");
 		a.setPassword("Patna");
 		repo.save(a);
 	}
 
 	@Test
 	public void testFetch() {
-		Admin a = repo.fetch(121);
+		Admin a = repo.fetch(1117);
 		System.out.println(a.getUserName() + "\t" + a.getPassword() + "\t" + a.getAdminId());
 	}
 
