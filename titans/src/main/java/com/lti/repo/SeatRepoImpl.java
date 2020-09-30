@@ -17,7 +17,6 @@ public class SeatRepoImpl implements SeatRepo {
 	@Transactional
 	public void save(Seat seat) {
 		em.persist(seat);
-
 	}
 
 	@Override

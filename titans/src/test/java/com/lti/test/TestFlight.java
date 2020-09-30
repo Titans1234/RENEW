@@ -31,7 +31,7 @@ public class TestFlight {
         f.setArrivalTime("11:45 AM");
         f.setDepartureTime("7:45 AM");
         f.setDuration("4 hrs");
-        f.setFare(4000);
+        f.setFare(4000.00);
 		repo.save(f);
 	}
 	
@@ -51,7 +51,7 @@ public class TestFlight {
 	
 	@Test
 	public void testFetch() {
-		Flight f = repo.fetch(131101);
+		Flight f = repo.fetch(131103);
 		System.out.println(f.getFlightName() +"\t" + f.getTotalSeat()
 		+"\t" +f.getFlightStatus()+"\t"+ f.getFromCity() +"\t" +
 				f.getToCity() +"\t" +f.getArrivalTime() +"\t" 

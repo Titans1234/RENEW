@@ -7,9 +7,8 @@ import com.lti.entity.Flight;
 public interface FlightRepo {
 
 	void save(Flight flight);
-	
 
-    Flight fetch(int flightId);
+	Flight fetch(int flightId);
 
-List<Flight> fetchAll();
+	List<Flight> fetchAll();
 }
