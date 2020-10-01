@@ -27,7 +27,7 @@ public class TestPassenger {
 	@Test
 	public void testSave() {
 		Passenger p = new Passenger();
-		p.setName("Mona");
+		p.setName("Sona");
 		p.setAge(22);
 		p.setGender("female");
 

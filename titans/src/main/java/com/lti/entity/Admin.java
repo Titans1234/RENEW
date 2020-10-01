@@ -15,7 +15,6 @@ public class Admin {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_adminid")
-
 	private int adminId;
 
 	@Column(nullable = false, unique = true)

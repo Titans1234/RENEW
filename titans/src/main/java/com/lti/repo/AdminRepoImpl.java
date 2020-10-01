@@ -58,7 +58,6 @@ public class AdminRepoImpl implements AdminRepo {
 		 * qry.setParameter("username",username); qry.setParameter("password",password);
 		 * List<Admin> admin = qry.getResultList();
 		 */
-
 	}
 
 	@Override
