@@ -10,10 +10,6 @@ public interface AdminRepo {
 
 	void save(Admin Admin);
 
-	Admin fetch(int adminId);
-
-	List<Admin> fetchAll();
-
 	void AdminAddFlights(Flight flight);
 
 	void AdminRemoveFlights(int flightId);
@@ -22,6 +18,8 @@ public interface AdminRepo {
 
 	Flight AdminSearchFlight(int flightid);
 
-	public boolean validateAdmin(AdminLogin login);
+	public String login(AdminLogin ald);
+	
+	public void cancelFlight(int flightId);
 
 }

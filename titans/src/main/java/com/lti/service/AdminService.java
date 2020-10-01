@@ -4,20 +4,25 @@ import java.util.List;
 
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
+import com.lti.pojo.AdminLogin;
+
 
 public interface AdminService {
+
 	void persist(Admin admin);
 
-	Admin find(int adminid);
+	/* Admin find(int adminid); */
 
-	List<Admin> load();
+	public String adminLoginService(AdminLogin ald);
 
-	void AdminAddFlights(Flight flight);
-
-	void AdminRemoveFlights(int flightId);
-
-	List<Flight> AdminViewFlights();
-
-	Flight AdminSearchFlight(int flightid);
+	/*
+	 * List<Admin> load(); void AdminAddFlights(Flight flight);
+	 * 
+	 * void AdminRemoveFlights(int flightId);
+	 * 
+	 * List<Flight> AdminViewFlights();
+	 * 
+	 * Flight AdminSearchFlight(int flightid);
+	 */
 
 }

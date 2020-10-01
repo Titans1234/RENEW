@@ -5,13 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
+import com.lti.entity.User;
 import com.lti.pojo.AdminLogin;
 
 @Repository
@@ -20,44 +20,10 @@ public class AdminRepoImpl implements AdminRepo {
 	@PersistenceContext
 	private EntityManager em;
 
-	@Transactional
+	
 	public void save(Admin admin) {
 		em.persist(admin);
 
-	}
-
-	public Admin fetch(int adminId) {
-		Admin f = em.find(Admin.class, adminId);
-		return f;
-	}
-
-	public List<Admin> fetchAll() {
-		return em.createQuery("from Admin").getResultList();
-	}
-
-	@Override
-	public boolean validateAdmin(AdminLogin login) {
-		System.out.println(login.getUsername() + " :" + login.getPassword());
-		String username = login.getUsername();
-		String password = login.getPassword();
-		String sql = "select ad from Admin ad where ad.userName=:username and ad.password=:password";
-		// Query query = em.createQuery(sql);
-		Query q = em.createQuery(sql, Admin.class);
-		q.setParameter("username", username);
-		q.setParameter("password", password);
-		Admin a = (Admin) q.getSingleResult();
-		// System.out.println(((Admin) a).getUserName());
-		System.out.println(a.getUserName());
-		// names.stream().forEach((x) -> System.out.println(x));
-		return false;
-
-		// String sql = "select ad from Admin ad where ad.username = : username and
-		// ad.password = :password";
-		/*
-		 * TypedQuery<Admin> qry = em.createQuery(sql, Admin.class);
-		 * qry.setParameter("username",username); qry.setParameter("password",password);
-		 * List<Admin> admin = qry.getResultList();
-		 */
 	}
 
 	@Override
@@ -82,6 +48,32 @@ public class AdminRepoImpl implements AdminRepo {
 	public Flight AdminSearchFlight(int flightid) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String login(AdminLogin ald) {
+		String query = "select a.userName from Admin a where a.userName= :u1 and a.password= :p1";
+		List<String> li = em.createQuery(query).setParameter("u1", ald.getUsername()).setParameter("p1", ald.getPassword()).getResultList();
+		if (li.size() > 0) {
+			System.out.println(li.get(0));
+			String a= li.get(0);
+			return a;
+		}
+		return null;
+		/*
+			 * else { System.out.println("No data found"); } return null;
+			 */
+			
+	}
+
+	@Override
+	public void cancelFlight(int flightId) {
+		String query1="update Flights f set f.flightStatus='cancelled' where f.flightId= :f1";
+		String query2="update Booking b set b.refundAmount=b.bookingAmount where b.flightId= :f2";
+		String query3="update Passenger p set p.status='cancelled' where c.bookingId in "
+				+ "(select b.bookingId from Booking b where b.flightId= :f3)";
+		
+		int flightsUpdatedRow=em.createQuery(query1).setParameter("f1", flightId).executeUpdate();
 	}
 
 }

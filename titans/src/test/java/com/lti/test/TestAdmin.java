@@ -27,32 +27,24 @@ public class TestAdmin {
 		repo.save(a);
 	}
 
-	@Test
-	public void testFetch() {
-		Admin a = repo.fetch(1111);
-		System.out.println(a.getUserName() + "\t" + a.getPassword() + "\t" + a.getAdminId());
-	}
-
-	@Test
-	public void testFetchAll() {
-		List<Admin> admin = repo.fetchAll();
-		for (Admin a : admin)
-			System.out.println(" " + a.getUserName() + "\t" + a.getPassword());
-	}
-
-	@Test
-	public void TestValidateAdmin() {
-
-		AdminLogin login = new AdminLogin("Saurabh", "patna");
-
-		boolean a = repo.validateAdmin(login);
-
-		if (a) {
-			System.out.println("Success for titans");
-		} else
-			System.out.println("Nahi hoga tumse!");
-	}
-
+	/*
+	 * @Test public void testFetch() { Admin a = repo.fetch(1111);
+	 * System.out.println(a.getUserName() + "\t" + a.getPassword() + "\t" +
+	 * a.getAdminId()); }
+	 * 
+	 * @Test public void testFetchAll() { List<Admin> admin = repo.fetchAll(); for
+	 * (Admin a : admin) System.out.println(" " + a.getUserName() + "\t" +
+	 * a.getPassword()); }
+	 * 
+	 * @Test public void TestValidateAdmin() {
+	 * 
+	 * AdminLogin login = new AdminLogin("Saurabh", "patna");
+	 * 
+	 * boolean a = repo.validateAdmin(login);
+	 * 
+	 * if (a) { System.out.println("Success for titans"); } else
+	 * System.out.println("Nahi hoga tumse!"); }
+	 */
 	@Test
 	void delAdmin() {
 		// repo.delete()
