@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.lti.entity.Admin;
+import com.lti.entity.Flight;
 import com.lti.repo.AdminRepo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -21,7 +22,7 @@ public class TestAdmin {
 	@Test
 	public void testSave() {
 		Admin a = new Admin();
-		a.setUserName("Ranbir");
+		a.setUserName("Manbir");
 		a.setPassword("Patna");
 		repo.save(a);
 	}
@@ -37,5 +38,32 @@ public class TestAdmin {
 		List<Admin> admin = repo.fetchAll();
 		for (Admin a : admin)
 			System.out.println(a.getUserName() + "\t" + a.getPassword());
+	}
+	
+//	@Test
+//	public void testAddFlight() {
+//		Flight f= new Flight();
+//		f.setFlightName("ME198");
+//		f.setTotalSeat(70);
+//		f.setFlightStatus("flying");
+//		f.setFromCity("Mumbai");
+//        f.setToCity("Patna");
+//        f.setArrivalTime("8:45 AM");
+//        f.setDepartureTime("10:45 AM");
+//        f.setDuration("2 hrs");
+//        f.setFare(12000.00);
+//      
+//	}
+	
+	@Test
+	public void TestValidateAdmin() {
+		String username1="Saurabh";
+		String password1="Patna";
+		boolean a =repo.validateAdmin(username1, password1);
+		if(a) {
+			System.out.println("Success for titans");
+		}
+		else 
+			System.out.println("Nahi hoga tumse!");		
 	}
 }

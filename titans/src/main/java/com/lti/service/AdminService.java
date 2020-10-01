@@ -1,17 +1,16 @@
-package com.lti.repo;
+package com.lti.service;
 
 import java.util.List;
 
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
 
-public interface AdminRepo {
+public interface AdminService {
+	void persist(Admin admin);
 
-	void save(Admin Admin);
+	Admin find(int adminid);
 
-	Admin fetch(int adminId);
-
-	List<Admin> fetchAll();
+	List<Admin> load();
 
 	void AdminAddFlights(Flight flight);
 
@@ -20,9 +19,5 @@ public interface AdminRepo {
 	List<Flight> AdminViewFlights();
 
 	Flight AdminSearchFlight(int flightid);
-
-	boolean validateAdmin(String username, String password);
-	
-	
 
 }
