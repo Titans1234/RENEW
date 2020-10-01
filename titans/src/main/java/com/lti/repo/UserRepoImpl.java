@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.lti.entity.User;;
 
 @Repository
-public class CustomerRepoImpl implements CustomerRepo{
+public class UserRepoImpl implements UserRepo{
      
 	@PersistenceContext
 	private EntityManager em;

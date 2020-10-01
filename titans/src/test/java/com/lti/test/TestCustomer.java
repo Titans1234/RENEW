@@ -12,35 +12,36 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.lti.entity.User;
-import com.lti.repo.CustomerRepo;
+import com.lti.repo.UserRepo;
+import com.lti.service.UserService;
 
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:applicationContext.xml")
+@ContextConfiguration(locations="classpath:applicationContext.xml")
 public class TestCustomer {
 	@Autowired
-	private CustomerRepo repo;
+	private UserService repo;
 	
 	@Test
 	public void testAdd()
 	{
-	
+		//ApplicationContext context=new ClassPathXmlApplicationContext("stereotypeConfig.xml");
 		User cust=new User();
 	     cust.setName("Saurabh");
 	     cust.setAge(22);
-	     cust.setEmail("sahisaurabh50@gmail.com");
+	     cust.setEmail("sahisaurabh511@gmail.com");
 	     cust.setPassword("Titans");
 	     cust.setContact("8873056889");
 	     cust.setGender("Male");
-		repo.Add(cust);
+		repo.register(cust);
 	}
 	
 	@Test 
 	public void testFetch()
 	{
 		
-	 User f=repo.Fetch(10103); 
+	 User f=repo.fetch(10103); 
 	 System.out.println(f.toString());
 	
 	}
@@ -59,7 +60,7 @@ public class TestCustomer {
 	@Test
 	public void deleteCustomer()
 	{
-		repo.delete(10101);
+		repo.removeUser(10124);
 	}
 	
 }
