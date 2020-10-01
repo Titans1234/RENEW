@@ -24,8 +24,8 @@ public class TestAdmin {
 	@Test
 	public void testSave() {
 		Admin a = new Admin();
-		a.setUserName("Sonu");
-		a.setPassword("Patna");
+		a.setUserName("ranbir");
+		a.setPassword("mumbai");
 		repo.save(a);
 	}
 
