@@ -8,13 +8,11 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
-import com.lti.entity.User;
-
+import com.lti.pojo.AdminLogin;
 
 @Repository
 public class AdminRepoImpl implements AdminRepo {
@@ -34,17 +32,44 @@ public class AdminRepoImpl implements AdminRepo {
 	}
 
 	public List<Admin> fetchAll() {
-		return em.createQuery("from admin").getResultList();
+		return em.createQuery("from Admin").getResultList();
+	}
+
+	@Override
+	public boolean validateAdmin(AdminLogin login) {
+		System.out.println(login.getUsername() + " :" + login.getPassword());
+		String username = login.getUsername();
+		String password = login.getPassword();
+		String sql = "select ad from Admin ad where ad.userName=:username and ad.password=:password";
+		// Query query = em.createQuery(sql);
+		Query q = em.createQuery(sql, Admin.class);
+		q.setParameter("username", username);
+		q.setParameter("password", password);
+		Admin a = (Admin) q.getSingleResult();
+		// System.out.println(((Admin) a).getUserName());
+		System.out.println(a.getUserName());
+		// names.stream().forEach((x) -> System.out.println(x));
+		return false;
+
+		// String sql = "select ad from Admin ad where ad.username = : username and
+		// ad.password = :password";
+		/*
+		 * TypedQuery<Admin> qry = em.createQuery(sql, Admin.class);
+		 * qry.setParameter("username",username); qry.setParameter("password",password);
+		 * List<Admin> admin = qry.getResultList();
+		 */
+
 	}
 
 	@Override
 	public void AdminAddFlights(Flight flight) {
-		/* flight1.setArrivalTime(flight.getArrivalTime()); */
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void AdminRemoveFlights(int flightId) {
+		// TODO Auto-generated method stub
 
 	}
 
@@ -58,32 +83,6 @@ public class AdminRepoImpl implements AdminRepo {
 	public Flight AdminSearchFlight(int flightid) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public boolean validateAdmin(String username1, String password1) {
-		/*
-		 * String sql =
-		 * "select username,password from Admin  where ad.username=: username and ad.password =:password"
-		 * ; TypedQuery<Admin> qry = em.createQuery(sql, Admin.class);
-		 * qry.setParameter("username", username); qry.setParameter("password",
-		 * password); List<Admin> admin = qry.getResultSet(); if (admin.isEmpty())
-		 * return false;
-		 * 
-		 * return true;
-		 */
-
-		/*
-		 * String admin=
-		 * "select username, password from Admin where username=username1 and password=password1"
-		 * ;
-		 * 
-		 * Query q = em.createNamedQuery("admin"); q.setParameter("username",
-		 * admin.getUsername()); q.setParameter("password", admin.getPassword()); return
-		 * (Admin) query.getSingleResult();
-		 */
-
-		
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
+import com.lti.pojo.AdminLogin;
 
 public interface AdminRepo {
 
@@ -21,8 +22,6 @@ public interface AdminRepo {
 
 	Flight AdminSearchFlight(int flightid);
 
-	boolean validateAdmin(String username, String password);
-	
-	
+	public boolean validateAdmin(AdminLogin login);
 
 }
