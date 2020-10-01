@@ -35,6 +35,9 @@ public class Booking {
 
 	@Column
 	private LocalDate dateOfBooking;
+	
+	@Column
+	private double refundAmount;
 
 	@Column
 	private double totalCost;

@@ -11,4 +11,8 @@ public interface FlightRepo {
 	Flight fetch(int flightId);
 
 	List<Flight> fetchAll();
+
+	public List<Flight> searchAFlight(String fromCity, String toCity, String day);
+ 
+	public List<Flight> searchRoutesByFlight(List<Integer> flightId, String fromCity, String toCity);
 }

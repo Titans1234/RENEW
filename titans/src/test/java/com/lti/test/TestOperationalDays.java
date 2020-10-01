@@ -44,7 +44,7 @@ public class TestOperationalDays {
 	public void testFetchAll() {
 		List<OperationalDays> o = repo.fetchAll();
 		for (OperationalDays s : o) {
-			System.out.println(s.getOperationalDays() + "\t" + s.getOperationalId() + "\t");
+			System.out.println(s.getOperationalDays() + "\t" + s.getOperationalId() + "\t" +s.getFlight().getFlightId());
 		}
 
 	}

@@ -10,16 +10,12 @@ public interface AdminRepo {
 
 	void save(Admin Admin);
 
-	void AdminAddFlights(Flight flight);
-
-	void AdminRemoveFlights(int flightId);
-
-	List<Flight> AdminViewFlights();
-
-	Flight AdminSearchFlight(int flightid);
+	public boolean removeFlight(int flightId);
 
 	public String login(AdminLogin ald);
-	
-	public void cancelFlight(int flightId);
+
+	public List<Flight> showFlight();
+
+	public boolean activateFlight(int flightId);
 
 }

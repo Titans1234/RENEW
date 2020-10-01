@@ -17,6 +17,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 @Entity
 @SequenceGenerator(name = "seq_flightid", initialValue = 131100, allocationSize = 1)
 @Table(name = "flight")
@@ -53,13 +56,17 @@ public class Flight {
 	@Column
 	private String duration;
 
-	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<OperationalDays> operationalDays;
 
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Booking> booking;
 
 	@OneToMany(mappedBy = "flight", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Seat> seats;
 
 	public int getFlightId() {

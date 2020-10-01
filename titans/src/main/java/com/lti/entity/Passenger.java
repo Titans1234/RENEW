@@ -32,6 +32,9 @@ public class Passenger {
 
 	@Column(nullable = false)
 	private String gender;
+	
+	@Column
+	private String status;
 
 	@ManyToOne
 	@JoinColumn(name = "bookingId")

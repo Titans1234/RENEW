@@ -1,17 +1,27 @@
 package com.lti.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import com.lti.bridge.ShowFlightDetails;
+import com.lti.bridge.Status;
 import com.lti.entity.Admin;
 import com.lti.entity.User;
 import com.lti.pojo.AdminLogin;
+import com.lti.pojo.RemoveFlight;
 import com.lti.service.AdminService;
 
 @CrossOrigin
@@ -19,21 +29,53 @@ import com.lti.service.AdminService;
 public class AdminRestController {
 
 	@Autowired
-	private AdminService service;
+	private AdminService ecoServ;
 
-	@PostMapping(value = "/add", consumes = "application/json")
+	@PostMapping(value = "/addAdmin", consumes = "application/json")
 	public String addEmployee(@RequestBody Admin admin) {
-		service.persist(admin);
-		return "Employee added successfully";
+		ecoServ.persist(admin);
+		return "Admin added successfully";
 	}
 
-	@GetMapping(value = "/login", produces = "application/json")
+	@GetMapping(value = "/loginAdmin", produces = "application/json")
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password) {
 
 		AdminLogin login = new AdminLogin(username, password);
-		return  service.adminLoginService(login);
-		
+		return ecoServ.adminLoginService(login);
+
+	}
+
+	/*
+	 * @GetMapping(path = "/cancelFlight", produces = "application/json") public
+	 * String cancelFlight(@RequestParam("flightId") int flightId) { return
+	 * ecoServ.cancelFlightAndUpdateInCustomerBookingService(flightId); }
+	 */
+
+	/*
+	 * @GetMapping("/removeFlight") public Status
+	 * removeFlight(@RequestParam("flightId") int flightId) {
+	 * System.out.println("FlightId" + flightId); return
+	 * ecoServ.removeFlight(flightId); }
+	 */
+
+	@GetMapping("/removeFlight")
+	public Status removeFlight(@RequestBody RemoveFlight removeFlight) {
+		System.out.println("FlightId" + removeFlight.getFlightId());
+		return ecoServ.removeFlight(removeFlight.getFlightId());
+	}
+
+	@RequestMapping(path = "/showFlight")
+	public ShowFlightDetails showFlight() {		
+		return ecoServ.showFlight();
 	}
 	
 	
+	  @GetMapping("/activateFlight") public Status
+	  removeFlight(@RequestParam("flightId") int flightId) {
+	  System.out.println("FlightId" + flightId); 
+	  return  ecoServ.showFlight(flightId);
+	 
+	  }
+	  
+	 
 }

@@ -1,7 +1,9 @@
 package com.lti.repo;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import com.lti.entity.Flight;
 import com.lti.entity.Seat;
 
 public interface SeatRepo {
@@ -12,4 +14,5 @@ public interface SeatRepo {
 
 	void delete(int seatid);
 
+	public List<Integer> totalSeatsBooked(List<Flight> flight, LocalDate dateOfJourney);
 }

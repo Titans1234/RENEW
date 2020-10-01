@@ -13,28 +13,37 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.lti.entity.Flight;
 import com.lti.entity.Seat;
+import com.lti.pojo.RemoveFlight;
 import com.lti.repo.SeatRepo;
+import com.lti.rest.AdminRestController;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class TestSeat {
+public class TestSeat{
 
+	/*
+	 * @Autowired private SeatRepo repo;
+	 */
 	@Autowired
-	private SeatRepo repo;
-
+	private AdminRestController repo;
+	
 	@PersistenceContext
 	private EntityManager em;
 
+	/*
+	 * @Test public void testSave() { Seat s = new Seat();
+	 * 
+	 * Flight f = em.find(Flight.class, 131100);
+	 * 
+	 * s.setSeats(2); s.setGender("economy"); s.setDate(LocalDate.of(2026, 1, 23));
+	 * s.setFlight(f); repo.save(s); }
+	 */
+	
 	@Test
-	public void testSave() {
-		Seat s = new Seat();
-
-		Flight f = em.find(Flight.class, 131100);
-
-		s.setSeats(2);
-		s.setGender("economy");
-		s.setDate(LocalDate.of(2026, 1, 23));
-		s.setFlight(f);
-		repo.save(s);
+	public void testRemove() {
+		RemoveFlight r=new RemoveFlight();
+		r.setFlightId(131103);
+		repo.removeFlight(r);
 	}
+	
 }
