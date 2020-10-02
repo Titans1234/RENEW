@@ -1,0 +1,22 @@
+.display-4{
+    font-size:250%;
+  text-align:center;  
+}
+small{
+    position: relative;
+    bottom:7px;
+}
+.res{
+    
+ 
+   width: 40%;
+   height: 500px;
+   background-color:#F4F4F8;
+}
+.res1{
+    
+    margin-left: 212px;
+      width: 40%;
+      height: 500px;
+      background-color:#F4F4F8;
+   }
