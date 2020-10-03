@@ -17,6 +17,7 @@ import { DeleteComponent } from './Admin/delete/delete.component';
 import { ViewComponent } from './Admin/view/view.component';
 
 import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { PassengerComponent } from './passenger/passenger.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
     AddComponent,
     DeleteComponent,
-    ViewComponent
+    ViewComponent,
+    PassengerComponent
 
   ],
   imports: [

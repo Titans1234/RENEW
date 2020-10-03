@@ -20,3 +20,24 @@ small{
       height: 500px;
       background-color:#F4F4F8;
    }
+   .fs{
+    margin: 15px 15px 15px 15px;
+    padding: 8px;
+    height: 150px;
+     background-color:white;
+  
+      border-style: ridge;
+     border-color: teal;
+   }
+   .btn-info{
+    background-color:  #20c39a;
+  border: 1px solid #a2f0dc;
+  position: relative;
+  left:330px;
+  top:20px;
+
+}
+.btn-info:hover{
+  background-color: #20c36b;
+  border:1px solid  #20c36b;
+}
