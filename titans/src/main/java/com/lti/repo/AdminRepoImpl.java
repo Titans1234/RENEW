@@ -14,6 +14,7 @@ import com.lti.bridge.ShowFlightDetails;
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
 import com.lti.entity.User;
+import com.lti.entity.OperationalDays;
 import com.lti.pojo.AdminLogin;
 
 @Repository
@@ -80,6 +81,31 @@ public class AdminRepoImpl implements AdminRepo {
 			e.printStackTrace();
 		}
 		return true;
+
+	}
+	
+	@Transactional
+	public boolean addAflight(Flight flight) {
+		if(flight!= null) {
+			em.persist(flight);
+			return true;
+		}
+		return false ;
+	}
+	
+	@Transactional
+	public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId) {
+		if (operationalDays.size() > 0) {
+			Flight flight = em.find(Flight.class, flightId);
+			flight.setOperationalDays(operationalDays);
+			for (OperationalDays op : operationalDays) {
+				op.setFlight(flight);
+
+			}
+			em.merge(flight);
+			return true;
+		}
+		return false;
 
 	}
 

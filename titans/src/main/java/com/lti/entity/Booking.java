@@ -35,9 +35,12 @@ public class Booking {
 
 	@Column
 	private LocalDate dateOfBooking;
-	
+
 	@Column
-	private double refundAmount;
+	private String fromCity;
+
+	@Column
+	private String toCity;
 
 	@Column
 	private double totalCost;
@@ -145,6 +148,22 @@ public class Booking {
 				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", flight=" + flight
 				+ ", customer=" + customer + ", seats=" + seats + ", passenger=" + passenger + ", transaction="
 				+ transaction + "]";
+	}
+
+	public String getFromCity() {
+		return fromCity;
+	}
+
+	public void setFromCity(String fromCity) {
+		this.fromCity = fromCity;
+	}
+
+	public String getToCity() {
+		return toCity;
+	}
+
+	public void setToCity(String toCity) {
+		this.toCity = toCity;
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.lti.bridge;
 
-public class FlightDetails {
+public class FlightDetails extends Status{
 	private int flightId;
 
 	private String flightName;

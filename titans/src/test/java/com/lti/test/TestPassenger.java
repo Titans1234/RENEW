@@ -30,7 +30,6 @@ public class TestPassenger {
 		p.setName("Sona");
 		p.setAge(22);
 		p.setGender("female");
-
 		repo.save(p);
 	}
 

@@ -10,8 +10,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.lti.entity.Flight;
-import com.lti.model.Routes;
-
 
 @Repository
 public class FlightRepoImpl implements FlightRepo {
@@ -35,8 +33,7 @@ public class FlightRepoImpl implements FlightRepo {
 
 	@Override
 	public List<Flight> searchAFlight(String fromCity, String toCity, String day) {
-		String sql = "select f from Flight f where f.FlightStatus='active' AND f.FlightId in (select r.flightId from Flight r where r.fromCity=:"
-				+ "from and r.toCity=:to and r.Flight.flightId in(select o.Flight.flightId from OperationalDays as o where o.operationalDays=:day))";
+		String sql = "select f from Flight f where f.FlightStatus='active' AND  f.fromCity=:from AND f.toCity=:to and f.flightId in(select o.Flight.flightId from OperationalDays as o where o.operationalDays=:day))";
 		TypedQuery<Flight> query = em.createQuery(sql, Flight.class);
 		query.setParameter("from", fromCity);
 		query.setParameter("to", toCity);
@@ -44,20 +41,20 @@ public class FlightRepoImpl implements FlightRepo {
 		List<Flight> flight = query.getResultList();
 		return flight;
 	}
-	
-	public List<Routes> searchRoutesByFlight(List<Integer> flightId, String fromCity, String toCity) {
-		List<Routes> routeDetails = new ArrayList<>();
-		for (int i = 0; i < flightId.size(); i++) {
 
-			String sql = "select r from Routes r where (r.bus.busId=:busId) AND (r.fromCity=:fromCity) AND (r.toCity=:toCity)";
-			TypedQuery<Routes> query = em.createQuery(sql, Routes.class);
-			query.setParameter("busId", flightId.get(i));
-			query.setParameter("fromCity", fromCity);
-			query.setParameter("toCity", toCity);
-
-			Routes routes = query.getSingleResult();
-			routeDetails.add(routes);
-		}
+	public List<Flight> searchRoutesByFlight(List<Integer> flightId, String fromCity, String toCity) {
+		List<Flight> routeDetails = new ArrayList<>();
+//		for (int i = 0; i < flightId.size(); i++) {
+//
+//			String sql = "select f from Flight f where (f.flightId=:flightId) AND (f.fromCity=:fromCity) AND (f.toCity=:toCity)";
+//			TypedQuery<Flight> query = em.createQuery(sql, Flight.class);
+//			query.setParameter("flightId", flightId.get(i));
+//			query.setParameter("fromCity", fromCity);
+//			query.setParameter("toCity", toCity);
+//
+//			Flight routes = query.getSingleResult();
+//			routeDetails.add(routes);
+//		}
 		return routeDetails;
 	}
 

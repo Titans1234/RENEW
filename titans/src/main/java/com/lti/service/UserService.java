@@ -9,19 +9,12 @@ import com.lti.pojo.UserLogin;
 
 public interface UserService {
 	// -----------UserDashboard
-	public List<User> fetchAll();
+	void testAdd(User user);
 
-	public User fetch(int userId);
-
-	public void register(User user);
-
-	public void removeUser(int UserId);
-
-	public boolean ValidateUser(UserLogin login);
-	
 	public List<FlightDetails> searchAFlight(String fromCity, String toCity, String day, LocalDate dateOfJourney);
 
+	SeatCountDetails fetchNoOfSeats(int flightId, LocalDate dateOfJourney);
+
 	// ---------Booking----------//
-	
 
 }

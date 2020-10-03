@@ -13,6 +13,7 @@ import com.lti.bridge.ShowFlightDetails;
 import com.lti.bridge.Status;
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
+import com.lti.entity.OperationalDays;
 import com.lti.pojo.AdminLogin;
 import com.lti.repo.AdminRepo;
 
@@ -58,15 +59,25 @@ public class AdminServiceImpl implements AdminService {
 		showFlightDetails.setFlightdetails(flight);
 		return showFlightDetails;
 	}
-	
+
 	@Override
-	public Status showFlight(int flightId) {
+	public Status showFlightStatus(int flightId) {
 		if (ecoRep.activateFlight(flightId)) {
 			status.setResultStatus(true);
 			return status;
 		}
 		status.setResultStatus(false);
 		return status;
+	}
+
+	@Override
+	public boolean addAFlight(Flight flight) {
+		return ecoRep.addAflight(flight);
+	}
+
+	@Override
+	public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId) {
+		return ecoRep.addOperationalDaysWithFlight(operationalDays, flightId);
 	}
 
 }
