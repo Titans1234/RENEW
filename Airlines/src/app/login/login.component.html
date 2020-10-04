@@ -23,11 +23,14 @@
                         </ul>
                         <div class="tab-content " id="myTabContent" >
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Welcome to Sukhyatra</h3>
+                                <h3 class="register-heading">Welcome to Let's Fly</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="email" class="form-control" placeholder="Your Email *" 
+                                            [(ngModel)]="user.email" 
+                                            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  #email="ngModel">
+                                            <span class="alert-warning" *ngIf="email.touched && email.invalid">Email is invalid</span>
                                         </div>
                                        
                                     

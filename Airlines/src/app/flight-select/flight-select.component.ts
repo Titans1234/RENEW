@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../Admin/flight';
-import { FlightModel} from '../flight.module';
+import { FlightModel} from '../flight.model';
 
 
 

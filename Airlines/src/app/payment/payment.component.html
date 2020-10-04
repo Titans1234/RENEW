@@ -15,7 +15,7 @@
     <div class= "form-group">
       <input type="text" class="card-holder" placeholder="Name On Card" name="name" [(ngModel)]=payment.name required pattern="[A-z][a-z]{3}" #name='ngModel'>
       <span *ngIf="name.touched && name.invalid" class="alert-danger">
-        Enter correct card Number!
+        Enter correct name on card!
     </span>
       </div>
    
@@ -55,7 +55,7 @@
       <!-- Card Verification Field -->
       <div class="card-verification">
         <div class="cvv-input">
-          <input type="text" placeholder="CVV">
+          <input type="number" placeholder="CVV">
         </div>
         <div class="cvv-details">
           <p>3 or 4 digits usually found <br> on the signature strip</p>

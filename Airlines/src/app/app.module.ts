@@ -18,7 +18,7 @@ import { ViewComponent } from './Admin/view/view.component';
 
 import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PassengerComponent } from './passenger/passenger.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { PassengerComponent } from './passenger/passenger.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    HttpClientModule
   ],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
