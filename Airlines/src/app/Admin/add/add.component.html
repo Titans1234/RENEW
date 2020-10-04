@@ -11,11 +11,16 @@
         <table>
          <tr>
             <td><label for="flight_no" class="box1">Flight Number</label></td>
-            <td><input type="number"  class="form-control" name="flight_no" [(ngModel)]="flight.flight_no"></td>
+            <td><input type="number"  class="form-control" name="flight_no" [(ngModel)]="flight.flight_no"
+                required pattern="[0-9]{5,}" placeholder="Flight no" #number="ngModel">
+            <span class="alert-warning" *ngIf="number.touched && number.invalid">Flight number is invalid</span>
+            </td>
         </tr>
         <tr class="box">
             <td><label for="source" class="box1">From</label></td>
-            <td><select name="source" [(ngModel)]="flight.source"class="form-control">
+            <td><select name="source" [(ngModel)]="flight.source"class="form-control"
+                required pattern="[A-Za-z]{3,}" placeholder="Source" #source="ngModel">
+            <span class="alert-warning" *ngIf="source.touched && source.invalid">Source is invalid</span>
                 <option selected>Choose...</option>
                 <option>Agartala,India</option>
                 <option>Agra,India</option>
@@ -29,23 +34,37 @@
         </tr>
         <tr>
             <td><label for="destination" class="box1" >To</label></td>
-            <td><input type="text" class="form-control" name="destination" [(ngModel)]="flight.destination"></td>
+            <td><input type="text" class="form-control" name="destination" [(ngModel)]="flight.destination"
+                required pattern="[A-Za-z]{3,}" placeholder="Destination" #destination="ngModel">
+            <span class="alert-warning" *ngIf="destination.touched && destination.invalid">Destination is invalid</span></td>
         </tr>
-        <tr>
+        <!-- <tr>
             <td><label for="d_time" class="box1">Depart</label></td>
             <td><input type="datetime" class="form-control" name="d_time" [(ngModel)]="flight.depart" min="2020-01-01" max="2025-01-01"></td>
+        </tr> -->
+        <tr>
+            <td><label for="dtime" class="box1">Departure</label></td>
+            <td><input type="text" class="form-control" name="dtime" [(ngModel)]="flight.depart"
+                required pattern="(1[012]|[1-9]):[0-5][0-9](\\s)(?i)(am|pm)" placeholder="Departure Time" #dtime="ngModel">
+                <span class="alert-warning" *ngIf="dtime.touched && dtime.invalid">Departure Time is invalid</span></td>
         </tr>
         <tr>
-            <td><label for="arr_time" class="box1">Arrive</label></td>
-            <td><input type="date" class="form-control" name="arr_time" [(ngModel)]="flight.arrive"></td>
+            <td><label for="arr_time" class="box1">Arrival</label></td>
+            <td><input type="text" class="form-control" name="arr_time" [(ngModel)]="flight.arrive"
+                required pattern="(1[012]|[1-9]):[0-5][0-9](\\s)(?i)(am|pm)" placeholder="Arrival Time" #arr_time="ngModel">
+                <span class="alert-warning" *ngIf="arr_time.touched && arr_time.invalid">Arrival Time is invalid</span></td>
         </tr>
         <tr>
             <td><label for="duration" class="box1">Duration</label></td>
-            <td><input type="text" class="form-control" name="duration" [(ngModel)]="flight.duration"></td>
+            <td><input type="text" class="form-control" name="duration" [(ngModel)]="flight.duration"
+                required pattern="[0-9]{1,}" placeholder="Duration" #duration="ngModel">
+            <span class="alert-warning" *ngIf="duration.touched && duration.invalid">Duration is invalid</span></td>
         </tr>
         <tr>
             <td><label for="source" class="box1">Cabin</label></td>
-            <td><input type="text" class="form-control" name="source" [(ngModel)]="flight.cabin"></td>
+            <td><input type="text" class="form-control" name="source" [(ngModel)]="flight.cabin"
+            required pattern="[A-Za-z]{1,}" placeholder="cabin" #soruce="ngModel">
+            <span class="alert-warning" *ngIf="source.touched && source.invalid">Cabin is invalid</span></td>
         </tr>
         <tr rowspan="2">
             <td colspan="2"><button type="button" class="btn btn-primary">ADD</button></td>

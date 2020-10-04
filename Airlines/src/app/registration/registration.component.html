@@ -25,13 +25,23 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" name="firstName" placeholder="First Name *" [(ngModel)]="user.firstName" 
+                                            required pattern="[A-Za-z]{3,}"  #firstName="ngModel">
+                                            <span class="alert-warning" *ngIf="firstName.touched && firstName.invalid">First Name is invalid</span>
+                                            <!-- <div *ngIf="firstName.submitted && firstName.invalid" class="invalid-feedback">
+                                                <div *ngIf="firstName.errors.required">First Name is required</div>
+                                            </div> -->
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="Last Name *" [(ngModel)]="user.lastName" 
+                                            required pattern="[A-Za-z]{3,}"  #lastName="ngModel">
+                                            <span class="alert-warning" *ngIf="lastName.touched && lastName.invalid">Last Name is invalid</span>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" placeholder="Password *"
+                                            [(ngModel)]="user.password" 
+                                            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  #password="ngModel">
+                                            <span class="alert-warning" *ngIf="password.touched && password.invalid">Password is invalid</span>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
@@ -52,7 +62,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                            <input type="email" class="form-control" placeholder="Your Email *" 
+                                            [(ngModel)]="user.email" 
+                                            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  #email="ngModel">
+                                            <span class="alert-warning" *ngIf="email.touched && email.invalid">Email is invalid</span>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />

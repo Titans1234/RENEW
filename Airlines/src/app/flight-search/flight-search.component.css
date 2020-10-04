@@ -68,14 +68,22 @@ select.form-control {
 
 #b1{
     position: relative;;
-    left:20px;
+ 
     bottom:10px;
 }
 
 #b2{
     position: relative;
-    left:100px;
+    left:295px;
     bottom: 10px;
+}
+.rd{
+    position: relative;
+    left: 35px;
+}
+.des{
+    position: relative;
+    left: 155px;
 }
 .carousel-caption{
     position:absolute;
