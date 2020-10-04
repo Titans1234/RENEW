@@ -37,7 +37,7 @@ public interface UserRepo {
 			      
 //Other
 	
-	 
+		 public int returnUsertId(User user) ;
 	 List<Booking>  fetchBookingsOfCustomer(int userId);
 		   
      public User findByEmailPassword(String email,String password);
@@ -49,7 +49,7 @@ public interface UserRepo {
 	 boolean cancelTicket(int ticketId,String email);
 	 public boolean isValidTicket(int ticketId, int customerId);
 	 public boolean isValidTicketDate(int ticketId);
-	 public int addTicketAndPassengerWithRegisteredCustomers(Booking ticket, List<Passenger>passenger,List<Seat> seats,Transaction transaction);
+	 public boolean addTicketAndPassengerWithRegisteredCustomers(Booking ticket, List<Passenger>passenger,List<Seat> seats,Transaction transaction);
 	 
 	 public List<Flight> searchRoutesByFlight(List<Integer> flightId, String fromCity, String toCity); 
 	 public List<Integer> totalSeatsBooked(List<Flight> flight, LocalDate dateOfJourney);

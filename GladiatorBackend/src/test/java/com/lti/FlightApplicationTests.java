@@ -21,9 +21,15 @@ import com.lti.bridge.ShowFlightDetails;
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
 import com.lti.entity.OperationalDays;
+import com.lti.entity.Passenger;
 import com.lti.entity.User;
+import com.lti.pojo.BookTicket;
+import com.lti.pojo.BookingSeatDetails;
+import com.lti.pojo.PassengerDetails;
 import com.lti.pojo.RemoveFlight;
 import com.lti.pojo.SearchFlight;
+import com.lti.pojo.TicketDetails;
+import com.lti.pojo.UserDetails;
 @SpringBootTest
 //@DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
@@ -75,10 +81,10 @@ class FlightApplicationTests {
     @Test
     public void testLogin()
     {
-//    	String username="anantshadisupport@gmail.com";
-//    	String password="shadi kr dunga";
-    	String username="sahisaurabh51@gmail.com";
-    	String password="sonu_3098";
+    	String username="anantshadisupport@gmail.com";
+    	String password="shadi kr dunga";
+//    	String username="sahisaurabh51@gmail.com";
+//    	String password="sonu_3098";
     	LoginStatus status=controller.login(username, password);
     	if(status.isStatus())
     	{
@@ -108,7 +114,54 @@ class FlightApplicationTests {
     	SearchFlight flight=new SearchFlight();
 		
     }
+    //***************************************************BOOK TICKET TEST *****************************************************//
+   
+    @Test
+    public void TestBookingTicket() {
+    BookTicket  bookticket=new BookTicket();//
+    UserDetails customerDetails=new UserDetails();//
+    TicketDetails ticketDetails=new TicketDetails();
+    List<PassengerDetails> passengerDetails=new  ArrayList<PassengerDetails>();
+    List<BookingSeatDetails> seatDetails=new ArrayList<BookingSeatDetails>();
     
+    customerDetails.setContact("8873056889");
+    customerDetails.setEmail("sahisaurabh51@gmail.com");
+    
+    LocalDate dtOfJrny=LocalDate.parse("2020-10-05");
+    ticketDetails.setDateOfBooking(LocalDate.now());
+    ticketDetails.setDateOfJourney(dtOfJrny);
+    ticketDetails.setFlightId(131105);
+    ticketDetails.setFromCity("Patna");
+    ticketDetails.setToCity("Delhi");
+    ticketDetails.setTotalCost(7200.00);
+    ticketDetails.setNoOfSeatsBooked(2);
+    
+    PassengerDetails p1=new  PassengerDetails();
+    PassengerDetails p2=new  PassengerDetails();
+    
+    p1.setAge(22);
+    p1.setName("Saurabh Kumar");
+    p1.setGender("male");
+    p2.setAge(23);
+    p2.setName("Mayank Yadav");
+    p2.setGender("male");
+    
+    passengerDetails.add(p1);
+    passengerDetails.add(p2);
+    
+    BookingSeatDetails b1=new BookingSeatDetails(6);
+    BookingSeatDetails b2=new BookingSeatDetails(8);
+    
+    seatDetails.add(b1);
+    seatDetails.add(b2);
+    
+    bookticket.setCustomerDetails(customerDetails);
+    bookticket.setTicketDetails(ticketDetails);
+    bookticket.setPassengerDetails(passengerDetails);
+    bookticket.setSeatDetails(seatDetails);
+    
+    System.out.println(controller.addTicketDetails( bookticket));
+    }
     
  /******************************Admin Test*****************************/
     Admin admin=new Admin();
@@ -181,4 +234,5 @@ class FlightApplicationTests {
 	   days.add(d3);
 	  System.out.println(adminCon.addOperationalDaysWithFlight(days,131106));
   }
+  
 }

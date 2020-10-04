@@ -166,12 +166,15 @@ public class UserRepoImpl implements UserRepo {
  
 	 }
 	 
-	 @Override
-	public int addTicketAndPassengerWithRegisteredCustomers(Booking ticket, List<Passenger>passenger,List<Seat>seats,Transaction transaction) {
-			ticket.setTransaction(transaction);
-
+	 @Transactional
+	public boolean addTicketAndPassengerWithRegisteredCustomers(Booking ticket, List<Passenger>passenger,List<Seat>seats,Transaction transaction) {
+			boolean flag=false;
+			
+		    ticket.setTransaction(transaction);
+		    
 			ticket.setPassenger(passenger);
 			ticket.setSeats(seats);
+			
 			transaction.setBooking(ticket);
 			for (Passenger p : passenger) {
 
@@ -182,13 +185,15 @@ public class UserRepoImpl implements UserRepo {
 
 				s.setBooking(ticket);
 			}
-			Booking t = new Booking();
+			//Booking t = new Booking();
 			try {
-				t = em.merge(ticket);
+				
+				    em.merge(ticket);
+				    flag=true;
 			} catch (NoResultException e) {
 				// TODO: handle exception
 			}
-			return t.getBookingId();
+			return flag;
 		}
 
 	 
@@ -235,7 +240,21 @@ public class UserRepoImpl implements UserRepo {
 			}
 			return seatsAvailable;
 		}
-	
+	public int returnUsertId(User user) {
+
+		 String query = "SELECT u FROM User u WHERE u.email =: email ";
+
+		 TypedQuery<User> query1 = em.createQuery(query, User.class);
+
+		 query1.setParameter("email", user.getEmail());
+
+		 User user1 = new User();
+
+		 user1 = query1.getSingleResult();
+
+		 return user.getCustomerId();
+
+		}
 	@Override
 	public List<Booking> fetchBookingsOfCustomer(int userId) {
 		// TODO Auto-generated method stub

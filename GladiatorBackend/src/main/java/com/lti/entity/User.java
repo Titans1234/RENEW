@@ -39,7 +39,7 @@ public class User {
 	@Column
 	private String gender;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade =CascadeType.ALL)
 	private List<Booking> ticket;
 
 	public int getCustomerId() {

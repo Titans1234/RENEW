@@ -55,8 +55,7 @@ public class UserController {
 
 	@PostMapping("/bookTicket")
 	public Status addTicketDetails(@RequestBody BookTicket bookTicket) {
-		// LocalDate journeyDate =
-		// LocalDate.parse(bookTicket.getTicketDetails().getDateOfJourney());
+		// LocalDate journeyDate = LocalDate.parse(bookTicket.getTicketDetails().getDateOfJourney());
 		return userServ.addTicketDetails(bookTicket.getCustomerDetails(), bookTicket.getTicketDetails(),
 				bookTicket.getPassengerDetails(), bookTicket.getSeatDetails());
 	}

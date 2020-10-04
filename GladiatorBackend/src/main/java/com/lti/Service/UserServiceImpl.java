@@ -111,25 +111,32 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-	public Status addTicketDetails(UserDetails userDetails, TicketDetails ticketDetails,
-			List<PassengerDetails> passengerDetails, List<BookingSeatDetails> seatDetails) {
+	public Status addTicketDetails(UserDetails userDetails, TicketDetails ticketDetails,List<PassengerDetails> passengerDetails, List<BookingSeatDetails> seatDetails) {
+		
 		Booking ticket = new Booking();
+		
 		User customer = new User();
-		Status status = new Status();
+		
+		Status status = new Status();//pojo
+		
 		Flight flight=new Flight();
+		
 		Transaction transaction = new Transaction();
-		int custId = 0;
-		System.out.println(userDetails.getEmail());
-		if (!userepo.isValidEmail(userDetails.getEmail())) {
-			customer.setEmail(userDetails.getEmail());
-		///	custId = userepo.registerUser(customer);//logic conflict
-		} else {
-			System.out.println("Please Register First!!");
-		}
+		
+		 int custId = 0;
+		 
+		 customer.setEmail(userDetails.getEmail());
+		 custId = userepo.returnUsertId(customer);//logic conflict//userID
+		
+		
 		List<Passenger> passenger = new ArrayList<Passenger>();
+		
 		List<Seat> seats = new ArrayList<Seat>();
+		
+		List<Booking> ticketList=new ArrayList<Booking>();
 
 		flight.setFlightId(ticketDetails.getFlightId());
+		
 		for (PassengerDetails p : passengerDetails) {
 			Passenger ptemp = new Passenger();
 			ptemp.setAge(p.getAge());
@@ -146,22 +153,25 @@ public class UserServiceImpl implements UserService {
 			stemp.setSeats(seatDetails.get(i).getSeatNo());
 			seats.add(stemp);
 		}
+		
 		transaction.setAmount(ticketDetails.getTotalCost());
 		transaction.setTransactionDate(ticketDetails.getDateOfBooking());
+		
 		customer.setCustomerId(custId);
+		
 		ticket.setUser(customer);
-
-		ticket.setFlight(flight);
-
+		
+        ticket.setFlight(flight);
+        
 		ticket.setDateOfBooking(ticketDetails.getDateOfBooking());
 		ticket.setDateOfJourney(ticketDetails.getDateOfJourney());
 		ticket.setNoOfSeatsBooked(ticketDetails.getNoOfSeatsBooked());
 		ticket.setTotalCost(ticketDetails.getTotalCost());
 		ticket.setFromCity(ticketDetails.getFromCity());
 		ticket.setToCity(ticketDetails.getToCity());
-
-		int ticketId = userepo.addTicketAndPassengerWithRegisteredCustomers(ticket, passenger, seats, transaction);
-		if (ticketId > 0) {
+      //  ticketList.add(ticket);
+		boolean ticketId = userepo.addTicketAndPassengerWithRegisteredCustomers(ticket, passenger, seats, transaction);
+		if (ticketId ) {
 
 			status.setResultStatus(true);
 			return status;
