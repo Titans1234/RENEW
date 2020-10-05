@@ -4,6 +4,7 @@ public class LoginStatus {
   private boolean status;
   private String userName;
   private int userId;
+
 //  
 //public boolean isStatus() {
 //	return status;
@@ -13,8 +14,7 @@ public class LoginStatus {
 //public void setStatus(boolean status) {
 //	this.status = status;
 //}
-  
-  
+    
 public boolean getStatus() {
 	return status;
 }

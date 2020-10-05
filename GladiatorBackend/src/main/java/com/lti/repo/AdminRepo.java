@@ -2,6 +2,7 @@ package com.lti.repo;
 
 import java.util.List;
 
+import com.lti.bridge.AdminLoginStatus;
 import com.lti.entity.Admin;
 import com.lti.entity.Booking;
 import com.lti.entity.Flight;
@@ -14,7 +15,7 @@ public interface AdminRepo {
 
 	public boolean removeFlight(int flightId);
 
-	public String login(AdminLogin ald);
+	public AdminLoginStatus login(AdminLogin ald);
 
 	public List<Flight> showFlight();
 	

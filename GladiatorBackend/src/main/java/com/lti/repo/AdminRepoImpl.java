@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional.TxType;
 import javax.transaction.Transactional;
 
@@ -14,6 +15,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 //import org.springframework.transaction.annotation.Transactional;
 
+import com.lti.bridge.AdminLoginStatus;
 import com.lti.bridge.ShowFlightDetails;
 import com.lti.entity.Admin;
 import com.lti.entity.Flight;
@@ -79,19 +81,40 @@ return true;
  
 //================ADMIN LOGIN===================//
 @Override
-public String login(AdminLogin ald) {
-    String query = "select a.userName from Admin a where a.userName= :u1 and a.password= :p1";
-    List<String> li = em.createQuery(query).setParameter("u1", ald.getUsername()).setParameter("p1", ald.getPassword()).getResultList();
-    if (li.size() > 0) {
-     //System.out.println(li.get(0));
-     String a = li.get(0);
-     System.out.println(a);
-     return a;
-    }
-return null;
-/*
-* else { System.out.println("No data found"); } return null;
-*/
+public AdminLoginStatus login(AdminLogin admin) {
+    String query = "select a from Admin a where a.userName= :user and a.password= :pass";
+//    Admin admin = em.createQuery(query).setParameter("u1", ald.getUsername()).setParameter("p1", ald.getPassword()).getSingleResult();
+//    if (li.size() > 0) {
+//     //System.out.println(li.get(0));
+//     String a = li.get(0);
+//     System.out.println(a);
+//     return a;
+//    }
+    TypedQuery<Admin> qry = em.createQuery(query,Admin.class);
+	qry.setParameter("user", admin.getUsername());
+	qry.setParameter("pass", admin.getPassword());
+	Admin c = new Admin();
+	try {
+		c = qry.getSingleResult();
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+   AdminLoginStatus status=new AdminLoginStatus();
+   if(c.getUserName()==null) {
+	   status.setUserName("Not Found");
+	   status.setStatus(false);
+	   System.out.println(c.toString());
+   }
+   else {
+   status.setStatus(true);
+   status.setUserName(c.getUserName());
+   System.out.println(c.toString());
+   System.out.println(status.getStatus());
+   }
+   
+   return status;
+ 
 
  }
 

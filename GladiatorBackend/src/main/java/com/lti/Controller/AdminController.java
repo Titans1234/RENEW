@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.Service.AdminService;
+import com.lti.bridge.AdminLoginStatus;
 import com.lti.bridge.ShowFlightDetails;
 import com.lti.bridge.Status;
 import com.lti.entity.Admin;
@@ -36,9 +37,10 @@ public class AdminController {
 
 	@PostMapping(value = "/loginAdmin", produces = "application/json")
 //	public String login(@RequestParam("username") String username, @RequestParam("password") String password)
-	public String adminlogin(@RequestBody AdminLogin adminLogin){
-    
-		return ecoServ.adminLoginService(adminLogin);	
+	public AdminLoginStatus adminlogin(@RequestBody AdminLogin adminLogin){
+   
+		AdminLoginStatus status=ecoServ.adminLoginService(adminLogin);
+		    return status ;
 	}   
         
 	/*

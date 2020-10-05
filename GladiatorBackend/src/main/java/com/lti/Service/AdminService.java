@@ -2,6 +2,7 @@ package com.lti.Service;
 
 import java.util.List;
 
+import com.lti.bridge.AdminLoginStatus;
 import com.lti.bridge.ShowFlightDetails;
 import com.lti.bridge.Status;
 import com.lti.entity.Admin;
@@ -13,7 +14,7 @@ public interface AdminService {
 
 	void persist(Admin admin);
 
-	public String adminLoginService(AdminLogin ald);
+	public AdminLoginStatus adminLoginService(AdminLogin ald);
 
 	public Status removeFlight(int fightId);
 

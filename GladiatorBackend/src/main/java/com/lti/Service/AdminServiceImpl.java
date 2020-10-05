@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.lti.bridge.AdminLoginStatus;
+import com.lti.bridge.RegisterStatus;
 import com.lti.bridge.ShowFlightDetails;
 import com.lti.bridge.Status;
 import com.lti.entity.Admin;
@@ -36,8 +38,8 @@ public class AdminServiceImpl implements AdminService {
 
 //==============ADMIN LOGIN===========//
 	@Override
-	public String adminLoginService(AdminLogin ald) {
-		return ecoRep.login(ald);
+	public AdminLoginStatus adminLoginService(AdminLogin admin) {
+			return ecoRep.login(admin);
 	}
 
 //========REMOVE FLIGHT======================//

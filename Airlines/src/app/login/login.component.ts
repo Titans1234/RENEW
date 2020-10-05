@@ -15,11 +15,13 @@ import { AdminLoginService } from '../services/admin-login.service';
 export class LoginComponent implements OnInit {
 
   adminLogin: AdminLogin = new AdminLogin();
-   adminMessage : string="";
+   adminMessage : string ="" ;
+   adminClientStatus : boolean ;
 
   login: Login = new Login();
   clientstatus: boolean  ;
   userName : string ="";
+  userMessage : string="";
   printId : number ;
   
 
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.login).subscribe(data => {
       if (!data.status) {
         this.clientstatus = data.status;
+        this.userMessage="Please enter valid details!";
       }
       else {
         this.clientstatus= data.status;
@@ -58,16 +61,17 @@ export class LoginComponent implements OnInit {
 
   adminLoginUser(){
      this.adminLoginService.adminlogin(this.adminLogin).subscribe(data =>{
-       if (data.username==null) {
-         this.adminMessage="Please add valid details!";
-       }
+        if (!data.status) {
+          this.adminClientStatus= data.status ;
+          this.adminMessage="Please add valid details!";
+        }
       else {
-         this.adminMessage=data.username;
-         
+        this.adminClientStatus=data.status;
+         this.adminMessage=data.userName; 
+         this.router.navigate(['FlightSearch']);
       }
      })
   }
 
- 
 
 }
