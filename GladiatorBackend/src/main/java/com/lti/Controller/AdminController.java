@@ -34,12 +34,11 @@ public class AdminController {
 		return "Admin added successfully";
 	}
 
-	@GetMapping(value = "/loginAdmin", produces = "application/json")
-	public String login(@RequestParam("username") String username, @RequestParam("password") String password) {
+	@PostMapping(value = "/loginAdmin", produces = "application/json")
+//	public String login(@RequestParam("username") String username, @RequestParam("password") String password)
+	public String adminlogin(@RequestBody AdminLogin adminLogin){
     
-		AdminLogin login = new AdminLogin(username, password);
-		return ecoServ.adminLoginService(login);
-		
+		return ecoServ.adminLoginService(adminLogin);	
 	}   
         
 	/*

@@ -132,7 +132,7 @@ class FlightApplicationTests {
 	public void testAdminLogin() {
 		String username = "Saurav";
 		String password = "Titans1234";
-		System.out.println(adminCon.login(username, password));
+//		System.out.println(adminCon.login(username, password));
 
 	}
 

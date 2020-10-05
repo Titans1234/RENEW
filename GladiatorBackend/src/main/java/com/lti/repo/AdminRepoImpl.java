@@ -27,11 +27,15 @@ public class AdminRepoImpl implements AdminRepo {
  @PersistenceContext
 private EntityManager em;
 
+ 
+ //================ADD ADMIN======================//
  @Transactional(value =TxType.REQUIRED)
  public void save(Admin admin) {
     em.persist(admin);
  }
 
+ 
+ //======================REMOVE FLIGHT==============//
 @Transactional
 public boolean removeFlight(int flightId) {
 Flight flight = new Flight();
@@ -58,6 +62,8 @@ return true;
 
  }
 
+
+//=====================SHOW FLIGHT================//
  public List<Flight> showFlight() {
    List<Flight> flight = new ArrayList<>();
    String sql = "select f from Flight f";
@@ -70,6 +76,8 @@ return true;
    return flight;
 }
 
+ 
+//================ADMIN LOGIN===================//
 @Override
 public String login(AdminLogin ald) {
     String query = "select a.userName from Admin a where a.userName= :u1 and a.password= :p1";
@@ -77,6 +85,7 @@ public String login(AdminLogin ald) {
     if (li.size() > 0) {
      //System.out.println(li.get(0));
      String a = li.get(0);
+     System.out.println(a);
      return a;
     }
 return null;
@@ -86,6 +95,9 @@ return null;
 
  }
 
+
+
+//=================ACTIVATE FLIGHT=============//
  @Override
 public boolean activateFlight(int flightId) {
   Flight flight = new Flight();
@@ -101,6 +113,8 @@ public boolean activateFlight(int flightId) {
   return true;
 }
 
+ 
+//===============ADD FLIGHT========================//
  @Transactional
 public boolean addAflight(Flight flight) {
 		if(flight!= null) {
@@ -110,6 +124,8 @@ public boolean addAflight(Flight flight) {
 		return false ;
  }
 
+ 
+//===============ADD OPERATIONAL DAYS==============// 
 @Transactional
 public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId) {
 	if (operationalDays.size() > 0) {
@@ -124,6 +140,7 @@ public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDay
 	return false;
 }
 
+//=============SHOW OPERATIONAL DAYS==============//
 @Override
 public List<OperationalDays> showOperationalDays(int flightId) {
 	String sql="select op from OperationalDays op where flightId=:flightid";

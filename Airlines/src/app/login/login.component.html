@@ -41,7 +41,7 @@
                                         <div>
                                            <h5>{{clientstatus}}</h5> 
                                            <h5>{{userName}}</h5>
-                                          
+                                    
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -71,25 +71,24 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="User Name *" value="" [(ngModel)]=adminLogin.username />
+                                          
                                         </div>
-                                       
-                                       
-
-
+                                       <br>
+                                       <div>
+                                         <h5>{{adminMessage}}</h5>
+                                       </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" placeholder="Password *" value="" [(ngModel)]=adminLogin.password/>
                                         </div>
-                                      
-                                        
+                                   
                                         <br>
                                         <br>
                                         <div>
-                                       
-                                        
-                                        <input type="submit" class="btnRegister"  value="Login"/><br/>
+                                     
+                                        <input type="submit" class="btnRegister"  value="AdminLogin" (click)="adminLoginUser()"/><br/>
                                     </div>
                                     </div>
                                 </div>
