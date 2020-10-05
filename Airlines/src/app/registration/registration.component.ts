@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../services/register.service';
 import { formatCurrency } from '@angular/common';
 import { NgForm } from "@angular/forms";
+import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 
 @Component({
   selector: 'app-registration',
@@ -25,7 +26,9 @@ export class RegistrationComponent implements OnInit {
     
     this.registerService.register(this.user).subscribe(data => {
       this.registerStatus = data.message;
+      if(this.registerStatus=="You have registred successfully"){
      this.router.navigate(['Login']);
+      }
     })
 
     // form.reset();

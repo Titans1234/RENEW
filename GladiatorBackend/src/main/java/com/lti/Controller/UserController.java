@@ -43,11 +43,11 @@ public class UserController {
 		return userServ.registerUser(user);
 	}
 
-	@GetMapping(value = "/login", produces = "application/json")
-	public LoginStatus login(@RequestParam("email") String email, @RequestParam("password") String password) {
-		Login login = new Login();
-		login.setEmail(email);
-		login.setPassword(password);
+	@PostMapping(value = "/login", produces = "application/json")
+//	public LoginStatus login(@RequestParam("email") String email, @RequestParam("password") String password) 
+	public LoginStatus login(@RequestBody Login login){
+//		login.setEmail(email);
+//		login.setPassword(password);
 		LoginStatus status = userServ.validate(login);
 		// System.out.println(user.getUsername() + "\t" + user.getPassword());
 		return status;

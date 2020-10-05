@@ -13,7 +13,8 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class LoginComponent implements OnInit {
 
   login: Login = new Login();
-  clientstatus: boolean = true;
+  clientstatus: boolean  ;
+  userName : string ="";
   
 
   constructor(private router: Router, private loginService: LoginService) { }
@@ -31,19 +32,19 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.loginService.login(this.login).subscribe(data => {
-      if (!data.isStatus) {
-        this.clientstatus = data.isStatus;
+      if (!data.status) {
+        this.clientstatus = data.status;
       }
       else {
         this.clientstatus= data.status;
         let userId = data.userId;
-        let userName = data.userName;
+        this.userName = data.userName;
 
-        sessionStorage.setItem('clientstatus',this.clientstatus);
-        sessionStorage.setItem('userId', userId);
-        sessionStorage.setItem('userName', userName);
-        sessionStorage.setItem('justOnce', "false");
-        this.router.navigate(['FlightSearch']);
+       
+         sessionStorage.setItem('userId', userId);
+         sessionStorage.setItem('userName', this.userName);
+         sessionStorage.setItem('justOnce', "false");
+         this.router.navigate(['FlightSearch']);
       }
     })
   }
