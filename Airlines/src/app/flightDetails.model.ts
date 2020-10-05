@@ -1,6 +1,6 @@
 export class FlightDetails{
-    fromCity: string;
-    toCity: string;
-    dateOfJourney :string;
-    day: string;
+  public  fromCity: string;
+    public toCity: string;
+    public dateOfJourney :string;
+    public day: string;
 }
