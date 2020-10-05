@@ -33,7 +33,8 @@
 }
 .Inside
 {
-    background-color: #bccbde;
+    /* background-color: #bccbde; */
+    background-image:url('src/assets/f1.jpg');
 }
 .btn
 {
