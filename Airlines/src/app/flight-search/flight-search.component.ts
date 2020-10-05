@@ -13,21 +13,18 @@ export class FlightSearchComponent implements OnInit {
   details: FlightDetails = new FlightDetails();
   data: any;
   totalFlight:number ;
-  date1 : Date = new Date();
-  fromCity1 : string ;
-  toCity :string ;
-  
+ 
   constructor(private flightDetails: FlightService,private router:Router) { }
 
-  ngOnInit(): void {const dateOfJourney = new Date(sessionStorage.getItem('date1'));
+  ngOnInit(): void {const dateOfJourney = new Date(sessionStorage.getItem('date'));
   const day1 = dateOfJourney.getDay();
   var Wday: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var day = Wday[day1];
    (day);
-  this.details.fromCity = sessionStorage.getItem('fromCity1');
-  this.details.toCity = sessionStorage.getItem('toCity1');
+  this.details.fromCity = sessionStorage.getItem('fromCity');
+  this.details.toCity = sessionStorage.getItem('toCity');
   this.details.day=day;
-  this.details.dateOfJourney = sessionStorage.getItem('date1');
+  this.details.dateOfJourney = sessionStorage.getItem('date');
    (this.details.dateOfJourney);
    (this.details);
   this.flightDetails.flightDetails(this.details).subscribe(data => {
