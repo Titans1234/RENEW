@@ -83,7 +83,7 @@ public class FlightDetails extends Status{
 
 	@Override
 	public String toString() {
-		return "BusDetails [busId=" + flightId + ", flightName=" + flightName + ", departureTime=" + departureTime
+		return "FlightDetails [fligthId=" + flightId + ", flightName=" + flightName + ", departureTime=" + departureTime
 				+ ", arrivalTime=" + arrivalTime + ", duration=" + duration + ", fare=" + fare
 				+ ", totalSeatsAvailable=" + totalSeatsAvailable + "]";
 	}

@@ -73,9 +73,9 @@ public class AdminController {
 	  return  ecoServ.FlightStatus(flightId);
 	 
 	  }
-	  
+	    
 		
-	  @PostMapping("/addFlight")
+	    @PostMapping("/addFlight")
 		public boolean addFlight(Flight flight) {
 			return ecoServ.addAFlight(flight);
 		}

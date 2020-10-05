@@ -4,67 +4,75 @@ import java.time.LocalDate;
 
 public class TicketDetails {
 
-		private LocalDate dateOfBooking = LocalDate.now();
-		private LocalDate dateOfJourney;
-		private int noOfSeatsBooked;
-		private double totalCost;
-		private int flightId;
-		private String fromCity;
-		private String toCity;
+	private LocalDate dateOfBooking = LocalDate.now();
+	private LocalDate dateOfJourney;
+	private int noOfSeatsBooked;
+	private double totalCost;
+	private int flightId;
+	private String fromCity;
+	private String toCity;
 
-		public String getFromCity() {
-			return fromCity;
-		}
+	public String getFromCity() {
+		return fromCity;
+	}
 
-		public void setFromCity(String fromCity) {
-			this.fromCity = fromCity;
-		}
+	public void setFromCity(String fromCity) {
+		this.fromCity = fromCity;
+	}
 
-		public String getToCity() {
-			return toCity;
-		}
+	public String getToCity() {
+		return toCity;
+	}
 
-		public void setToCity(String toCity) {
-			this.toCity = toCity;
-		}
+	public void setToCity(String toCity) {
+		this.toCity = toCity;
+	}
 
-		public int getFlightId() {
-			return flightId;
-		}
+	public int getFlightId() {
+		return flightId;
+	}
 
-		public void setFlightId(int flightId) {
-			this.flightId = flightId;
-		}
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
+	}
 
-		public LocalDate getDateOfBooking() {
-			return dateOfBooking;
-		}
+	public LocalDate getDateOfBooking() {
+		return dateOfBooking;
+	}
 
-		public void setDateOfBooking(LocalDate dateOfBooking) {
-			this.dateOfBooking = dateOfBooking;
-		}
+	public void setDateOfBooking(LocalDate dateOfBooking) {
+		this.dateOfBooking = dateOfBooking;
+	}
 
-		public LocalDate getDateOfJourney() {
-			return dateOfJourney;
-		}
+	public LocalDate getDateOfJourney() {
+		return dateOfJourney;
+	}
 
-		public void setDateOfJourney(LocalDate dateOfJourney) {
-			this.dateOfJourney = dateOfJourney;
-		}
+	public void setDateOfJourney(LocalDate dateOfJourney) {
+		this.dateOfJourney = dateOfJourney;
+	}
 
-		public int getNoOfSeatsBooked() {
-			return noOfSeatsBooked;
-		}
+	public int getNoOfSeatsBooked() {
+		return noOfSeatsBooked;
+	}
 
-		public void setNoOfSeatsBooked(int noOfSeatsBooked) {
-			this.noOfSeatsBooked = noOfSeatsBooked;
-		}
+	public void setNoOfSeatsBooked(int noOfSeatsBooked) {
+		this.noOfSeatsBooked = noOfSeatsBooked;
+	}
 
-		public double getTotalCost() {
-			return totalCost;
-		}
+	public double getTotalCost() {
+		return totalCost;
+	}
 
-		public void setTotalCost(double totalCost) {
-			this.totalCost = totalCost;
-		}
+	public void setTotalCost(double totalCost) {
+		this.totalCost = totalCost;
+	}
+
+	@Override
+	public String toString() {
+		return "TicketDetails [dateOfBooking=" + dateOfBooking + ", dateOfJourney=" + dateOfJourney
+				+ ", noOfSeatsBooked=" + noOfSeatsBooked + ", totalCost=" + totalCost + ", flightId=" + flightId
+				+ ", fromCity=" + fromCity + ", toCity=" + toCity + "]";
+	}
+
 }

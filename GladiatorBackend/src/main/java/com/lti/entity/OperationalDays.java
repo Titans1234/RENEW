@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,8 +27,8 @@ public class OperationalDays {
 	@Column
 	private String operationalDays;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="flight_id")
+	@ManyToOne(fetch = FetchType.LAZY )
+	@JoinColumn(name="flightId")
 	private Flight flight;
 
 	public int getOperationalId() {

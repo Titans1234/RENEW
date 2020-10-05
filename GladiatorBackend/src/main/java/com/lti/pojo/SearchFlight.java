@@ -1,5 +1,7 @@
 package com.lti.pojo;
 
+import java.time.LocalDate;
+
 public class SearchFlight {
 	private String fromCity;
 
@@ -7,7 +9,7 @@ public class SearchFlight {
 
 	private String day;
 
-	private String dateOfJourney;
+	private LocalDate dateOfJourney;
 
 	public String getFromCity() {
 		return fromCity;
@@ -33,11 +35,12 @@ public class SearchFlight {
 		this.day = day;
 	}
 
-	public String getDateOfJourney() {
+	public LocalDate getDateOfJourney() {
 		return dateOfJourney;
 	}
 
-	public void setDateOfJourney(String dateOfJourney) {
+	public void setDateOfJourney(LocalDate dateOfJourney) {
 		this.dateOfJourney = dateOfJourney;
 	}
+
 }

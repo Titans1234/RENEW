@@ -37,6 +37,9 @@ public class User {
 	private int age;
 
 	@Column
+	private double walletBalance;
+
+	@Column
 	private String gender;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -104,6 +107,14 @@ public class User {
 
 	public void setTicket(List<Booking> ticket) {
 		this.ticket = ticket;
+	}
+
+	public double getWalletBalance() {
+		return walletBalance;
+	}
+
+	public void setWalletBalance(double walletBalance) {
+		this.walletBalance = walletBalance;
 	}
 
 }

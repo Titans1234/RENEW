@@ -3,6 +3,7 @@ package com.lti.entity;
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -44,7 +45,7 @@ public class Seat {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name ="flight_id")
+	@JoinColumn(name = "flight_id")
 	private Flight flight;
 
 	public int getSeatId() {

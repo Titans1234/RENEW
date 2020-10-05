@@ -22,28 +22,25 @@ import com.lti.repo.AdminRepo;
 
 @Service
 public class AdminServiceImpl implements AdminService {
-  
+
 	Status status = new Status();
 	Flight flight = new Flight();
 
 	@Autowired
 	private AdminRepo ecoRep;
 
-	
+//===============ADD ADMIN=============//
 	public void persist(Admin admin) {
 		ecoRep.save(admin);
 	}
 
+//==============ADMIN LOGIN===========//
 	@Override
 	public String adminLoginService(AdminLogin ald) {
 		return ecoRep.login(ald);
 	}
-	/*
-	 * @Override public String cancelFlightAndUpdateInCustomerBookingService(int
-	 * flightId) { ecoRep.AdminRemoveFlights(flightId); return
-	 * "Flight deleted successfully and refund initiated"; }
-	 */
- // Add Delete View 
+
+//========REMOVE FLIGHT======================//
 	@Override
 	public Status removeFlight(int flightId) {
 		if (ecoRep.removeFlight(flightId)) {
@@ -53,7 +50,8 @@ public class AdminServiceImpl implements AdminService {
 		status.setResultStatus(false);
 		return status;
 	}
-    //
+
+//=============SHOW FLIGHT  LIST==================//
 	@Override
 	public ShowFlightDetails showFlight() {
 		ShowFlightDetails showFlightDetails = new ShowFlightDetails();
@@ -62,9 +60,10 @@ public class AdminServiceImpl implements AdminService {
 		showFlightDetails.setFlightdetails(flight);
 		return showFlightDetails;
 	}
-	//To check flight status
+
+//==============TO ACTIVATE FLIGHT===========//	
 	public Status FlightStatus(int flightId) {
-	 if (ecoRep.activateFlight(flightId)) {
+		if (ecoRep.activateFlight(flightId)) {
 			status.setResultStatus(true);
 			return status;
 		}
@@ -72,11 +71,13 @@ public class AdminServiceImpl implements AdminService {
 		return status;
 	}
 
+//=================ADD FLIGHT=============//
 	@Override
 	public boolean addAFlight(Flight flight) {
 		return ecoRep.addAflight(flight);
 	}
 
+//==============OPERATIONAL DAYS===========//	
 	@Override
 	public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId) {
 		return ecoRep.addOperationalDaysWithFlight(operationalDays, flightId);

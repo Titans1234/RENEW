@@ -1,19 +1,24 @@
 package com.lti.pojo;
 
 public class CancelTicket {
-	private int ticketno;
-	private String email;
-	public int getTicketno() {
-		return ticketno;
+	private int userId;
+
+	private int BookingId;
+
+	public int getBookingId() {
+		return BookingId;
 	}
-	public void setTicketno(int ticketno) {
-		this.ticketno = ticketno;
+
+	public void setBookingId(int bookingId) {
+		BookingId = bookingId;
 	}
-	public String getEmail() {
-		return email;
+
+	public int getUserId() {
+		return userId;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

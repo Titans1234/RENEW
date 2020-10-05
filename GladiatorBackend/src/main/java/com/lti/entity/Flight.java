@@ -55,16 +55,16 @@ public class Flight {
 	private String duration;
 
 	@OneToMany(fetch = FetchType.EAGER,mappedBy="flight",cascade=CascadeType.ALL)
-	//@JsonIgnore
+	@JsonIgnore
 	private List<OperationalDays>operationalDays;
 
 	@OneToMany(fetch = FetchType.LAZY,mappedBy = "flight", cascade=CascadeType.ALL)
-	//@JsonIgnore
+	@JsonIgnore
 	private List<Booking> booking;
 
 	
 	@OneToMany(fetch = FetchType.LAZY,mappedBy = "flight", cascade=CascadeType.ALL)
-	//@JsonIgnore
+	@JsonIgnore
 	private List<Seat> seats;
 
 	public int getFlightId() {

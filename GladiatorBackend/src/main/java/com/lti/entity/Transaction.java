@@ -2,6 +2,7 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -62,6 +63,12 @@ public class Transaction {
 
 	public void setBooking(Booking booking) {
 		this.booking = booking;
+	}
+
+	@Override
+	public String toString() {
+		return "Transaction [transactionId=" + transactionId + ", amount=" + amount + ", transactionDate="
+				+ transactionDate + "]";
 	}
 
 }

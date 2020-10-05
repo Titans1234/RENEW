@@ -65,10 +65,6 @@ return true;
    System.out.println();
    flight = query.getResultList();
 
-   for(Flight f:flight)
-   {
-	System.out.println(f.getOperationalDays().size());
-   }
    if(flight==null)
 	System.out.println("No record Found in Flight database");
    return flight;

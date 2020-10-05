@@ -37,12 +37,15 @@ public class Booking {
 
 	@Column
 	private LocalDate dateOfBooking;
-	
+
 	@Column
 	private String fromCity;
 
 	@Column
 	private String toCity;
+	
+	@Column
+	private boolean status=false ;
 
 	public String getFromCity() {
 		return fromCity;
@@ -69,7 +72,7 @@ public class Booking {
 	private Flight flight;
 
 	@ManyToOne
-	@JoinColumn(name = "customer_id")
+	@JoinColumn(name = "userId")
 	@JsonIgnore
 	private User user;
 
@@ -78,7 +81,7 @@ public class Booking {
 	private List<Seat> seats;
 
 	@OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
-    @JsonIgnore
+	@JsonIgnore
 	private List<Passenger> passenger;
 
 	@OneToOne(mappedBy = "booking", cascade = CascadeType.ALL)
@@ -100,7 +103,6 @@ public class Booking {
 		this.passenger = passenger;
 	}
 
-	
 	public int getBookingId() {
 		return bookingId;
 	}
@@ -149,8 +151,6 @@ public class Booking {
 		this.flight = flight;
 	}
 
-	
-
 	public User getUser() {
 		return user;
 	}
@@ -166,13 +166,19 @@ public class Booking {
 	public void setTransaction(Transaction transaction) {
 		this.transaction = transaction;
 	}
-    
+
 	@Override
 	public String toString() {
 		return "Ticket [bookingId=" + bookingId + ", noOfSeatsBooked=" + noOfSeatsBooked + ", dateOfJourney="
-				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost + ", flight=" + flight
-				+ ", customer=" + user + ", seats=" + seats + ", passenger=" + passenger + ", transaction="
-				+ transaction + "]";
+				+ dateOfJourney + ", dateOfBooking=" + dateOfBooking + ", totalCost=" + totalCost +" , transaction="+ transaction + " , status="+status+"]";
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }

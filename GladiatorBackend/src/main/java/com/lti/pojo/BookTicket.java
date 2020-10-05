@@ -2,7 +2,6 @@ package com.lti.pojo;
 
 import java.util.List;
 
-
 public class BookTicket {
 
 	private UserDetails customerDetails;
@@ -13,6 +12,13 @@ public class BookTicket {
 
 	private List<BookingSeatDetails> seatDetails;
 
+	@Override
+	public String toString() {
+		return "BookTicket [customerDetails=" + customerDetails + ", ticketDetails=" + ticketDetails
+				+ ", passengerDetails=" + passengerDetails + ", seatDetails=" + seatDetails + "]";
+	}
+
+	
 	public UserDetails getCustomerDetails() {
 		return customerDetails;
 	}
