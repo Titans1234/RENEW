@@ -12,6 +12,7 @@ import {FlightService} from '../services/flight.service';
 export class FlightSearchComponent implements OnInit {
   details: FlightDetails = new FlightDetails();
   data: any;
+  totalFlight:number ;
 
   constructor(private flightDetails: FlightService,private router:Router) { }
 
@@ -29,9 +30,17 @@ export class FlightSearchComponent implements OnInit {
   this.flightDetails.flightDetails(this.details).subscribe(data => {
     this.data = data;
      (data);
-    // this.totalFlight=data.length;  //idk yeh kya h
+    // this.totalFlight=data.length;  //idk yeh kya 
+    this.totalFlight=data.length;
   })}
 
+  // viewSeats(busId:any,fare:any,busName:any)
+  // {
+  //   sessionStorage.setItem('flightId',flightId);
+  //   sessionStorage.setItem('fare',fare)
+  //   sessionStorage.setItem('flightName',flightName);
+  //   this.router.navigate(['SEATSELECT']);
+  // }
     next(){
       this.router.navigate(['FlightSelect']);
         }

@@ -14,4 +14,13 @@ export class FlightService {
     return this.http.post("http://localhost:8181/searchFlight",flightDetails);
   }
 
+  // noOfSeats(seatdetails : SeatDetails):Observable<any>{
+  //   return this.http.post("http://localhost:8181/getNoOfSeats",seatdetails);
+  // }
+
+  // bookMyticket(bookticket:BookTicket):Observable<any>
+  // {
+  //   return this.http.post("http://localhost:8181/bookTicket",bookticket)
+  // }
+
 }
