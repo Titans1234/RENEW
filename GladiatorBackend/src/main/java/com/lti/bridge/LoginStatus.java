@@ -3,6 +3,8 @@ package com.lti.bridge;
 public class LoginStatus {
   private boolean status;
   private String userName;
+  private int userId;
+  
 public boolean isStatus() {
 	return status;
 }
@@ -15,4 +17,11 @@ public String getUserName() {
 public void setUserName(String userName) {
 	this.userName = userName;
 }
+public int getUserId() {
+	return userId;
+}
+public void setUserId(int userId) {
+	this.userId = userId;
+}
+
 }

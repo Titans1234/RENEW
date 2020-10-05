@@ -40,8 +40,8 @@ public class AdminController {
 		AdminLogin login = new AdminLogin(username, password);
 		return ecoServ.adminLoginService(login);
 		
-	}
-
+	}   
+        
 	/*
 	 * @GetMapping(path = "/cancelFlight", produces = "application/json") public
 	 * String cancelFlight(@RequestParam("flightId") int flightId) { return
@@ -71,7 +71,7 @@ public class AdminController {
 	  removeFlight(@RequestParam("flightId") int flightId) {
 	  System.out.println("FlightId" + flightId); 
 	  return  ecoServ.FlightStatus(flightId);
-	 
+ 
 	  }
 	    
 		

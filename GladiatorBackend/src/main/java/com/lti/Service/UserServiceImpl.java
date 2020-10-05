@@ -63,7 +63,7 @@ public class UserServiceImpl implements UserService {
 	public LoginStatus validate(Login login) {
 		String password = Base64.getEncoder().encodeToString(login.getPassword().getBytes());
 		System.out.println(password);
-		return userepo.loginUser(login.getUsername(), password);
+		return userepo.loginUser(login.getEmail(), password);
 	}
 
 	public boolean isValidEmailId(String email) {

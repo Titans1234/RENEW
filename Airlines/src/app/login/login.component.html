@@ -26,18 +26,25 @@
                                 <h3 class="register-heading">Welcome to Let's Fly</h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
-                                        <div class="form-group">
+                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Your Email *" 
-                                            [(ngModel)]="user.email" 
+                                            [(ngModel)]="login.email" 
                                             required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  #email="ngModel">
                                             <span class="alert-warning" *ngIf="email.touched && email.invalid">Email is invalid</span>
+                                        </div> 
+                                        <!-- <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="User Name *" value="" />
+                                        </div> -->
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div>
+                                           <h5>{{clientstatus}}</h5> 
                                         </div>
-                                       
-                                    
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                            <input type="password" class="form-control" placeholder="Password *" value="" [(ngModel)]=login.password />
                                         </div>
                                        
                                         
@@ -46,8 +53,9 @@
                                         <div>
                                        
                                         
-                                        <input type="submit" class="btnRegister"  value="Login"/><br/>
+                                        <input type="submit" class="btnRegister"  value="Login" (click)="loginUser()"/><br/>
                                     </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +69,7 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="User Name *" value="" />
                                         </div>
                                        
                                        

@@ -11,10 +11,9 @@ export class FlightSearchComponent implements OnInit {
   constructor(private router :Router) { }
 
   ngOnInit(): void {}
+
     next(){
       this.router.navigate(['FlightSelect']);
         }
-
-  
 
 }

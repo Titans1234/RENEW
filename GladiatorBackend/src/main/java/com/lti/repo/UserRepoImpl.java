@@ -35,7 +35,6 @@ public class UserRepoImpl implements UserRepo {
 /************** Registration*********************************************************/
 	@Transactional
 	public void registerUser(User user) {
-
 		em.persist(user);
 	}
 
@@ -74,9 +73,11 @@ public class UserRepoImpl implements UserRepo {
 		if (c.getEmail() == null) {
 			log.setStatus(false);
 			log.setUserName("");
+			log.setUserId(0);
 		} else {
 			log.setStatus(true);
 			log.setUserName(c.getName());
+			log.setUserId(c.getCustomerId());
 		}
 		return log;
 	}

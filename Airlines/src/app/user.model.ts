@@ -1,11 +1,10 @@
 export class User{
-    public title: string ;
-    public  firstName : string ;
+   
+    public  name : string ;
     public password : string ;
-    public lastName : string ;
     public email : string ;
-    public confirmpassword : string ;
-    public phoneNumber :number;
-    public date : string ;
-
+    public contact :number;
+    public age: number;
+    public walletBalance : number;
+    public gender : string ;
 }
