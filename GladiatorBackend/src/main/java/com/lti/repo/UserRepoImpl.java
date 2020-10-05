@@ -78,6 +78,7 @@ public class UserRepoImpl implements UserRepo {
 			log.setStatus(true);
 			log.setUserName(c.getName());
 			log.setUserId(c.getCustomerId());
+			System.out.println(c.toString());
 		}
 		return log;
 	}

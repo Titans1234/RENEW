@@ -92,12 +92,12 @@ class FlightApplicationTests {
 //    	String password="shadi kr dunga";
 		String username = "anantshadisupport@gmail.com";
 		String password = "shadi kr dunga";
-		LoginStatus status = controller.login(username, password);
-		if (status.isStatus()) {
-			System.out.println(status.getUserName() + ", You can book now ");
-		} else {
-			System.out.println("Enter Valid Email/password");
-		}
+//		LoginStatus status = controller.login(username, password);
+//		if (status.isStatus()) {
+//			System.out.println(status.getUserName() + ", You can book now ");
+//		} else {
+//			System.out.println("Enter Valid Email/password");
+//		}
 	}
 
 	@Test
