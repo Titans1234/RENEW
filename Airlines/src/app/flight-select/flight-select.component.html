@@ -1,42 +1,38 @@
 <div class="container">
-
+<!-- 
   <h1 class="display-4"><u>Choose From The Best</u></h1>
-
-
-
-  <!-- 
   <table class="table table-striped">
 
     <thead>
 
       <tr>
-
-
+        <th>From</th>
+        <th>To</th>
+        <th>Day</th>
         <th>Departure Time</th>
         <th>Arrival Time</th>
         <th>Flight no</th>
-        <th>From</th>
-        <th>To</th>
         <th>Duration</th>
-        <th>Economy Price</th>
-        <th>Business Price</th>
+        <th>Fare</th>
+        <th>Seats Available</th>
 
       </tr>
 
     </thead>
 
-    <tbody>-->
-      <!--   
-        <tr *ngFor="let student of flights">
+    <tbody>
+      
+        <tr *ngFor="let f of data">
       <tr>
-        <td>{{ flight.DepartureTime}}</td>
-        <td>{{ flight.ArrivalTime}}</td>
-        <td>{{ flight.flightno }}</td>
-        <td>{{ flight.From }}</td>
-        <td>{{ flight.To}}</td>
-        <td>{{ flight.Duration}}</td>
-        <td>Rs. {{ flight.EconomyPrice}}</td>
-        <td>Rs. {{ flight.BusinessPrice}}</td>
+        <td>{{this.details.fromCity}}</td>
+        <td>{{ this.details.toCity}}</td>
+        <td>{{this.details.day}}</td>>
+        <td>{{ f.DepartureTime}}</td>
+        <td>{{ f.ArrivalTime}}</td>
+       <td>{{ flight.flightno }}</td>   
+        <td>{{ f.Duration}}</td>
+        <td>Rs. {{ f.fare}}</td>
+        <td> {{ f.totalseatAvaialabe}}</td>
 
       </tr>
 

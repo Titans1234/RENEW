@@ -136,12 +136,12 @@ class FlightApplicationTests {
 
 	}
 
-	@Test
-	public void TestRemoveFlight() {
-		RemoveFlight remove = new RemoveFlight();
-		remove.setFlightId(101);
-		System.out.println(adminCon.removeFlight(remove));
-	}
+//	@Test
+//	public void TestRemoveFlight() {
+//		RemoveFlight remove = new RemoveFlight();
+//		remove.setFlightId(101);
+//		System.out.println(adminCon.removeFlight(remove));
+//	}
 
 	@Test
 	public void TestingShowFlight() {

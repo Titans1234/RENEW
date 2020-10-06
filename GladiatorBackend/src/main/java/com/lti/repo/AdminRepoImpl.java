@@ -83,13 +83,7 @@ return true;
 @Override
 public AdminLoginStatus login(AdminLogin admin) {
     String query = "select a from Admin a where a.userName= :user and a.password= :pass";
-//    Admin admin = em.createQuery(query).setParameter("u1", ald.getUsername()).setParameter("p1", ald.getPassword()).getSingleResult();
-//    if (li.size() > 0) {
-//     //System.out.println(li.get(0));
-//     String a = li.get(0);
-//     System.out.println(a);
-//     return a;
-//    }
+
     TypedQuery<Admin> qry = em.createQuery(query,Admin.class);
 	qry.setParameter("user", admin.getUsername());
 	qry.setParameter("pass", admin.getPassword());
@@ -117,7 +111,6 @@ public AdminLoginStatus login(AdminLogin admin) {
  
 
  }
-
 
 
 //=================ACTIVATE FLIGHT=============//

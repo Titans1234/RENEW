@@ -55,8 +55,10 @@ public class AdminController {
 	 * System.out.println("FlightId" + flightId); return
 	 * ecoServ.removeFlight(flightId); }
 	 */
+	
 
-	@GetMapping("/removeFlight")
+	//public Status removeFlight(@RequestParam("flightId") int flightId){
+	@PostMapping(value="/removeFlight" , produces = "application/json")
 	public Status removeFlight(@RequestBody RemoveFlight removeFlight) {
 		System.out.println("FlightId" + removeFlight.getFlightId());
 		return ecoServ.removeFlight(removeFlight.getFlightId());
@@ -68,8 +70,8 @@ public class AdminController {
 	}
 	
 	
-	  @GetMapping("/activateFlight") public Status
-	  removeFlight(@RequestParam("flightId") int flightId) {
+	  @GetMapping("/activateFlight")
+	  public Status activateFlight(@RequestParam("flightId") int flightId) {
 	  System.out.println("FlightId" + flightId); 
 	  return  ecoServ.FlightStatus(flightId);
  

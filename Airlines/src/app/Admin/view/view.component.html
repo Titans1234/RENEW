@@ -1,1 +1,13 @@
-<p>view works!</p>
+<div class="main">
+    <h4 class="last">Flight Details:</h4>
+    <div class="card"  *ngFor="let cp of flight" >
+        <div>Bus ID :{{cp.flightId}} </div>
+        <div>Total Seat:{{cp.totalSeat}} </div>
+        <div>Bus Name : {{cp.flightName}}</div>
+        <div>Status : {{cp.flightStatus}}</div>
+        <button *ngIf='cp.flightStatus=="active"' (click)='remove(cp.flightId)' type="submit" class="un"  > Remove Flight</button>
+        <button *ngIf='cp.flightStatus=="inactive"' (click)='add(cp.flightId)' type="submit" > Add Flight</button>
+        
+    </div>
+       
+</div>

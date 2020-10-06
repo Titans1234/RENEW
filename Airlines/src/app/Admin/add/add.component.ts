@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Flight}  from '../flight';
+import {Flight}  from '../flight.model';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',

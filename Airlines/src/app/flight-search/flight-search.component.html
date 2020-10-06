@@ -60,9 +60,8 @@
 					<form action="">
 						<div class="row">
 
-
 							<div id="b1">
-								<button type="button" class="btn btn-primary btn-lg">One way</button>
+								<button type="button" class="btn btn-disabled btn-lg">One way</button>
 							</div>
 
 							<!-- <div id="b2">
@@ -73,6 +72,10 @@
 
 
 							<div class="row">
+                            <div class="col-lg-6">
+                            <p>Soruce : </p>
+
+							</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -82,9 +85,9 @@
 									<select id="s" 
 										class="form-control custom-select bg-white border-left-0 border-md"
 										name="fromCity"
-                                        [(ngModel)]="details.fromCity" 
-                                        #fromCity="ngModel">
-										<option value=""><Source></option>
+                                        [(ngModel)]="fromCity" 
+                                        >
+										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
 										<option value="3">Bangalore</option>
@@ -92,6 +95,12 @@
 										<option value="5">Chennai</option>
 									</select>
 								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<p>Destination : </p>
+		
+									</div>
 								<div class="input-group col-lg-6 mb-4 des">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -101,9 +110,9 @@
 									<select id="d" name="Destination"
 										class="form-control custom-select bg-white border-left-0 border-md"
 										name="toCity" 
-                                        [(ngModel)]="details.toCity" 
-                                        #toCity="ngModel">
-										<option value="">Destination</option>
+                                        [(ngModel)]="toCity" 
+                                       >
+										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
 										<option value="3">Bangalore</option>
@@ -111,11 +120,14 @@
 										<option value="5">Chennai</option>
 									</select>
 								</div>
+							
 							</div>
-
 							<div class="row">
 
-								
+								<div class="col-lg-6">
+									<p>Date Of Journey : </p>
+		
+									</div>
 
 								<div class="input-group col-lg-6 mb-4 rd">
 									<div class="input-group-prepend">
@@ -126,8 +138,8 @@
 									<input id="rdate" type="date" placeholder="Journey Date"
 										class="form-control bg-white border-left-0 border-md"
 										name="dateOfJourney" 
-                                        [(ngModel)]="details.dateOfJourney"
-                                        #dateOfJourney="ngModel">
+                                        [(ngModel)]="date"
+                                       >
 								</div>
 							</div>
 
@@ -204,7 +216,7 @@
 			<img class="card-img-top c-img" src="../../assets/mumbai.jpg" alt="Card image cap">
 			<div class="card-body">
 				<h5 class="card-title">Mumbai</h5>
-				<p class="card-text">Mumbai has three main seasons â€” Summer, Monsoon& Winter. The best time to visit
+				<p class="card-text">Mumbai has three main seasons - Summer, Monsoon& Winter. The best time to visit
 					is between November and February.</p>
 				<a href="https://www.holidify.com/places/mumbai/sightseeing-and-things-to-do.html"> <button
 						type="button" class="btn btn-info btn-lg">Find More!</button> </a>
@@ -246,7 +258,7 @@
 
 				<img class="team-pic" src="../../assets/mona.jpeg">
 				<h3 class="naam">Seerapu Maneesha Reddy</h3>
-				<p>Some text that describes me lorem ipsum ipsum lorem.</p>
+				<p>TL - The UI Girl!</p>
 				<p class="mail"><i>Seerapu.Reddy@lntinfotech.com</i></p>
 				<a href="https://www.linkedin.com/in/maneesha-reddy-692645172"> <button type="button"
 						class="btn btn-info btn-lg">Contact</button> </a>
@@ -255,28 +267,25 @@
 
 				<img class="team-pic" src="../../assets/mayank1.jpg">
 				<h3 class="naam">Mayank Yadav</h3>
-				<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				<p class="mail"><i>example@example.com</i></p>
+				<p>The Hard Worker!</p>
+				<p class="mail"><i>Mayank.Yadav@lntinfotech.com</i></p>
 				<a href="#"> <button type="button" class="btn btn-info btn-lg">Contact</button> </a>
 			</div>
 			<div class="col">
 
 				<img class="team-pic" src="../../assets/saurav.jpeg">
 				<h3 class="naam">Saurabh Kumar Sah</h3>
-				<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				<p class="mail"><i>example@example.com</i></p>
+				<p>The Intellectual One!</p>
+				<p class="mail"><i>Saurabh.Sah@lntinfotech.com</i></p>
 				<a href="#"> <button type="button" class="btn btn-info btn-lg">Contact</button> </a>
 			</div>
 			<div class="col">
 
 				<img class="team-pic" src="../../assets/anant.jpeg">
 				<h3 class="naam">Anant Arabariya</h3>
-				<p>Some text that describes me lorem ipsum ipsum lorem.</p>
-				<p class="mail"><i>example@example.com</i></p>
+				<p>The Helper Guy!</p>
+				<p class="mail"><i>anant.arbariya@lntinfotech.com</i></p>
 				<a href="#"> <button type="button" class="btn btn-info btn-lg">Contact</button> </a>
 			</div>
 
 		</div>
-
-	</div>
-</section>
