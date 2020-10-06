@@ -85,8 +85,8 @@
 									<select id="s" 
 										class="form-control custom-select bg-white border-left-0 border-md"
 										name="fromCity"
-                                        [(ngModel)]="details.fromCity" 
-                                        #fromCity="ngModel">
+                                        [(ngModel)]="fromCity" 
+                                        >
 										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
@@ -110,8 +110,8 @@
 									<select id="d" name="Destination"
 										class="form-control custom-select bg-white border-left-0 border-md"
 										name="toCity" 
-                                        [(ngModel)]="details.toCity" 
-                                        #toCity="ngModel">
+                                        [(ngModel)]="toCity" 
+                                       >
 										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
@@ -138,8 +138,8 @@
 									<input id="rdate" type="date" placeholder="Journey Date"
 										class="form-control bg-white border-left-0 border-md"
 										name="dateOfJourney" 
-                                        [(ngModel)]="details.dateOfJourney"
-                                        #dateOfJourney="ngModel">
+                                        [(ngModel)]="date"
+                                       >
 								</div>
 							</div>
 
@@ -289,6 +289,3 @@
 			</div>
 
 		</div>
-
-	</div>
-</section>
