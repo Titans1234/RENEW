@@ -68,8 +68,9 @@ select.form-control {
 
 #b1{
     position: relative;;
- 
-    bottom:10px;
+   bottom: 40px;
+   left: 10px;
+    
 }
 
 #b2{
@@ -79,11 +80,11 @@ select.form-control {
 }
 .rd{
     position: relative;
-    left: 35px;
+  
 }
 .des{
     position: relative;
-    left: 50px;
+    
 }
 .carousel-caption{
     position:absolute;
@@ -103,6 +104,11 @@ select.form-control {
     padding-bottom: 1rem;
 }
 .btn-primary{
+    background-color:  #20c39a;
+    border: 1px solid #20c39a;
+}
+
+.btn-disabled{
     background-color:  #20c39a;
     border: 1px solid #20c39a;
 }

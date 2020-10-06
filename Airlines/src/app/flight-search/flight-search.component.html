@@ -60,9 +60,8 @@
 					<form action="">
 						<div class="row">
 
-
 							<div id="b1">
-								<button type="button" class="btn btn-primary btn-lg">One way</button>
+								<button type="button" class="btn btn-disabled btn-lg">One way</button>
 							</div>
 
 							<!-- <div id="b2">
@@ -73,6 +72,10 @@
 
 
 							<div class="row">
+                            <div class="col-lg-6">
+                            <p>Soruce : </p>
+
+							</div>
 								<div class="input-group col-lg-6 mb-4">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -84,7 +87,7 @@
 										name="fromCity"
                                         [(ngModel)]="details.fromCity" 
                                         #fromCity="ngModel">
-										<option value=""><Source></option>
+										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
 										<option value="3">Bangalore</option>
@@ -92,6 +95,12 @@
 										<option value="5">Chennai</option>
 									</select>
 								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<p>Destination : </p>
+		
+									</div>
 								<div class="input-group col-lg-6 mb-4 des">
 									<div class="input-group-prepend">
 										<span class="input-group-text bg-white px-4 border-md border-right-0">
@@ -103,7 +112,7 @@
 										name="toCity" 
                                         [(ngModel)]="details.toCity" 
                                         #toCity="ngModel">
-										<option value="">Destination</option>
+										
 										<option value="1">Mumbai</option>
 										<option value="2">Hyderabad</option>
 										<option value="3">Bangalore</option>
@@ -111,11 +120,14 @@
 										<option value="5">Chennai</option>
 									</select>
 								</div>
+							
 							</div>
-
 							<div class="row">
 
-								
+								<div class="col-lg-6">
+									<p>Date Of Journey : </p>
+		
+									</div>
 
 								<div class="input-group col-lg-6 mb-4 rd">
 									<div class="input-group-prepend">
