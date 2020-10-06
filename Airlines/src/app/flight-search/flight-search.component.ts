@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router' ;
 // import { from } from 'rxjs';
-import {FlightDetails} from '../flightDetails.model';
-import {FlightService} from '../services/flight.service';
+import { FlightSearchService } from '../services/flight-search.service';
+
 
 @Component({
   selector: 'app-flight-search',
@@ -10,39 +10,43 @@ import {FlightService} from '../services/flight.service';
   styleUrls: ['./flight-search.component.css']
 })
 export class FlightSearchComponent implements OnInit {
-  details: FlightDetails = new FlightDetails();
-  data: any;
-  totalFlight:number ;
+  fromCity: string;
+  toCity: string;
+  date : string;
+
  
-  constructor(private flightDetails: FlightService,private router:Router) { }
 
-  ngOnInit(): void {const dateOfJourney = new Date(sessionStorage.getItem('date'));
-  const day1 = dateOfJourney.getDay();
-  var Wday: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var day = Wday[day1];
-   (day);
-  this.details.fromCity = sessionStorage.getItem('fromCity');
-  this.details.toCity = sessionStorage.getItem('toCity');
-  this.details.day=day;
-  this.details.dateOfJourney = sessionStorage.getItem('date');
-   (this.details.dateOfJourney);
-   (this.details);
-  this.flightDetails.flightDetails(this.details).subscribe(data => {
-    this.data = data;
-     (data);
-    // this.totalFlight=data.length;  //idk yeh kya 
-    this.totalFlight=data.length;
-  })}
+  FromCities = ["Patna","Delhi", "Dehradun", "Meerut","Saharanpur"];
+  constructor(private flightDetails: FlightSearchService ,private router:Router) {
+    sessionStorage.removeItem('fromCity');
+    sessionStorage.removeItem('toCity');
+    sessionStorage.removeItem('date');
+    sessionStorage.removeItem('fare')
+    sessionStorage.removeItem('flightId')
+   }
 
-  // viewSeats(flightId:any,fare:any,flightName:any)
-  // {
-  //   sessionStorage.setItem('flightId',flightId);
-  //   sessionStorage.setItem('fare',fare)
-  //   sessionStorage.setItem('flightName',flightName);
-  //   this.router.navigate(['SEATSELECT']);
-  // }
+   setValue(){
+    sessionStorage.setItem('fromCity',this.fromCity);
+    sessionStorage.setItem('toCity',this.toCity);
+    sessionStorage.setItem('date',this.date);
+    this.router.navigate['(FlightSelect)'];
+  }
+
+  ngOnInit(): void {
+  let today = new Date().toISOString().split('T')[0];
+     (today);
+  document.getElementsByName("trip-start")[0].setAttribute('min', today);
+  if(sessionStorage.getItem('justOnce')=="false"){
+    sessionStorage.setItem('justOnce',"true");
+    window.location.reload();
+  }
+
+}
+
     next(){
       this.router.navigate(['FlightSelect']);
         }
+
+
 
 }
