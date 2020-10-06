@@ -29,7 +29,7 @@ export class FlightSearchComponent implements OnInit {
     sessionStorage.setItem('fromCity',this.fromCity);
     sessionStorage.setItem('toCity',this.toCity);
     sessionStorage.setItem('date',this.date);
-    this.router.navigate['(FlightSelect)'];
+    this.router.navigate(['FlightSelect']);
   }
 
   ngOnInit(): void {

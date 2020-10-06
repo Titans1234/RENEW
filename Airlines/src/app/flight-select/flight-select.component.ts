@@ -3,6 +3,7 @@ import { FlightModel} from '../flight.model';
 import {FlightDetails} from '../flightDetails.model';
 import {FlightService} from '../services/flight.service';
 import { Router }  from '@angular/router';
+import {IncomingFlightDetails} from '../incomingflightDetails.model';
 
 @Component({
   selector: 'app-flight-select',
@@ -15,6 +16,7 @@ export class FlightSelectComponent implements OnInit {
   totalFlight:number ;
   flight = new FlightModel();
 // flights : FlightModel[] = [] ;
+ inputValue : IncomingFlightDetails [] ;
 
   constructor(private flightDetailService: FlightService,private router:Router) { 
   this.flight.flightno="FE123",
@@ -40,13 +42,13 @@ export class FlightSelectComponent implements OnInit {
     //  (this.details.dateOfJourney);
     //  (this.details);
     this.flightDetailService.flightDetails(this.details).subscribe(data => {
-      this.data = data;
+      this.inputValue = data;
+      
      //  (data);
       // this.totalFlight=data.length; 
       this.totalFlight=data.length;
     })
     
   }
-
 
 }

@@ -1,5 +1,5 @@
 <div class="container">
-<!-- 
+ 
   <h1 class="display-4"><u>Choose From The Best</u></h1>
   <table class="table table-striped">
 
@@ -22,23 +22,21 @@
 
     <tbody>
       
-        <tr *ngFor="let f of data">
-      <tr>
+        <tr *ngFor="let f of inputValue">
         <td>{{this.details.fromCity}}</td>
         <td>{{ this.details.toCity}}</td>
-        <td>{{this.details.day}}</td>>
-        <td>{{ f.DepartureTime}}</td>
-        <td>{{ f.ArrivalTime}}</td>
-       <td>{{ flight.flightno }}</td>   
-        <td>{{ f.Duration}}</td>
-        <td>Rs. {{ f.fare}}</td>
-        <td> {{ f.totalseatAvaialabe}}</td>
-
+        <td>{{this.details.day}}</td>
+        <td>{{ f.departureTime}}</td>
+        <td>{{ f.arrivalTime}}</td>
+       <td>{{ f.flightId }}</td>   
+        <td>{{ f.duration}}</td>
+        <td>Rs.{{ f.fare}}</td>
+        <td> {{ f.totalSeatsAvailable}}</td>
       </tr>
 
     </tbody>
 
-  </table> -->
+  </table> 
 <br>
 <p>Source -> Destination</p>
 <small>Start Date - Return Date</small>
