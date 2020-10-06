@@ -15,6 +15,7 @@ export class FlightSearchComponent implements OnInit {
   date : string;
 
  
+
   FromCities = ["Patna","Delhi", "Dehradun", "Meerut","Saharanpur"];
   constructor(private flightDetails: FlightSearchService ,private router:Router) {
     sessionStorage.removeItem('fromCity');
@@ -41,6 +42,7 @@ export class FlightSearchComponent implements OnInit {
   }
 
 }
+
     next(){
       this.router.navigate(['FlightSelect']);
         }
