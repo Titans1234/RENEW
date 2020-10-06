@@ -19,6 +19,7 @@ import { ViewComponent } from './Admin/view/view.component';
 import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PassengerComponent } from './passenger/passenger.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddComponent,
     DeleteComponent,
     ViewComponent,
-    PassengerComponent
+    PassengerComponent,
+    UserProfileComponent
 
   ],
   imports: [
