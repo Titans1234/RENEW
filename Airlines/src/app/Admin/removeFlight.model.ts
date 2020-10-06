@@ -1,3 +1,3 @@
 export class RemoveFlight{
-    flightId : number;
+ public  flightId : number ;
 }

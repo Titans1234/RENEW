@@ -183,6 +183,14 @@ class FlightApplicationTests {
 		days.add(d2);
 		days.add(d3);
 		System.out.println(adminCon.addOperationalDaysWithFlight(days, 131106));
+	
+	}
+	
+	@Test
+	public void  testRemove() {
+		RemoveFlight r=new RemoveFlight();
+		r.setFlightId(131122);
+		adminCon.removeFlight(131122);
 	}
 
 	// ====================TEST SEARCH FLIGHT========================================//

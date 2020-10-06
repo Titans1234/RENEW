@@ -65,11 +65,15 @@ export class LoginComponent implements OnInit {
           this.adminClientStatus= data.status ;
           this.adminMessage="Please add valid details!";
         }
-      else {
+      else if(sessionStorage.getItem('flightId')!=null) {
+        this.router.navigate(['SeatSelect']); }
+        else{
         this.adminClientStatus=data.status;
-         this.adminMessage=data.userName; 
+         this.adminMessage=data.userName;  
          this.router.navigate(['FlightSearch']);
       }
+
+    
      })
   }
 

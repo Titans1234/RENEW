@@ -7,7 +7,7 @@ import { RemoveFlight } from "../removeFlight.model";
   providedIn: 'root'
 })
 export class ActivateRemoveService {
-
+a:number ;
   constructor(private http:HttpClient) { }
 
 
@@ -17,7 +17,9 @@ export class ActivateRemoveService {
 
   removeFlight(removeFlight : RemoveFlight):Observable<any>{
     console.log(removeFlight.flightId);
-    return this.http.post("http://localhost:8181/removeFlight",removeFlight);
+     this.a= removeFlight.flightId;
+     console.log(this.a);
+    return this.http.post("http://localhost:8181/removeFlight",this.a);
    }
 
    showFlight():Observable<any>{

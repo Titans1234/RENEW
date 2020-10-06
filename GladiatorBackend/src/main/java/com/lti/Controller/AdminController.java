@@ -57,11 +57,13 @@ public class AdminController {
 	 */
 	
 
-	//public Status removeFlight(@RequestParam("flightId") int flightId){
-	@PostMapping(value="/removeFlight" , produces = "application/json")
-	public Status removeFlight(@RequestBody RemoveFlight removeFlight) {
-		System.out.println("FlightId" + removeFlight.getFlightId());
-		return ecoServ.removeFlight(removeFlight.getFlightId());
+	
+	@PostMapping("/removeFlight")
+//	public Status removeFlight(@RequestBody RemoveFlight removeFlight) {
+	public Status removeFlight(@RequestParam("flightId") int flightId){
+//		System.out.println("FlightId" + removeFlight.getFlightId());
+		System.out.println("FlightId"+flightId);
+		return ecoServ.removeFlight(flightId);
 	}
 
 	@RequestMapping(path = "/showFlight")

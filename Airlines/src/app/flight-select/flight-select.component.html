@@ -1,66 +1,99 @@
-<div class="container">
- 
-  <h1 class="display-4"><u>Choose From The Best</u></h1>
-  <table class="table table-striped">
+<div class="searchFlight-content">
+  <div class= "searchDetails">
+    <div class="w-1 fl">      
+      <a>FROM :      {{this.details.fromCity}}</a>  
+    </div>
+    <div class="w-1 fl">
+      <a>TO :    {{this.details.toCity}}</a>
+    </div>
+    <div class="w-1 fl">
+      <a>DATE OF JOURNEY : {{this.details.dateOfJourney}}</a>
+    </div>
+  </div>
+  <div class="searchFlight-header" >
+    <div class="sort-sec clearfix">
+      <div class="w-30 fl">
+          <span class="w-60" >
+            {{totalFlight}} Flights found
+          </span>
+      </div>     
+    </div>
+  </div>
+  <div *ngIf = "totalFlight > 0"> 
+    <div class="searchFlight-card" *ngFor ="let f of inputValue" > 
+      <div class="searchFlight-card"  >
+      <ul class="Flight-items" style="list-style-type: none;">
 
-    <thead>
+        <div>
+          <li>           
+            <div class="clearfix">
+              <div class=" p-right-20 w-11 fl">
+                <div class="dp-time f-19 d-color f-bold">
+                   {{f.departureTime}}                  
+               <!-- 02:30 PM -->
+                </div>            
+              </div>
+              <div class="dp-time f-19 d-color f-bold">            
+                <i class="destination fa fa-map-marker"></i>              
+                 {{this.details.fromCity}}              
+                <!--Bangalore-->
+              </div> 
+            <span class="path">| </span>
+              <div class=" f-20 d-color disp-Inline">
+                  <i class="fa fa-fighter-jet"></i>
+                   {{f.flightName}},
+                  {{f.flightType}} Seater    
+                  <!-- Indigo -->
+                <span class="durationPos">
+                  Duration :
+                   {{f.duration}} 
+                  <!-- 2 hrs -->
+                </span> 
+                  <span class="farePos">
+                   INR :  {{f.fare}}
+                 <!-- INR : 3500.00 -->
+                </span> 
+                <span class="seatsPos">
+                   Seats Available: {{f.totalSeatsAvailable}} 
+                  <!-- Seats Available: 40 -->
+                </span>
+               </div>      
+               <div class="path">| </div>
+               <div class="  p-right-20 w-11 fl">
+                 <div class="dur lh-24">                
+                   {{f.arrivalTime}} 
+                    <!-- 4:30 PM -->
+                   <i class="destination fa fa-map-marker"></i> 
+                    {{this.details.toCity}} 
+                   <!-- Hyderabad -->
+                 </div>
+               </div>
+             <div class="clearfix m-top-16">
+               <!-- <button class="button view-seats fr" (click)="viewSeats(f.flightId,f.fare,f.flightName)"  >
+                 View Seats
+               </button> -->
+               <button class="button view-seats fr" (click)="viewSeats(f.flightId,f.fare,f.flightName)">View seats</button>
+               
+             </div>
+           </div>
+           </li>
+         </div>
+       </ul>
+     </div>
+</div>
 
-      <tr>
-        <th>From</th>
-        <th>To</th>
-        <th>Day</th>
-        <th>Departure Time</th>
-        <th>Arrival Time</th>
-        <th>Flight no</th>
-        <th>Duration</th>
-        <th>Fare</th>
-        <th>Seats Available</th>
 
-      </tr>
-
-    </thead>
-
-    <tbody>
+   <!-- <div *ngIf="totalFlight==0">
+     <div class="about-card">
+       <div class="error-view">
+         <img src="assets/busgif.gif">
+         <h3>Oops! No Flights found.</h3>
+         <div class="message-container">
+          
+       </div>
+     </div>
       
-        <tr *ngFor="let f of inputValue">
-        <td>{{this.details.fromCity}}</td>
-        <td>{{ this.details.toCity}}</td>
-        <td>{{this.details.day}}</td>
-        <td>{{ f.departureTime}}</td>
-        <td>{{ f.arrivalTime}}</td>
-       <td>{{ f.flightId }}</td>   
-        <td>{{ f.duration}}</td>
-        <td>Rs.{{ f.fare}}</td>
-        <td> {{ f.totalSeatsAvailable}}</td>
-      </tr>
-
-    </tbody>
-
-  </table> 
-<br>
-<p>Source -> Destination</p>
-<small>Start Date - Return Date</small>
-<br>
-<div class="row"> 
-<div class="res">
-<div class="fs">
- 8:30 AM - 10:30 AM
- 
- <br>
- <br>
- <input type="radio" id="eco" value="Economy">
-<label for="eco">Economy Price: Rs 4200</label>
-&nbsp;
-<input type="radio" id="fl" value="Business">
-<label for="fl">Business Price: Rs 5500</label>
-<a href="http://localhost:4200/Payment" > <button type="button" class="btn btn-info btn-sm">Proceed</button> </a>
-</div>
-</div>
-<br>
-<br>
-<div class="res1">
-
-</div>
-<br>
-</div>
-</div>
+     </div>-->
+  
+   <!-- </div> -->
+ <!-- </div>  -->

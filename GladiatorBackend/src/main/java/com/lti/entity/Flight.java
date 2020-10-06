@@ -49,7 +49,7 @@ public class Flight {
 	private String arrivalTime;
 
 	@Column
-	private double Fare;
+	private double fare;
 
 	@Column
 	private String duration;
@@ -132,11 +132,11 @@ public class Flight {
 	}
 
 	public double getFare() {
-		return Fare;
+		return fare;
 	}
 
 	public void setFare(double fare) {
-		Fare = fare;
+		fare = fare;
 	}
 
 	public String getDuration() {
@@ -175,7 +175,7 @@ public class Flight {
 	  ", totalSeat=" + totalSeat + ", flightName=" + flightName + ", flightStatus="
 	  + flightStatus + ", fromCity=" + fromCity + ", toCity=" + toCity +
 	  ", departureTime=" + departureTime + ", arrivalTime=" + arrivalTime +
-	  ", Fare=" + Fare + ", duration=" + duration + "]"; }
+	  ", Fare=" + fare + ", duration=" + duration + "]"; }
 	 
 
 
