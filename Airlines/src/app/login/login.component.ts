@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   login: Login = new Login();
   clientstatus: boolean  ;
   userName : string ="";
-  userId : string ;
+  
   userMessage : string="";
   printId : number ;
   
@@ -48,18 +48,18 @@ export class LoginComponent implements OnInit {
       else if(sessionStorage.getItem('flightId')!=null) {
         
         this.clientstatus= data.status;
-        this.userId = data.userId;
-        this.userName = data.userName;
-        sessionStorage.setItem('userId', this.userId);
-        sessionStorage.setItem('userName', this.userName);
+         let userId = data.userId;
+         let userName = data.userName;
+        sessionStorage.setItem('userId', userId);
+        sessionStorage.setItem('userName', userName);
         sessionStorage.setItem('justOnce', "false");
         this.router.navigate(['SeatSelect']);  
         //  this.router.navigate(['FlightSearch']);
         //  this.printId =sessionStorage.getItem("userId");
       }
       else{
-        
-        sessionStorage.setItem('userId', this.userId);
+        let userId = data.userId;
+        sessionStorage.setItem('userId', userId);
         sessionStorage.setItem('userName', this.userName);
         sessionStorage.setItem('justOnce', "false");
         this.router.navigate(['FlightSearch']);
