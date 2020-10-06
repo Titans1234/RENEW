@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   login: Login = new Login();
   clientstatus: boolean  ;
   userName : string ="";
+  userId : string ;
   userMessage : string="";
   printId : number ;
   
@@ -44,17 +45,24 @@ export class LoginComponent implements OnInit {
         this.clientstatus = data.status;
         this.userMessage="Please enter valid details!";
       }
-      else {
+      else if(sessionStorage.getItem('flightId')!=null) {
+        
         this.clientstatus= data.status;
-        let userId = data.userId;
+        this.userId = data.userId;
         this.userName = data.userName;
-
-       
-         sessionStorage.setItem('userId', userId);
-         sessionStorage.setItem('userName', this.userName);
-         sessionStorage.setItem('justOnce', "false");
-         this.router.navigate(['FlightSearch']);
+        sessionStorage.setItem('userId', this.userId);
+        sessionStorage.setItem('userName', this.userName);
+        sessionStorage.setItem('justOnce', "false");
+        this.router.navigate(['SeatSelect']);  
+        //  this.router.navigate(['FlightSearch']);
         //  this.printId =sessionStorage.getItem("userId");
+      }
+      else{
+        
+        sessionStorage.setItem('userId', this.userId);
+        sessionStorage.setItem('userName', this.userName);
+        sessionStorage.setItem('justOnce', "false");
+        this.router.navigate(['FlightSearch']);
       }
     })
   }
@@ -65,12 +73,10 @@ export class LoginComponent implements OnInit {
           this.adminClientStatus= data.status ;
           this.adminMessage="Please add valid details!";
         }
-      else if(sessionStorage.getItem('flightId')!=null) {
-        this.router.navigate(['SeatSelect']); }
         else{
         this.adminClientStatus=data.status;
          this.adminMessage=data.userName;  
-         this.router.navigate(['FlightSearch']);
+        this.router.navigate(['Add']);
       }
 
     
