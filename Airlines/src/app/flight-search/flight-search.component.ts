@@ -34,7 +34,7 @@ export class FlightSearchComponent implements OnInit {
     this.totalFlight=data.length;
   })}
 
-  // viewSeats(busId:any,fare:any,busName:any)
+  // viewSeats(flightId:any,fare:any,flightName:any)
   // {
   //   sessionStorage.setItem('flightId',flightId);
   //   sessionStorage.setItem('fare',fare)
