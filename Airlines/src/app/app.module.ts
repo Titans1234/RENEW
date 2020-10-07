@@ -20,6 +20,8 @@ import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PassengerComponent } from './passenger/passenger.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MyBookingComponent } from './my-booking/my-booking.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     DeleteComponent,
     ViewComponent,
     PassengerComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MyBookingComponent,
+    ChangePasswordComponent
 
   ],
   imports: [

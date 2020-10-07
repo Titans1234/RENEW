@@ -67,4 +67,5 @@ public interface UserRepo {
 
 	public boolean addWalletBalance(int customerId, double amount);
 
+	public User showProfile(int userId);
 }

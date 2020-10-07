@@ -10,6 +10,9 @@ import { FlightSearchComponent} from './flight-search/flight-search.component';
 import { AddComponent } from './Admin/add/add.component';
 import { DeleteComponent } from './Admin/delete/delete.component';
 import {PassengerComponent} from './passenger/passenger.component';
+import {UserProfileComponent } from './user-profile/user-profile.component';
+import { MyBookingComponent } from './my-booking/my-booking.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
   {path:'Cancel', component:CancellationComponent},
@@ -22,7 +25,10 @@ const routes: Routes = [
   {path:'Add',component:AddComponent},
   {path:'Delete',component:DeleteComponent},
   {path:'Payment',component:PaymentComponent},
+  {path:'UserProfile',component:UserProfileComponent},
+  {path:'MyBooking',component:MyBookingComponent},
   {path:'Passenger',component:PassengerComponent},
+  {path:'ChangePassword',component:ChangePasswordComponent},
 
 //  {path:'FlightSearch', redirectTo:'/add', pathMatch :'full'},
   {path:'', redirectTo:'/FlightSearch', pathMatch :'full'}

@@ -10,6 +10,7 @@ import com.lti.bridge.RegisterStatus;
 import com.lti.bridge.SeatCountDetails;
 import com.lti.bridge.Status;
 import com.lti.bridge.StatusString;
+import com.lti.bridge.ViewProfile;
 import com.lti.bridge.WalletDetails;
 import com.lti.entity.User;
 import com.lti.pojo.BookingSeatDetails;
@@ -41,4 +42,6 @@ public interface UserService {
 	public WalletDetails showWalletBalance(int customerId);
 
 	public WalletDetails addWalletBalance(int userId, double amount);
+
+	public ViewProfile showProfile(int userId) ;
 }

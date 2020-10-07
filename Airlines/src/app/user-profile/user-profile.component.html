@@ -1,8 +1,22 @@
-<table>
-    <thead>
-      <tr> </tr> 
-    </thead>
-    <tbody>
-      
-    </tbody>
-</table>
+<body>
+
+  <div class="sidebar">
+      <a href="#profile" [routerLink]="['/UserProfile']"><i class="fa fa-fw fa-user"></i> My Profile</a>
+      <a href="#bookings" [routerLink]="['/MyBookings']"><i class="fa fa-fw fa-envelope"></i> My Bookings</a>
+      <a href="#changepassword" [routerLink]="['/ChangePassword']"><i class="fa fa-fw fa-wrench"></i> Change
+          Password</a>
+      <a href="#wallet" [routerLink]="['/wallet']"><i class="fa fa-credit-card"></i> Wallet</a>
+  </div>
+
+  <div class="main">
+      <h2>My Profile</h2>
+      <div class="card">
+          <IMG SRC="../assets/profile.gif" width="500px" height="200px" style="float: left;"><br>
+          <span><b>User Name</b> : {{viewProfile.name}}</span><br><br>
+          <span><b>Age</b> : {{viewProfile.age}}</span><br><br>
+          <span><b>Gender</b> : {{viewProfile.gender}}</span><br><br>
+          <span><b>Email</b> : {{viewProfile.email}}</span><br><br>
+          <span><b>Phone Number</b> : {{viewProfile.contact}}</span><br><br>
+      </div>
+  </div>
+</body>

@@ -16,6 +16,7 @@ import com.lti.bridge.RegisterStatus;
 import com.lti.bridge.SeatCountDetails;
 import com.lti.bridge.Status;
 import com.lti.bridge.StatusString;
+import com.lti.bridge.ViewProfile;
 import com.lti.bridge.WalletDetails;
 import com.lti.email.Email;
 import com.lti.entity.Booking;
@@ -296,5 +297,18 @@ public class UserServiceImpl implements UserService {
 		}
 		return wallet;
 	}
-
+//==================SHOW PROFILE===============================================//
+	
+	public ViewProfile showProfile(int userId) {
+		User user=new User();
+		ViewProfile viewProfile =new ViewProfile();
+		user=userepo.showProfile(userId);
+		viewProfile.setAge(user.getAge());
+		viewProfile.setContact(user.getContact());
+		viewProfile.setEmail(user.getEmail());
+		viewProfile.setGender(user.getGender());
+		viewProfile.setName(user.getName());
+		
+		return viewProfile;
+	}
 }

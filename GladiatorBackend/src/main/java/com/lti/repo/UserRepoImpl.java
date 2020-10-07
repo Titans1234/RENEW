@@ -26,6 +26,7 @@ import com.lti.entity.Seat;
 import com.lti.entity.Transaction;
 import com.lti.entity.User;
 
+
 @Repository
 public class UserRepoImpl implements UserRepo {
 	@PersistenceContext
@@ -268,7 +269,7 @@ public class UserRepoImpl implements UserRepo {
 
 	}
 
-//============RETURN USER ID==========================================================================================//
+//====================RETURN USER ID===============================================================================//
 	public int returnUsertId(User user) {
 		String query = "SELECT u FROM User u WHERE u.email =: email ";
 		TypedQuery<User> query1 = em.createQuery(query, User.class);
@@ -425,4 +426,24 @@ public class UserRepoImpl implements UserRepo {
 		return false;
 	}
 
+	//=======================================View Profile===========================//
+	
+	
+	public User showProfile(int userId) {
+		String sql = "select cs from User cs where cs.userId= :userId";
+		TypedQuery<User> qry = em.createQuery(sql, User.class);
+		qry.setParameter("userId", userId);
+		User cust = new User();
+		try {
+			cust = qry.getSingleResult();
+		} catch (NoResultException nre) {
+
+		}
+		return cust;
+	}
+	
+	
+	
+	
+	
 }

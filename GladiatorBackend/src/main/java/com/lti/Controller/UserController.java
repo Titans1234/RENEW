@@ -21,7 +21,9 @@ import com.lti.bridge.RegisterStatus;
 import com.lti.bridge.SeatCountDetails;
 import com.lti.bridge.Status;
 import com.lti.bridge.StatusString;
+import com.lti.bridge.ViewProfile;
 import com.lti.bridge.WalletDetails;
+import com.lti.pojo.ProfileCard;
 import com.lti.pojo.UpdateWallet;
 import com.lti.entity.User;
 import com.lti.pojo.BookTicket;
@@ -99,6 +101,13 @@ public class UserController {
 	public WalletDetails addWalletBalanace(@RequestBody UpdateWallet updateWallet) {
 
 		return userServ.addWalletBalance(updateWallet.getUserId(), updateWallet.getWalletAmount());
+	}
+	
+	
+	@PostMapping("/viewProfile")
+	public ViewProfile showProfile(@RequestBody ProfileCard profileCard)
+	{
+		return userServ.showProfile(profileCard.getUserId());
 	}
 
 }
