@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SeatDetails } from '../SeatDetails.model';
 import { SeatDetailsService } from '../services/seat-details.service';
-
+import { SeatBookDetails } from "../seatBookDetails.model";
 @Component({
   selector: 'app-seat-select',
   templateUrl: './seat-select.component.html',
@@ -13,8 +13,10 @@ export class SeatSelectComponent implements OnInit {
   fare: number = 0;
   totalFare: number = 0;
   seatDetails: SeatDetails = new SeatDetails();
+  s :SeatBookDetails[]=new Array<SeatBookDetails>();
+  seatBookDetails: SeatBookDetails;
   selected: boolean = false;
-  selectSeats = new Array<number>();
+  selectSeats = new Array<string>();
   selectedSeatNumber: string;
   limitExceeds: string = "Cannot book more than 5 Seats."
   limit: boolean = false;
@@ -26,7 +28,8 @@ export class SeatSelectComponent implements OnInit {
   constructor(private seatDetailservice: SeatDetailsService, private router: Router) { }
 
 
-  selectseat(idin: any) {
+  selectseat(idin: string) {
+    console.log(idin);
     console.log(this.economyFare);
     console.log("inside select seats");
     var sliced = idin.slice(0, 1);
@@ -67,6 +70,9 @@ export class SeatSelectComponent implements OnInit {
           this.fare = (Number(sessionStorage.getItem('fare')) + 3000);
         }
         this.selectSeats.push(idin);
+        // this.seatBookDetails.seatNo= (idin);
+        // this.s.push(this.seatBookDetails);
+        // this.seatBookDetails=new SeatBookDetails;
         this.totalFare = this.fare;
         console.log(this.totalFare);
         this.isChecked(id);
@@ -75,6 +81,9 @@ export class SeatSelectComponent implements OnInit {
       else if (this.selectSeats.length <= 4) {
 
         this.selectSeats.push(idin);
+        // this.seatBookDetails.seatNo= (idin);
+        // this.s.push(this.seatBookDetails);
+        // this.seatBookDetails=new SeatBookDetails;
         this.isChecked(id);
 
         if (sliced == 'E') {
@@ -143,6 +152,8 @@ export class SeatSelectComponent implements OnInit {
 
   storeSeatDetails() {
     sessionStorage.setItem("seatsBooked", JSON.stringify(this.selectSeats));
+    sessionStorage.setItem("seatObjectList", JSON.stringify(this.s))
+    console.log(this.s);
     sessionStorage.setItem("totalFare", String(this.totalFare));
     this.router.navigate(['Passenger']);
   }

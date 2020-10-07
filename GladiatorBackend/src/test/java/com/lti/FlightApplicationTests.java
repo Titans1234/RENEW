@@ -235,13 +235,13 @@ class FlightApplicationTests {
 
 		customerDetails.setUserId(10125);
 
-		LocalDate dtOfJrny = LocalDate.parse("2020-10-05");
+		LocalDate dtOfJrny = LocalDate.parse("2020-10-12");
 
 		ticketDetails.setDateOfBooking(LocalDate.now());
 
 		ticketDetails.setDateOfJourney(dtOfJrny);
 
-		ticketDetails.setFlightId(131122);
+		ticketDetails.setFlightId(131129);
 
 		ticketDetails.setFromCity("Patna");
 
@@ -273,11 +273,11 @@ class FlightApplicationTests {
 
 		BookingSeatDetails b1 = new BookingSeatDetails();
 	    b1.setSeatNo("E1A");
-		b1.setSeatClass("E");
+//		b1.setSeatClass("E");
 
 		BookingSeatDetails b2 = new BookingSeatDetails();
 		b2.setSeatNo("B5A");
-		b2.setSeatClass("B");
+//		b2.setSeatClass("B");
 		seatDetails.add(b1);
 
 		seatDetails.add(b2);

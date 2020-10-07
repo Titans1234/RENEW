@@ -47,7 +47,7 @@ export class PassengerComponent implements OnInit {
 
   ADD(){
     console.log("alert");
-    if(this.noOfpassenger.length>this.counter){
+    if(this.noOfpassenger.length-1 >= this.counter){
       this.counter++ ;
       console.log("inside add pass");
       this.seat=this.noOfpassenger[this.counter];

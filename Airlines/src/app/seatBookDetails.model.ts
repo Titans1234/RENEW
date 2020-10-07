@@ -1,3 +1,3 @@
 export class SeatBookDetails {
-    seatNo:number;
+    seatNo : string;
 }

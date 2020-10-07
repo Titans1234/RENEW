@@ -1,20 +1,30 @@
 <table>
     <thead>
-     <tr><th>DOJ</th>
-     <th>FROM</th>
-     <th>TO</th>
-    <th>flight name</th>
-    <th>Seats Booked</th>
-    <th>BookingId</th>
-     <th>Passenger Details</th></tr>
-</thead>
+        <tr>
+            <th>DOJ :{{dateOfJourney}}</th>
+        </tr>
+        <tr>
+            <th>FROM : {{from}}</th>
+        </tr>
+        <tr>
+            <th>TO : {{destination}}</th>
+        </tr>
+        <tr>
+            <th>flight name : {{flightName}}</th>
+        </tr>
+        <tr>
+            <th>Seats Booked : {{noOfpassenger}}</th>
+        </tr>
+        <tr>
+            <th>Passenger Details </th>
+        </tr>
+    </thead>
     <tbody>
-     <!-- <tr><td>{{}}</td>
-     <td>{{}}</td>
-    <td>{{}}</td>
-    <td>{{}}</td>
-    <td>{{}}</td>
-    <td>{{}}</td>
-    {{}}</td></tr> -->
-</tbody>
+        <tr *ngFor = "let p of p">
+            <td>{{p.name}}</td>
+            <td>{{p.gender}}</td>
+            <td>{{p.age}}</td>
+        </tr>
+        <tr><button [routerLink]="['/Payment']" type="submit">Payment</button></tr>
+    </tbody>
 </table>

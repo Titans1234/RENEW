@@ -1,3 +1,3 @@
 export class UserDetails{
-    userId : string ;
+    userId : number ;
 }

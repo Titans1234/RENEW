@@ -162,7 +162,7 @@ public class UserServiceImpl implements UserService {
 			Seat stemp = new Seat();
 			stemp.setFlight(flight);
 			stemp.setDate(ticketDetails.getDateOfJourney());
-			stemp.setGender(seatDetails.get(i).getSeatClass());
+//			stemp.setGender(seatDetails.get(i).getSeatClass());
 			stemp.setSeats(seatDetails.get(i).getSeatNo());
 			seats.add(stemp);
 		}

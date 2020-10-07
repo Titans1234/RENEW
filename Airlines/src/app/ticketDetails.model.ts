@@ -1,6 +1,6 @@
 export class TicketDetails {
     
-    dateOfBooking:string;
+    // dateOfBooking:string;
 	dateOfJourney:string;
 	noOfSeatsBooked:number;
 	totalCost:number;

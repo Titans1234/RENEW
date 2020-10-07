@@ -68,6 +68,7 @@ public class UserController {
 	public Status addTicketDetails(@RequestBody BookTicket bookTicket) {
 		// LocalDate journeyDate =
 		// LocalDate.parse(bookTicket.getTicketDetails().getDateOfJourney());
+		System.out.println("reached till controlla");
 		System.out.println(bookTicket);
 		return userServ.addTicketDetails(bookTicket.getCustomerDetails(), bookTicket.getTicketDetails(),
 				bookTicket.getPassengerDetails(), bookTicket.getSeatDetails());

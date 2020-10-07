@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {FlightDetails} from '../flightDetails.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { BookTicket } from "../bookTicket.model";
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,9 @@ export class FlightService {
   //   return this.http.post("http://localhost:8181/getNoOfSeats",seatdetails);
   // }
 
-  //  bookMyticket(bookticket:BookTicket):Observable<any>
-  //  {
-  //    return this.http.post("http://localhost:8181/bookTicket",bookticket)
-  //  }
+    bookMyticket(bookticket:BookTicket):Observable<any>
+    {
+      return this.http.post("http://localhost:8181/bookTicket",bookticket)
+    }
 
 }
