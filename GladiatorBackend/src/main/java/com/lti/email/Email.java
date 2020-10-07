@@ -42,7 +42,7 @@ public class Email {
 
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom("ecobusserviceddn@gmail.com");
-		message.setTo(customerDetails.getEmail());
+//		message.setTo(customerDetails.getEmail());
 		message.setSubject("Welcome to your new ecoBus Account");
 		message.setText(" Congratulations! You have booked a reschedulable ticket.   "
 				+ ""

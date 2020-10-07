@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ConfirmDetailsComponent } from './confirm-details/confirm-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     PassengerComponent,
     UserProfileComponent,
     MyBookingComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ConfirmDetailsComponent
 
   ],
   imports: [

@@ -229,9 +229,9 @@ class FlightApplicationTests {
 
 		List<BookingSeatDetails> seatDetails = new ArrayList<BookingSeatDetails>();
 
-		customerDetails.setContact("9958220706");
-
-		customerDetails.setEmail("11997mayank@gmail.com");
+//		customerDetails.setContact("9958220706");
+//
+//		customerDetails.setEmail("11997mayank@gmail.com");
 
 		customerDetails.setUserId(10125);
 

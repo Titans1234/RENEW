@@ -13,6 +13,7 @@ import {PassengerComponent} from './passenger/passenger.component';
 import {UserProfileComponent } from './user-profile/user-profile.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ConfirmDetailsComponent } from './confirm-details/confirm-details.component';
 
 const routes: Routes = [
   {path:'Cancel', component:CancellationComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:'MyBooking',component:MyBookingComponent},
   {path:'Passenger',component:PassengerComponent},
   {path:'ChangePassword',component:ChangePasswordComponent},
+  {path:'ConfirmDetail',component:ConfirmDetailsComponent},
 
 //  {path:'FlightSearch', redirectTo:'/add', pathMatch :'full'},
   {path:'', redirectTo:'/FlightSearch', pathMatch :'full'}

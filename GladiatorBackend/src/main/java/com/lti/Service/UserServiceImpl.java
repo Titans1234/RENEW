@@ -136,7 +136,7 @@ public class UserServiceImpl implements UserService {
 		Flight flight = new Flight();
 		Transaction transaction = new Transaction();
 		int custId = 0;
-		System.out.println(userDetails.getEmail());
+	//	System.out.println(userDetails.getEmail());
 //		custId = userepo.returnUsertId(customer);
 		custId = userDetails.getUserId();
 
