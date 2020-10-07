@@ -52,6 +52,7 @@ public class TicketDetails {
 		this.dateOfJourney = dateOfJourney;
 	}
 
+
 	public int getNoOfSeatsBooked() {
 		return noOfSeatsBooked;
 	}

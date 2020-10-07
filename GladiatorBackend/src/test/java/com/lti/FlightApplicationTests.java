@@ -272,11 +272,11 @@ class FlightApplicationTests {
 		passengerDetails.add(p2);
 
 		BookingSeatDetails b1 = new BookingSeatDetails();
-		b1.setSeatNo(6);
+	    b1.setSeatNo("E1A");
 		b1.setSeatClass("E");
 
 		BookingSeatDetails b2 = new BookingSeatDetails();
-		b2.setSeatNo(8);
+		b2.setSeatNo("B5A");
 		b2.setSeatClass("B");
 		seatDetails.add(b1);
 

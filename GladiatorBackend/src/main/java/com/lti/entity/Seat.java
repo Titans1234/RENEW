@@ -29,7 +29,7 @@ public class Seat {
 	private LocalDate dateOfJourney;
 
 	@Column
-	private int seats;
+	private String seats;
 
 	@Column
 	private String gender;
@@ -64,11 +64,12 @@ public class Seat {
 		this.dateOfJourney = date;
 	}
 
-	public int getSeats() {
+
+	public String getSeats() {
 		return seats;
 	}
 
-	public void setSeats(int seats) {
+	public void setSeats(String seats) {
 		this.seats = seats;
 	}
 

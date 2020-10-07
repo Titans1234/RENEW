@@ -1,12 +1,17 @@
 package com.lti.pojo;
 
 public class BookingSeatDetails {
-	private int seatNo;
+	private String seatNo;
 
 	private String seatClass;
 
-	public int getSeatNo() {
+	
+	public String getSeatNo() {
 		return seatNo;
+	}
+
+	public void setSeatNo(String seatNo) {
+		this.seatNo = seatNo;
 	}
 
 	public String getSeatClass() {
@@ -15,10 +20,6 @@ public class BookingSeatDetails {
 
 	public void setSeatClass(String seatClass) {
 		this.seatClass = seatClass;
-	}
-
-	public void setSeatNo(int seatNo) {
-		this.seatNo = seatNo;
 	}
 
 	@Override
