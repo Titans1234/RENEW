@@ -1,303 +1,185 @@
-
-<script>
-  $('input:checkbox')
-  .click(
-    function() {
-      var limitReached = $('input:checkbox:checked').length >= 3;   
-      $('input:checkbox').not(':checked').attr('disabled', limitReached);
-    }
-  );
-  </script>
-      <div id="plane">
-        <div id="cockpit">
-          <h1>Please select a seat</h1>
-        </div>
-        <div class="exit exit--front fuselage"></div>
-        <ol id="cabin fuselage">
-          <li id="row row--1">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="1A" />
-                <label for="1A">1A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="1B" />
-                <label for="1B">1B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="1C" />
-                <label for="1C">1C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" disabled id="1D" />
-                <label for="1D">Occupied</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="1E" />
-                <label for="1E">1E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="1F" />
-                <label for="1F">1F</label>
-              </li>
-            </ol>
+<body class="body">
+  <div id="plane">
+    <div id="cockpitm">
+      <!-- <h1>Pilot Cabin </h1> -->
+    </div>
+    <div class="exit exit--front fuselage"></div>
+    <ol id="cabin fuselage">
+      <li id="row row--1">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="E1A"  onclick='selectseat(E1A)'/>
+            <label for="E1A">E1A</label>
           </li>
-          <li id="row row--2">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="2A" />
-                <label for="2A">2A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="2B" />
-                <label for="2B">2B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="2C" />
-                <label for="2C">2C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="2D" />
-                <label for="2D">2D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="2E" />
-                <label for="2E">2E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="2F" />
-                <label for="2F">2F</label>
-              </li>
-            </ol>
+          <li id="seat">
+            <input type="checkbox" id="E1B" onclick='selectseat(E1B)' />
+            <label for="E1B">E1B</label>
           </li>
-          <li id="row row--3">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="3A" />
-                <label for="3A">3A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="3B" />
-                <label for="3B">3B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="3C" />
-                <label for="3C">3C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="3D" />
-                <label for="3D">3D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="3E" />
-                <label for="3E">3E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="3F" />
-                <label for="3F">3F</label>
-              </li>
-            </ol>
+          <li id="seat">
+            <input type="checkbox" id="E1C" onclick='selectseat(E1C)'/>
+            <label for="E1C">E1C</label>
           </li>
-          <li id="row row--4">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="4A" />
-                <label for="4A">4A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="4B" />
-                <label for="4B">4B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="4C" />
-                <label for="4C">4C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="4D" />
-                <label for="4D">4D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="4E" />
-                <label for="4E">4E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="4F" />
-                <label for="4F">4F</label>
-              </li>
-            </ol>
+         
+          <li id="seat">
+            <input type="checkbox"  id="E1D" onclick='selectseat(E1D)'/>
+            <label for="E1D">E1D</label>
           </li>
-          <li id="row row--5">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="5A" />
-                <label for="5A">5A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="5B" />
-                <label for="5B">5B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="5C" />
-                <label for="5C">5C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="5D" />
-                <label for="5D">5D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="5E" />
-                <label for="5E">5E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="5F" />
-                <label for="5F">5F</label>
-              </li>
-            </ol>
+          <li id="seat">
+            <input type="checkbox" id="E1E" onclick='selectseat(E1E)'/>
+            <label for="E1E">E1E</label>
           </li>
-          <li id="row row--6">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="6A" />
-                <label for="6A">6A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="6B" />
-                <label for="6B">6B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="6C" />
-                <label for="6C">6C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="6D" />
-                <label for="6D">6D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="6E" />
-                <label for="6E">6E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="6F" />
-                <label for="6F">6F</label>
-              </li>
-            </ol>
-          </li>
-          <li id="row row--7">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="7A" />
-                <label for="7A">7A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="7B" />
-                <label for="7B">7B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="7C" />
-                <label for="7C">7C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="7D" />
-                <label for="7D">7D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="7E" />
-                <label for="7E">7E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="7F" />
-                <label for="7F">7F</label>
-              </li>
-            </ol>
-          </li>
-          <li id="row row--8">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="8A" />
-                <label for="8A">8A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="8B" />
-                <label for="8B">8B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="8C" />
-                <label for="8C">8C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="8D" />
-                <label for="8D">8D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="8E" />
-                <label for="8E">8E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="8F" />
-                <label for="8F">8F</label>
-              </li>
-            </ol>
-          </li>
-          <li id="row row--9">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="9A" />
-                <label for="9A">9A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="9B" />
-                <label for="9B">9B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="9C" />
-                <label for="9C">9C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="9D" />
-                <label for="9D">9D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="9E" />
-                <label for="9E">9E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="9F" />
-                <label for="9F">9F</label>
-              </li>
-            </ol>
-          </li>
-          <li id="row row--10">
-            <ol id="seats" type="A">
-              <li id="seat">
-                <input type="checkbox" id="10A" />
-                <label for="10A">10A</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="10B" />
-                <label for="10B">10B</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="10C" />
-                <label for="10C">10C</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="10D" />
-                <label for="10D">10D</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="10E" />
-                <label for="10E">10E</label>
-              </li>
-              <li id="seat">
-                <input type="checkbox" id="10F" />
-                <label for="10F">10F</label>
-              </li>
-            </ol>
+          <li id="seat">
+            <input type="checkbox" id="E1F" onclick='selectseat(E1F)'/>
+            <label for="E1F">E1F</label>
           </li>
         </ol>
-        <div class="exit exit--back fuselage">
-      <div id="container">
-        <button id="center" onclick="myFunction()" target="_blank"><span>Make Payment</span></button>
-          </div>
-      </div>
-   
+      </li>
+      <li id="row row--2">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="E2A" onclick='selectseat(E2A)'/>
+            <label for="E2A">E2A</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E2B" onclick='selectseat(E2B)'/>
+            <label for="E2B">E2B</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E2C" onclick='selectseat(E2C)'/>
+            <label for="E2C">E2C</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E2D" onclick='selectseat(E2D)'/>
+            <label for="E2D">E2D</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E2E" onclick='selectseat(E2E)'/>
+            <label for="E2E">E2E</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E2F" onclick='selectseat(E2F)'/>
+            <label for="E2F">E2F</label>
+          </li>
+        </ol>
+      </li>
+      <li id="row row--3">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="E3A" onclick='selectseat(E3A)'/>
+            <label for="E3A">E3A</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E3B" onclick='selectseat(E3B)'/>
+            <label for="E3B">E3B</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E3C" onclick='selectseat(E3C)'/>
+            <label for="E3C">E3C</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E3D" onclick='selectseat(E3D)'/>
+            <label for="E3D">E3D</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E3E" onclick='selectseat(E3E)'/>
+            <label for="E3E">E3E</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E3F" onclick='selectseat(E3F)'/>
+            <label for="E3F">E3F</label>
+          </li>
+        </ol>
+      </li>
+      <li id="row row--4">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="E4A" onclick='selectseat(E4A)'/>
+            <label for="E4A">E4A</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E4B" onclick='selectseat(E4B)'/>
+            <label for="E4B">E4B</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E4C" onclick='selectseat(E4C)'/>
+            <label for="E4C">E4C</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E4D" onclick='selectseat(E4D)'/>
+            <label for="E4D">E4D</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E4E" onclick='selectseat(E4E)'/>
+            <label for="E4E">E4E</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="E4F" onclick='selectseat(E5F)'/>
+            <label for="E4F">E4F</label>
+          </li>
+        </ol>
+      </li>
+      <li id="row row--5">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="B5A" onclick='selectseat(B4A)'/>
+            <label for="B5A">B5A</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B5B" onclick='selectseat(B5B)'/>
+            <label for="B5B">B5B</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B5C" onclick='selectseat(B5C)'/>
+            <label for="B5C">B5C</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B5D" onclick='selectseat(B5D)'/>
+            <label for="B5D">B5D</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B5E" onclick='selectseat(B5E)'/>
+            <label for="B5E">B5E</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B5F" onclick='selectseat(B5F)'/>
+            <label for="B5F">B5F</label>
+          </li>
+        </ol>
+      </li>
+      <li id="row row--6">
+        <ol id="seats" type="A">
+          <li id="seat">
+            <input type="checkbox" id="B6A" onclick='selectseat(B6A)'/>
+            <label for="B6A">B6A</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B6B" onclick='selectseat(B6B)'/>
+            <label for="B6B">B6B</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B6C" onclick='selectseat(B6C)'/>
+            <label for="B6C">B6C</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B6D" onclick='selectseat(B6D)'/>
+            <label for="B6D">B6D</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B6E" onclick='selectseat(B6E)'/>
+            <label for="B6E">B6E</label>
+          </li>
+          <li id="seat">
+            <input type="checkbox" id="B6F" onclick='selectseat(B6F)'/>
+            <label for="B6F">B6F</label>
+          </li>
+        </ol>
+      </li>
+    </ol>
+    <div class="exit exit--back fuselage">
+  
+  </div>
+  <div id="container">
+    <button id="center" onclick="myFunction()" target="_blank"><span>Make Payment</span></button>
+  </div>
+  </div>
+  </body>
