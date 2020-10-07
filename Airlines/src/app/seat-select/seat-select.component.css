@@ -282,8 +282,8 @@ body{
   background-size: cover; 
   /* opacity: .85; */
 }
-
-@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+/* 
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700"; */
 .rwd-table {
   margin: 1em 0;
   min-width: 240px;
@@ -371,7 +371,7 @@ body{
   color: #dd5;
 }
 /* ==================================================== */
-@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+ /* @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";  */
 .lwd-table {
   margin: 1em 0;
   min-width: 240px;
@@ -440,7 +440,7 @@ body{
   margin-left:600px; 
   position:relative;
   bottom:515px;
-  left:55px;
+  left:260px;
   height: 220px;
   
 }
