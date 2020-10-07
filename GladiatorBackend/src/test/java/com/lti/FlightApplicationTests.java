@@ -324,7 +324,8 @@ class FlightApplicationTests {
 		SeatCount s = new SeatCount();
 
 		s.setFlightId(131122);
-		s.setDateOfJourney(LocalDate.of(2020, 10, 5));
+//		s.setDateOfJourney(LocalDate.of(2020, 10, 5));
+		s.setDateOfJourney("");
 		SeatCountDetails s2=new SeatCountDetails();
 		s2 = controller.fetchNoOfSeats(s);
 	}

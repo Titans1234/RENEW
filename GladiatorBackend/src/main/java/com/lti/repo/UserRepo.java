@@ -61,7 +61,7 @@ public interface UserRepo {
 
 	public int returnUsertId(User user);
 
-	public List<Integer> fetchNoOfSeats(int flightId, LocalDate dateOfJourney);
+	public List<String> fetchNoOfSeats(int flightId, LocalDate dateOfJourney);
 
 	public double showWalletBalance(int customerId);
 

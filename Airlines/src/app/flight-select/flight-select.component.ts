@@ -56,6 +56,7 @@ export class FlightSelectComponent implements OnInit {
   {  
     console.log("inside viewSeats")
     sessionStorage.setItem('flightId',flightId);
+    console.log(flightId)
     sessionStorage.setItem('fare',fare)
     sessionStorage.setItem('flightName',flightName);
     if(sessionStorage.getItem('userId')!=null){

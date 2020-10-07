@@ -267,7 +267,7 @@ public class UserServiceImpl implements UserService {
 
 // ========================FETCH NO OF SEATS==================================================================================//
 	public SeatCountDetails fetchNoOfSeats(int flightId, LocalDate dateOfJourney) {
-		List<Integer> noOfSeats = new ArrayList<>();
+		List<String> noOfSeats = new ArrayList<>();
 		noOfSeats = userepo.fetchNoOfSeats(flightId, dateOfJourney);
 		SeatCountDetails seatCountDetails = new SeatCountDetails();
 		seatCountDetails.setNoOfseats(noOfSeats);

@@ -87,9 +87,10 @@ public class UserController {
 	@PostMapping("/getNoOfSeats")
 	public SeatCountDetails fetchNoOfSeats(@RequestBody SeatCount seatCount) {
 		System.out.println(seatCount.getDateOfJourney() + "give date");
-//		LocalDate journeyDate = LocalDate.parse(seatCount.getDateOfJourney());
+	 LocalDate journeyDate = LocalDate.parse(seatCount.getDateOfJourney());
 //		System.out.println(userServ.fetchNoOfSeats(seatCount.getFlightId(), journeyDate));
-		return userServ.fetchNoOfSeats(seatCount.getFlightId(), seatCount.getDateOfJourney());
+//		return userServ.fetchNoOfSeats(seatCount.getFlightId(), seatCount.getDateOfJourney());
+	return userServ.fetchNoOfSeats(seatCount.getFlightId(), journeyDate);
 	}
 
 	@PostMapping("/walletBalance")

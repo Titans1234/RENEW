@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SeatCountDetails {
-	List<Integer> noOfseats = new ArrayList<Integer>();
+	List<String> noOfseats = new ArrayList<String>();
 
-	public List<Integer> getNoOfseats() {
+	public List<String> getNoOfseats() {
 		return noOfseats;
 	}
 
-	public void setNoOfseats(List<Integer> noOfseats) {
+	public void setNoOfseats(List<String> noOfseats) {
 		this.noOfseats = noOfseats;
 	}
+
+	
 
 }

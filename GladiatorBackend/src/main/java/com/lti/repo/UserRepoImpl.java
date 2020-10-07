@@ -376,8 +376,8 @@ public class UserRepoImpl implements UserRepo {
 	}
 
 //=================FETCH SEATS=======================================================================================//
-	public List<Integer> fetchNoOfSeats(int flightId, LocalDate dateOfJourney) {
-		List<Integer> noOfSeats = new ArrayList<>();
+	public List<String> fetchNoOfSeats(int flightId, LocalDate dateOfJourney) {
+		List<String> noOfSeats = new ArrayList<>();
 		String sql = " SELECT s.seats from Seat s WHERE s.dateOfJourney=: dateOfJourney AND s.flight.flightId=: flightId";
 		Query q = em.createQuery(sql);
 		q.setParameter("dateOfJourney", dateOfJourney);
