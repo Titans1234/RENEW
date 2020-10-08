@@ -21,7 +21,7 @@ export class MyBookingComponent implements OnInit {
     }
    }
 
-   
+
    bookings:any;
    status:boolean;
    canticket:CancelLoggedTicket=new CancelLoggedTicket();

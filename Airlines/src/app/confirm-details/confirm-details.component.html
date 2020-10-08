@@ -12,7 +12,9 @@
              
              <tr class='selected_seats'><span class="p">Passenger Details:</span></tr>
             <tr *ngFor="let p of p">
-              <span class="pd"><td>{{p.name}}, {{p.gender}}, {{p.age}}</td></span>
+              <span class="pd"><td><tb>{{p.name}}, {{p.gender}}, {{p.age}}</tb></td></span>
+              <br>
+              <br>
              <button class="btn btn-info btn-lg" [routerLink]="['/Payment']" type="submit">Proceed To Payment</button>
             </tr>
            </table>

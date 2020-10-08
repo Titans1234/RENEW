@@ -76,6 +76,7 @@ export class PaymentComponent implements OnInit {
         }
         else {
           this.ticketStatus = data.resultStatus;
+          this.router.navigate(['MyBooking']);
 
         }
       })

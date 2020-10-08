@@ -3,15 +3,14 @@
     <div class="sidebar">
         <a href="#profile" [routerLink]="['/UserProfile']"><i class="fa fa-fw fa-user"></i> My Profile</a>
         <a href="#bookings" [routerLink]="['/MyBooking']"><i class="fa fa-fw fa-envelope"></i> My Bookings</a>
-        <a href="#changepassword" [routerLink]="['/ChangePassword']"><i class="fa fa-fw fa-wrench"></i> Change
-            Password</a>
+        <a href="#changepassword" [routerLink]="['/ChangePassword']"><i class="fa fa-fw fa-wrench"></i> Change Password</a>
         <a href="#wallet" [routerLink]="['/wallet']"><i class="fa fa-credit-card"></i> Wallet</a>
     </div>
 
     <div class="main">
         <h2>My Bookings</h2>
         <div class="card" *ngFor ="let cp of bookings">
-            <IMG SRC="../assets/booking.gif" width="400px" height="300px" style="float: left;"><br>
+            <IMG SRC="../assets/zubair.jpeg" width="400px" height="300px" style="float: right;"><br>
             <span><b>Ticket Number</b> :{{cp.ticketId}} </span><br><br>
             <span><b>Date of Journey</b> :{{cp.dateOfJourney}} </span><br><br>
             <span><b>Date of Booking</b> :{{cp.dateOfBooking}} </span><br><br>
