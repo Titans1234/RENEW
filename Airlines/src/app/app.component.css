@@ -43,7 +43,9 @@ li.dropdown-menu{
 .nav-link{
 	color:white;
 }
-
+.nav-item{
+	size:120%;
+}
 /* .carousel-inner > .item > img {  width: 62px;; height:370px;  }  */
 
 
