@@ -407,6 +407,7 @@ public class UserRepoImpl implements UserRepo {
 		} catch (NoResultException e) {
 
 		}
+		
 
 		return cust.getWalletBalance();
 	}

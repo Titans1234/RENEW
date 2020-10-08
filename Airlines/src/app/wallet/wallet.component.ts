@@ -49,6 +49,21 @@ public addBalance() {
 
 }
 
+logout()
+  {
+    sessionStorage.removeItem('fromCity');
+    sessionStorage.removeItem('toCity');
+    sessionStorage.removeItem('date');
+    sessionStorage.removeItem('fare');
+    sessionStorage.removeItem('flightId');
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('userName');
+    sessionStorage.removeItem('justOnce');
+    sessionStorage.removeItem('passengerdetails');
+    sessionStorage.removeItem('seatBookdetails');
+    sessionStorage.removeItem('flightName');
+    this.router.navigate(['FlightSearch']);
+  }
 }
 
 
