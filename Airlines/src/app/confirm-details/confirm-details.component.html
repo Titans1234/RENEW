@@ -1,30 +1,24 @@
-<table>
-    <thead>
-        <tr>
-            <th>DOJ :{{dateOfJourney}}</th>
-        </tr>
-        <tr>
-            <th>FROM : {{from}}</th>
-        </tr>
-        <tr>
-            <th>TO : {{destination}}</th>
-        </tr>
-        <tr>
-            <th>flight name : {{flightName}}</th>
-        </tr>
-        <tr>
-            <th>Seats Booked : {{noOfpassenger}}</th>
-        </tr>
-        <tr>
-            <th>Passenger Details </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let p of p">
-            <td>{{p.name}}</td>
-            <td>{{p.gender}}</td>
-            <td>{{p.age}}</td>
-        </tr>
-        <tr><button [routerLink]="['/Payment']" type="submit">Payment</button></tr>
-    </tbody>
-</table>
+<div class="pay_main">
+    <div class="login_main">
+        <div>
+            <div  class="head_card ">Booking Details</div>
+            <table  class="select_card">
+<tr class='selected_seats'><td><span class="he">Date Of Journey:</span> {{dateOfJourney}} </td> </tr>         
+<tr class='selected_seats'><td><span class="he">From City: </span> {{from}} </td> </tr>
+            <tr class='selected_seats'><td><span class="he">To City:</span> {{destination}} </td> </tr>
+             
+             <tr class='selected_seats'><td><span class="he">Travelling with:</span> {{flightName}} </td> </tr>
+             <tr class='selected_seats'><td><span class="he">Seats Booked:</span> {{noOfpassenger}} </td> </tr>
+             
+             <tr class='selected_seats'><span class="p">Passenger Details:</span></tr>
+            <tr *ngFor="let p of p">
+              <span class="pd"><td>{{p.name}}, {{p.gender}}, {{p.age}}</td></span>
+             <button class="btn btn-info btn-lg" [routerLink]="['/Payment']" type="submit">Proceed To Payment</button>
+            </tr>
+           </table>
+        
+        </div>
+             
+         </div>
+
+</div>

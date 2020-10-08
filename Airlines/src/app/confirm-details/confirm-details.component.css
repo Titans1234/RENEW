@@ -1,0 +1,81 @@
+.login_main {
+   
+    background-color: rgba(255,255,255,0.7);
+     position: relative;
+     left: 170px;
+     top: 95px;
+      height: fit-content;
+      border-radius: 1.5em;
+      box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+      width: 1000px;
+     
+  }
+  
+  
+  
+  
+    .pay_head{
+      margin-left:150px;
+      padding-top: 5px;
+      
+      font-size: large;
+      font-weight: 800;
+    }
+  .pay_main{
+    height:680px;
+    background-image: url('../../assets/adminside.jpg');
+    background-size: cover;
+  }
+  
+  
+  .head_card{
+      text-align: center;
+      font-size: 200%;
+      padding: 10px;
+      text-decoration: underline;
+  }
+  .he{
+    font-weight: bold;
+  }
+  .p{
+    font-weight: bold;
+    position: relative;
+   left: 308px;
+   text-decoration: overline;
+  }
+  .pd{
+    font-size: larger;
+    position: relative;
+   left: 115px;
+  }
+  .selected_seats{
+      font-size: 30px;
+      
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 10px;
+      margin-left:100px;
+      padding-bottom: 20px;
+     
+  }
+  td{
+   position: relative;
+   left: 308px;
+  }
+  
+   .btn-info{
+    background-color:  #20c39a;
+  border: 1px solid #20c39a;
+  position: relative;
+  left:360px;
+  top:12px;
+  }
+  .btn-info:hover{
+  background-color: #0e4126;
+  border:1px solid  #20c36b;
+  }
+  .select_card{
+      margin-left: 20px;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      padding-left: 50px;
+  }

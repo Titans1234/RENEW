@@ -1,68 +1,68 @@
 body{
-    background-color: rgb(241, 241, 241);
-    z-index: -1000;
-  }
-  
-  .sidebar {
-    height: 100%;
-    width: 220px;
-    position: fixed;
-    z-index: 1;
-    top: 10;
-    border: 4px solid #d84f57;
-    overflow-x: hidden;
-    padding-top: 16px;
-    border: 4px solid #d84f57;
-  }
-  
-  .sidebar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: rgb(94, 83, 83);
-    display: block;
-  }
-  
-  .sidebar a:hover {
-    color: #000000;
-  }
-  
-  .main {
-    margin-left: 300px; /* Same as the width of the sidenav */
-    padding: 0px 10px;
-    height: 600px;
-    position: relative;
-    background-size: 100% 100%;
-  
-  }
-  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 1000px;
-    margin: auto;
-    margin-right: 75px;
-    text-align: center;
-    font-family: arial;
-    border-radius: 25px;
-    padding-left: 100px;
-    padding-top: 20px;
-    background-color: white;
-    border: 2px solid black;
-  }
-  
-  .cancelBooking{
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 10px;
-    margin-bottom: 20px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 85, 85);
-    text-align: center;
-    cursor: pointer;
-    width: fit-content;
-    font-size: 18px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-right: 10px;
-  }
+  background-color: rgb(241, 241, 241);
+  z-index: -1000;
+}
+
+.sidebar {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 10;
+  border: 4px solid #d84f57;
+  overflow-x: hidden;
+  padding-top: 16px;
+  border: 4px solid #d84f57;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(94, 83, 83);
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #000000;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+  height: 600px;
+  position: relative;
+  background-size: 100% 100%;
+
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  margin: auto;
+  margin-right: 75px;
+  text-align: center;
+  font-family: arial;
+  border-radius: 25px;
+  padding-left: 100px;
+  padding-top: 20px;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.cancelBooking{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 85, 85);
+  text-align: center;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 18px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-right: 10px;
+}
