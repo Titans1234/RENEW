@@ -85,18 +85,11 @@ public class UserServiceImpl implements UserService {
 //==================CANCEL TICKET=========================//
 
 	public StatusString cancelTicket(int bookingId, int userId) {
-
-		boolean a = userepo.checkUser(userId);
-		if (a) {
-			
-			StatusString s1 = new StatusString();
+	
+		    StatusString s1 = new StatusString();
 			s1= userepo.cancelTicket(bookingId);
 			return s1;
-		}
-		StatusString s2 = new StatusString();
-		s2.setStatus("Please enter valid userId");
-		System.out.println(s2);
-		return s2;
+	
 
 	}
 
@@ -247,15 +240,21 @@ public class UserServiceImpl implements UserService {
 				mbt.setNoOfSeatsBooked(myBookings.get(i).getNoOfSeatsBooked());
 				mbt.setTotalCost(myBookings.get(i).getTotalCost());
 				mbt.setTicketId(myBookings.get(i).getBookingId());
-				if (myBookings.get(i).getDateOfJourney().minusDays(2).compareTo(LocalDate.now()) > 0) {
-					mbt.setCancelButton(true);
-
-				} else {
-					mbt.setCancelButton(false);
-				}
+				mbt.setCancelButton(myBookings.get(i).isStatus());
+				System.out.println(myBookings.get(i).isStatus());
+				System.out.println("=====");
+				System.out.println(mbt.isCancelButton());
+				
+//				if (myBookings.get(i).getDateOfJourney().minusDays(2).compareTo(LocalDate.now()) > 0) {
+//					mbt.setCancelButton(true);
+//
+//				} else {
+//					mbt.setCancelButton(false);
+//				}
 				myBookTickets.add(mbt);
 			}
 			myBookingDetails.setMybookings(myBookTickets);
+			System.out.println(myBookingDetails.toString());
 			myBookingDetails.setResultStatus(true);
 			return myBookingDetails;
 

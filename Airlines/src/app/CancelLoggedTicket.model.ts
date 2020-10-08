@@ -1,4 +1,4 @@
-export class CancelLoggedTicket{
+export class CancelLoggedTicket {
 
-    bookingId : number;
+    bookingId: number;
 }

@@ -2,7 +2,6 @@ body{
   background-color: rgb(241, 241, 241);
   z-index: -1000;
 }
-
 .sidebar {
   height: 96.5%;
   width: 220px;
@@ -12,9 +11,8 @@ body{
   border: 4px solid #20C39A;
   overflow-x: hidden;
   padding-top: 16px;
-  border: 4px solid #20C39A;
+  
 }
-
 .sidebar a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -33,7 +31,12 @@ body{
   height: 600px;
   position: relative;
   background-size: 100% 100%;
+}
 
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }
 
 .card {
@@ -41,28 +44,12 @@ body{
   max-width: 1000px;
   margin: auto;
   margin-right: 75px;
-  text-align: center;
+  text-align: left;
   font-family: arial;
   border-radius: 25px;
   padding-left: 100px;
   padding-top: 20px;
-  background-color: white;
+  padding-bottom: 20px;
+  background-color:white;
   border: 2px solid black;
-}
-
-.cancelBooking{
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px;
-  margin-bottom: 20px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 85, 85);
-  text-align: center;
-  cursor: pointer;
-  width: fit-content;
-  font-size: 18px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin-right: 10px;
 }

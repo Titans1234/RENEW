@@ -256,11 +256,12 @@ public class UserRepoImpl implements UserRepo {
 
 	public List<Booking> fetchAllBookingsOfCustomer(int userId) {
 
-		String sql = "select b from Booking b where b.user.userId=:userId";
+		String sql = "select b from Booking b where b.user.userId=:userId and b.flight.flightStatus=: Status ";
 
 		TypedQuery<Booking> query = em.createQuery(sql, Booking.class);
 
 		query.setParameter("userId", userId);
+		query.setParameter("Status", "Available");
 
 		List<Booking> ticket = query.getResultList();
 		System.out.println(ticket.toString());
@@ -288,7 +289,6 @@ public class UserRepoImpl implements UserRepo {
 		if (u == null) {
 			return false;
 		}
-
 		return true;
 	}
 
@@ -371,8 +371,7 @@ public class UserRepoImpl implements UserRepo {
 				status.setStatus("Your booking has been cancelled :(");
 				return status;
 		
-
-		
+	
 	}
 
 //=================FETCH SEATS=======================================================================================//
@@ -412,7 +411,7 @@ public class UserRepoImpl implements UserRepo {
 		return cust.getWalletBalance();
 	}
 
-	@Override
+	@Transactional
 	public boolean addWalletBalance(int userId, double amount) {
 		User cust = new User();
 		cust = em.find(User.class, userId);

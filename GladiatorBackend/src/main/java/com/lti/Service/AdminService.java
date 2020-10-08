@@ -25,5 +25,7 @@ public interface AdminService {
 	public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId);
 
 	public boolean addAFlight(Flight flight);
+	
+	 public List<Flight> inactiveFlight();
 
 }

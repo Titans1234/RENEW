@@ -15,6 +15,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ConfirmDetailsComponent } from './confirm-details/confirm-details.component';
 import { ViewComponent } from './Admin/view/view.component';
 import { AdminComponent } from './Admin/admin.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 const routes: Routes = [
   {path:'Cancel', component:CancellationComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'Payment',component:PaymentComponent},
   {path:'UserProfile',component:UserProfileComponent},
   {path:'MyBooking',component:MyBookingComponent},
+  {path:'Wallet',component:WalletComponent},
   {path:'Passenger',component:PassengerComponent},
   {path:'ChangePassword',component:ChangePasswordComponent},
   {path:'ConfirmDetail',component:ConfirmDetailsComponent},

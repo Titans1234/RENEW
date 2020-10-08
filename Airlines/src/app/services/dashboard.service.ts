@@ -5,6 +5,8 @@ import {Profile } from '../profile.model';
 import { ForgotPassword } from "../ForgotPassword.model";
 import { CancelLoggedTicket } from "../CancelLoggedTicket.model";
 import { ChangePassword } from '../changePassword.model' ;
+import { WalletAmount} from '../walletAmount.model';
+import {addAmountToWallet} from '../addAmountToWallet.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +20,13 @@ export class DashboardService {
     return this.http.post("http://localhost:8181/viewProfile",profile);
   }
 
-  // showWalletBalance(walletAmount:WalletAmount):Observable<any>{
-  //   return this.http.post("http://localhost:8181/walletBalance",walletAmount);
-  // }
+   showWalletBalance(walletAmount:WalletAmount):Observable<any>{
+     return this.http.post("http://localhost:8181/walletBalance",walletAmount);
+  }
   
-  // addBalance(addAmountToWallet:addAmountToWallet):Observable<any>{
-  //   return this.http.post("http://localhost:8181/addBalance",addAmountToWallet);
-  // }
+   addBalance(addAmountToWallet:addAmountToWallet):Observable<any>{
+     return this.http.post("http://localhost:8181/addBalance",addAmountToWallet);
+   }
 
    changePassword(changePassword : ChangePassword):Observable<any>{
      return this.http.post("http://localhost:8181/changePassword",changePassword);

@@ -1,72 +1,54 @@
-<form class="credit-card" #payment="ngForm">
-    <div class="form-header">
-      <h4 class="title">Credit card detail</h4>
-    </div>
-   
-    <div class="form-body">
-      <div class= "form-group">
-      <!-- Card Number -->
-      <input type="number" class="card-number"  name="number" placeholder="Card Number" [(ngModel)]=payment.id required pattern="[0-9]{16}" #number='ngModel'>
-      <span *ngIf="number.touched && number.invalid" class="alert-danger">
-        Enter correct card Number!
-    </span>
-    </div>
-      
-    <div class= "form-group">
-      <input type="text" class="card-holder" placeholder="Name On Card" name="name" [(ngModel)]=payment.name required pattern="[A-z][a-z]{3}" #name='ngModel'>
-      <span *ngIf="name.touched && name.invalid" class="alert-danger">
-        Enter correct name on card!
-    </span>
-      </div>
-   
-      <!-- Date Field -->
-      <div class="date-field">
-        <div class="month">
-          <select name="Month">
-            <option value="january">January</option>
-            <option value="february">February</option>
-            <option value="march">March</option>
-            <option value="april">April</option>
-            <option value="may">May</option>
-            <option value="june">June</option>
-            <option value="july">July</option>
-            <option value="august">August</option>
-            <option value="september">September</option>
-            <option value="october">October</option>
-            <option value="november">November</option>
-            <option value="december">December</option>
-          </select>
-        </div>
-        <div class="year">
-          <select name="Year">
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-          </select>
-        </div>
-      </div>
-   
-      <!-- Card Verification Field -->
-      <div class="card-verification">
-        <div class="cvv-input">
-          <input type="number" placeholder="CVV">
-        </div>
-        <div class="cvv-details">
-          <p>3 or 4 digits usually found <br> on the signature strip</p>
-        </div>
-      </div>
-   
-      <!-- Buttons -->
-      <button type="submit" class="proceed-btn" (click)="payNow()">Pay Now</button>
+<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
 
-      
-    </div>
-    <div>{{ticketStatus}}</div>
-  </form>
-  
+<div class="container">
+  <div id="Checkout" class="inline">
+      <h1>Pay Invoice</h1>
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+      <form>
+          <div class="form-group">
+              <label for="PaymentAmount">Payment amount</label>
+              <div class="amount-placeholder">
+                  <span>Rs </span>
+                  <span>{{totalFare}}</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label or="NameOnCard">Name on card</label>
+              <input id="NameOnCard" class="form-control" type="text" maxlength="255">
+          </div>
+          <div class="form-group">
+              <label for="CreditCardNumber">Card number</label>
+              <input id="CreditCardNumber" class="null card-image form-control" type="text">
+          </div>
+          <div class="expiry-date-group form-group">
+              <label for="ExpiryDate">Expiry date</label>
+              <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY" maxlength="7">
+          </div>
+          <div class="security-code-group form-group">
+              <label for="SecurityCode">Security code</label>
+              <div class="input-container" >
+                  <input id="SecurityCode" class="form-control" type="text" >
+                  <i id="cvc" class="fa fa-question-circle"></i>
+              </div>
+              <!-- <div class="cvc-preview-container two-card hide">
+                  <div class="amex-cvc-preview"></div>
+                  <div class="visa-mc-dis-cvc-preview"></div>
+              </div> -->
+          </div>
+          <div class="zip-code-group form-group">
+              <label for="ZIPCode">ZIP/Postal code</label>
+              <div class="input-container">
+                  <input id="ZIPCode" class="form-control" type="text" maxlength="10">
+                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
+              </div>
+          </div>
+          <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit" (click)="payNow()" >
+              <!-- <span class="submit-button-lock">Pay Now</span> -->
+              <span class="align-middle">Pay Now</span>
+          </button>

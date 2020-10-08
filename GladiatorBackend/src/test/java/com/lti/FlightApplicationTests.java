@@ -145,7 +145,7 @@ class FlightApplicationTests {
 
 	@Test
 	public void TestingShowFlight() {
-		ShowFlightDetails details = adminCon.showFlight();
+		ShowFlightDetails details = adminCon.showFlight(true);
 
 		for (Flight f : details.getFlightdetails()) {
 			System.out.println(f);

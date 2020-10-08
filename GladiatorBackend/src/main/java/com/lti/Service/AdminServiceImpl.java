@@ -62,7 +62,13 @@ public class AdminServiceImpl implements AdminService {
 		showFlightDetails.setFlightdetails(flight);
 		return showFlightDetails;
 	}
-
+	
+	 public List<Flight> inactiveFlight()
+	 {
+		 List<Flight> flight=new ArrayList<Flight>();
+		 flight=ecoRep.inactiveFlight();
+		 return flight;
+	 }
 //==============TO ACTIVATE FLIGHT===========//	
 	public Status FlightStatus(int flightId) {
 		if (ecoRep.activateFlight(flightId)) {

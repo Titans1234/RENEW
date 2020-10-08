@@ -12,7 +12,8 @@ import { Flight } from '../flight';
 })
 export class ViewComponent implements OnInit {
   
-   data : any ;
+   data1 : Observable<FlightResult[]>;
+     data2 :any ;
   // flight: Observable<FlightResult[]>;
  // flight :FlightResult ;
  // flightDetails: FlightResult[]= [];
@@ -27,37 +28,39 @@ export class ViewComponent implements OnInit {
   ngOnInit() {
     this.reloadData();
     console.log("ng in it");
-   // this.reloadData2();
+    this.reloadData2();
   }
 
-
+  object:boolean;
   reloadData() {
-    this.flightserv.flightResult().subscribe(data => {
-      this.data= data;
-      console.log(this.data);
-      console.log("inside");
-      //  this.flight = data[0] ;
-      //  console.log(this.flight);
-      // this.flightDetails = data ;
-      // console.log(this.flightDetails[0]);
-      // console.log(this.flightDetails.length);
-    }); }
+   this.object=true;
+ this.data1=this.flightserv.flightResult(this.object);
+    // .subscribe(data => {
+    //   this.data1= data;
+    //   console.log(this.data1);
+    //   console.log("inside");
+    //   //  this.flight = data[0] ;
+    //   //  console.log(this.flight);
+    //   // this.flightDetails = data ;
+    //   // console.log(this.flightDetails[0]);
+    //   // console.log(this.flightDetails.length);
+    // }); }
   
-  
+  }
 
-  //  reloadData2() {
+    reloadData2() {
    
-  //    this.flightserv.activeFlightResult().subscribe( data => {
-  //      this. flightInactiveDetails = data;
-  //      console.log(this.flightInactiveDetails);
-  //    });
-  //  }
+      this.flightserv.activeFlightResult().subscribe( data => {
+        this. data2 = data;
+        console.log(this.data2);
+      });
+   }
 
   deleteflight(id: number) {
     this.flightserv.deleteFlight(id).subscribe(data => {
           console.log(data);
           this.reloadData();
-       //   this.reloadData2();
+          this.reloadData2();
         },
         error => console.log(error));
     window.alert("Flight is Deactivated");
@@ -68,7 +71,7 @@ export class ViewComponent implements OnInit {
     this.flightserv.enableFlight(id).subscribe(data => {
           console.log(data);
           this.reloadData();
-      //   this.reloadData2();
+         this.reloadData2();
         },
         error => console.log(error));
     window.alert("Flight is Deactivated");

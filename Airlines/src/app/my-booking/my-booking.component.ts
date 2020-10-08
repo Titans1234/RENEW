@@ -25,13 +25,16 @@ export class MyBookingComponent implements OnInit {
    bookings:any;
    status:boolean;
    canticket:CancelLoggedTicket=new CancelLoggedTicket();
-   cancelstatus:boolean;
+   cancelstatus : string;
 
 
   ngOnInit(): void {
+    
     this.mybook.userId=Number(sessionStorage.getItem('userId'));
       this.service.myBooking(this.mybook).subscribe(data =>{
+        console.log(data);
         console.log(data.resultStatus)
+        console.log(data.cancelButton);
         if(data.resultStatus)
         {
           this.status=true;
@@ -48,9 +51,12 @@ export class MyBookingComponent implements OnInit {
   cancelTicket(ticketId){
     this.canticket.bookingId=ticketId;
     this.service.cancelTicket(this.canticket).subscribe(data=>{
-      this.cancelstatus=data.resultStatus;
-      if(data.resultStatus)
+    this.cancelstatus=data.status;
+    console.log(data.cancelButton);
+      if(this.cancelstatus!=null)
       {
+        console.log("cancel");
+     
         window.location.reload();
       }
     })

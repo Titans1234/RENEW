@@ -84,6 +84,7 @@ public class UserController {
 
 	@PostMapping("/myBookings")
 	public MyBookingDetails fetchBookingsOfCustomer(@RequestBody MyBookings myBookings) {
+		
 		return userServ.fetchBookingsOfCustomer(myBookings.getUserId());
 	}
 

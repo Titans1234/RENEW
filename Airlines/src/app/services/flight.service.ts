@@ -25,9 +25,9 @@ export class FlightService {
   }
 
   
-  flightResult(): Observable<any> {
+  flightResult(val:boolean): Observable<any> {
     console.log("showFlight");
-    return this.http.get("http://localhost:8181/showFlight");
+    return this.http.post("http://localhost:8181/showFlight",val);
   }
 
 

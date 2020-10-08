@@ -66,17 +66,42 @@ return true;
 
 
 //=====================SHOW FLIGHT================//
- public List<Flight> showFlight() {
-   List<Flight> flight = new ArrayList<>();
-   String sql = "select f from Flight f";
-   Query query = em.createQuery(sql);
-   System.out.println();
-   flight = query.getResultList();
+// public List<Flight> showFlight() {
+//   List<Flight> flight = new ArrayList<>();
+//   String sql = "select f from Flight f";
+//   Query query = em.createQuery(sql);
+//   System.out.println();
+//   flight = query.getResultList();
+//
+//   if(flight==null)
+//	System.out.println("No record Found in Flight database");
+//   return flight;
+//}
 
-   if(flight==null)
-	System.out.println("No record Found in Flight database");
-   return flight;
-}
+ public List<Flight> showFlight() {
+	   List<Flight> flight = new ArrayList<>();
+	   String sql = "select f from Flight f where flightStatus=:avail";
+	   TypedQuery<Flight> qry = em.createQuery(sql, Flight.class);
+	   qry.setParameter("avail","Available");
+	   //Query query = em.createQuery(sql).setParameter("avail", "Available");
+	   System.out.println();
+	   flight = qry.getResultList();
+
+	   if(flight==null)
+		System.out.println("No record Found in Flight database");
+	   return flight;
+	}
+ public List<Flight> inactiveFlight()
+ {
+	 List<Flight> flight=new ArrayList<Flight>();
+	 String sql = "select f from Flight f where flightStatus=:avail";
+	   TypedQuery<Flight> qry = em.createQuery(sql, Flight.class);
+	   qry.setParameter("avail","inactive");
+	   flight = qry.getResultList();
+     if(flight==null)
+    	 System.out.println("No record Found in Flight database");
+	 return flight;
+ }
 
  
 //================ADMIN LOGIN===================//

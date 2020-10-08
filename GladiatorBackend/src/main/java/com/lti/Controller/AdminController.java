@@ -66,11 +66,24 @@ public class AdminController {
 		return ecoServ.removeFlight(flightId);
 	}
 
-	@GetMapping(path = "/showFlight")
-	public ShowFlightDetails showFlight() {		
-		return ecoServ.showFlight();
+	@PostMapping(path = "/showFlight")
+	public ShowFlightDetails showFlight(@RequestBody Boolean flag) {
+       if(flag)
+    	   System.out.println("Ab chal ja");
+    	   return ecoServ.showFlight();
 	}
 	
+	@GetMapping(path = "/inactiveFlight")
+	public List<Flight> IncativeFlight() {		
+			//System.out.println("Searching..............."+status.getStatus());
+	   System.out.println("reached");
+		List<Flight> flight=ecoServ.inactiveFlight();
+		for(Flight f:flight)
+		{
+			System.out.println(f.getFlightId());
+		}
+		return flight;
+}
 	
 	  @GetMapping("/activateFlight")
 	  public Status activateFlight(@RequestParam("flightId") int flightId) {

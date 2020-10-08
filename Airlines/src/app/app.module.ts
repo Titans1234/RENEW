@@ -21,6 +21,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ConfirmDetailsComponent } from './confirm-details/confirm-details.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ConfirmDetailsComponent } from './confirm-details/confirm-details.compo
     UserProfileComponent,
     MyBookingComponent,
     ChangePasswordComponent,
-    ConfirmDetailsComponent
+    ConfirmDetailsComponent,
+    WalletComponent
 
   ],
   imports: [

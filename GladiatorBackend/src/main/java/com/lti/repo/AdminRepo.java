@@ -26,4 +26,6 @@ public interface AdminRepo {
     public boolean addAflight(Flight flight);
 	
     public boolean addOperationalDaysWithFlight(List<OperationalDays> operationalDays, int flightId);
+    
+    public List<Flight> inactiveFlight();
 }

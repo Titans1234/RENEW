@@ -17,6 +17,8 @@ export class PaymentComponent implements OnInit {
   noOfpassenger : string[] ;
   totalMembers: number;
   customer : UserDetails = new UserDetails() ;
+  totalfare : number ;
+  totalFare = sessionStorage.getItem("totalFare");
 
   s: SeatBookDetails;
   p: PassengerDetails[] = new Array<PassengerDetails>();
