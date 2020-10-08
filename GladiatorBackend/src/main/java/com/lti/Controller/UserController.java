@@ -61,7 +61,6 @@ public class UserController {
 //		LocalDate journeyDate = LocalDate.parse(searchFlight.getDateOfJourney());// parse("year-mm-dd")
 		return userServ.searchAFlight(searchFlight.getFromCity(), searchFlight.getToCity(), searchFlight.getDay(),
 				searchFlight.getDateOfJourney());
-
 	}
 
 	@PostMapping("/bookTicket")

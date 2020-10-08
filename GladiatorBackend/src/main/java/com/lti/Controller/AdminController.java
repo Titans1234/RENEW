@@ -21,8 +21,8 @@ import com.lti.entity.Flight;
 import com.lti.entity.OperationalDays;
 import com.lti.pojo.AdminLogin;
 import com.lti.pojo.RemoveFlight;
-
-@CrossOrigin(origins = "http://localhost:4200")
+//(origins = "http://localhost:4200")
+@CrossOrigin
 @RestController
 public class AdminController {
 
@@ -76,7 +76,6 @@ public class AdminController {
 	  public Status activateFlight(@RequestParam("flightId") int flightId) {
 	  System.out.println("FlightId" + flightId); 
 	  return  ecoServ.FlightStatus(flightId);
- 
 	  }
 	    
 		

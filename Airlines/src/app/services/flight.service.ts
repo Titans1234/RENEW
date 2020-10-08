@@ -24,26 +24,28 @@ export class FlightService {
     return this.http.post("http://localhost:8181/bookTicket", bookticket)
   }
 
-  private baseUrl = "http://localhost:8181";
-
+  
   flightResult(): Observable<any> {
-    return this.http.get(this.baseUrl + "/showFlight" );
+    console.log("showFlight");
+    return this.http.get("http://localhost:8181/showFlight");
   }
+
+
   activeFlightResult(): Observable<any> {
-    return this.http.get(`${this.baseUrl + "/inactiveFlight"}`);
+    return this.http.get("http://localhost:8181/inactiveFlight");
   }
 
   addflight(flight: Flight): Observable<any> {
     console.log(flight.fare);
-    return this.http.post(`${this.baseUrl + "/addFlight"}`, flight);
+    return this.http.post("http://localhost:8181/addFlight", flight);
   }
 
   deleteFlight(id: number): Observable<any> {
-    return this.http.put(`${"http://localhost:8181/tobackend/api/v1/removeFlight"}`, id);
+    return this.http.put("http://localhost:8181/removeFlight", id);
   }
 
   enableFlight(id: number): Observable<any> {
-    return this.http.put(`${"http://localhost:8181/tobackend/api/v1/activateFlight"}`, id);
+    return this.http.put("http://localhost:8181/activateFlight", id);
   }
   
 }
