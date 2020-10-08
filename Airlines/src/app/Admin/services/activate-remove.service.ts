@@ -11,19 +11,4 @@ a:number ;
   constructor(private http:HttpClient) { }
 
 
-  activateFlight(activateFlight : RemoveFlight):Observable<any>{
-    return this.http.post("http://localhost:8181/activateFlight",activateFlight);
-  }
-
-  removeFlight(removeFlight : RemoveFlight):Observable<any>{
-    console.log(removeFlight.flightId);
-     this.a= removeFlight.flightId;
-     console.log(this.a);
-    return this.http.post("http://localhost:8181/removeFlight",this.a);
-   }
-
-   showFlight():Observable<any>{
-    return this.http.get("http://localhost:8181/showFlight");
-  }
-
 }

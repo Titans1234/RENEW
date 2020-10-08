@@ -22,7 +22,7 @@ import com.lti.entity.OperationalDays;
 import com.lti.pojo.AdminLogin;
 import com.lti.pojo.RemoveFlight;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class AdminController {
 
@@ -66,7 +66,7 @@ public class AdminController {
 		return ecoServ.removeFlight(flightId);
 	}
 
-	@RequestMapping(path = "/showFlight")
+	@GetMapping(path = "/showFlight")
 	public ShowFlightDetails showFlight() {		
 		return ecoServ.showFlight();
 	}

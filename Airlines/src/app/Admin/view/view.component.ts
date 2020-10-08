@@ -12,8 +12,8 @@ import { FlightService } from "../../services/flight.service"
 export class ViewComponent implements OnInit {
 
 
-  flight:Observable<FlightResult[]>;
-  filghtIncative:Observable<FlightResult[]>;
+  flight:Observable <FlightResult[]>;
+  filghtIncative:FlightResult[];
  // status:StatusString;
   show:boolean;
   constructor(private flightserv:FlightService,private router:Router) { 
@@ -27,7 +27,10 @@ export class ViewComponent implements OnInit {
   {  
     
    // this.status.status="Send all flight details"; 
-    this.flight=this.flightserv.flightResult();
+   this.flightserv.flightResult().subscribe((data) => {
+    this.flight = data;
+    
+    });
      // this.filghtIncative=this.flightserv.activeFlightResult();
   }
    reloadData2()

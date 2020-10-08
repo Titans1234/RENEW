@@ -13,9 +13,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { SeatSelectComponent } from './seat-select/seat-select.component';
 import { AddComponent } from './Admin/add/add.component';
-import { DeleteComponent } from './Admin/delete/delete.component';
 import { ViewComponent } from './Admin/view/view.component';
-
 import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { PassengerComponent } from './passenger/passenger.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +34,6 @@ import { ConfirmDetailsComponent } from './confirm-details/confirm-details.compo
     SeatSelectComponent,
 
     AddComponent,
-    DeleteComponent,
     ViewComponent,
     PassengerComponent,
     UserProfileComponent,

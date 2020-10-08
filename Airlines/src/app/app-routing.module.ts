@@ -8,12 +8,13 @@ import {PaymentComponent } from './payment/payment.component';
 import  { FlightSelectComponent } from './flight-select/flight-select.component';
 import { FlightSearchComponent} from './flight-search/flight-search.component';
 import { AddComponent } from './Admin/add/add.component';
-import { DeleteComponent } from './Admin/delete/delete.component';
 import {PassengerComponent} from './passenger/passenger.component';
 import {UserProfileComponent } from './user-profile/user-profile.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ConfirmDetailsComponent } from './confirm-details/confirm-details.component';
+import { ViewComponent } from './Admin/view/view.component';
+import { AdminComponent } from './Admin/admin.component';
 
 const routes: Routes = [
   {path:'Cancel', component:CancellationComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'FlightSelect', component:FlightSelectComponent},
   {path:'FlightSearch', component:FlightSearchComponent},
   {path:'Add',component:AddComponent},
-  {path:'Delete',component:DeleteComponent},
+  {path:'View',component:ViewComponent},
+  {path:'Admin',component:AdminComponent},
   {path:'Payment',component:PaymentComponent},
   {path:'UserProfile',component:UserProfileComponent},
   {path:'MyBooking',component:MyBookingComponent},

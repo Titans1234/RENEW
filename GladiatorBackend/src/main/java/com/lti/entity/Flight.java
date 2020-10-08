@@ -53,6 +53,9 @@ public class Flight {
 
 	@Column
 	private String duration;
+	
+	@Column
+	private String flightno ;
 
 	@OneToMany(fetch = FetchType.EAGER,mappedBy="flight",cascade=CascadeType.ALL)
 	@JsonIgnore
@@ -176,6 +179,14 @@ public class Flight {
 	  + flightStatus + ", fromCity=" + fromCity + ", toCity=" + toCity +
 	  ", departureTime=" + departureTime + ", arrivalTime=" + arrivalTime +
 	  ", Fare=" + fare + ", duration=" + duration + "]"; }
+
+	public String getFlightno() {
+		return flightno;
+	}
+
+	public void setFlightno(String flightno) {
+		this.flightno = flightno;
+	}
 	 
 
 

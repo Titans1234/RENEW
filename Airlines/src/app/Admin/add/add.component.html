@@ -1,7 +1,8 @@
 <nav>
 
 </nav>
-<div class="Inside">
+<p *ngIf="status">{{status}}</p>
+<div class="Inside" *ngIf="!show">
 <div class="container"> 
     <div class="row">
         <div class="col col-11.5">
@@ -11,30 +12,26 @@
         <table>
          <tr>
             <td><label for="flight_no" class="box1">Flight Number</label></td>
-            <td><input type="number"  class="form-control" name="flight_no" [(ngModel)]="flight.flight_no"
-                required pattern="[0-9]{5,}" placeholder="Flight no" #number="ngModel">
+            <td><input type="number"  class="form-control" name="flight_no" [(ngModel)]="flight.flightno"
+                required pattern="[0-9]{5,}" placeholder="Flight No" #number="ngModel">
             <span class="alert-warning" *ngIf="number.touched && number.invalid">Flight number is invalid</span>
             </td>
         </tr>
+        <tr>
+            <td><label for="flightname" class="box1">Flight Name</label></td>
+            <td><input type="text" class="form-control" name="flightname" [(ngModel)]="flight.flightName"
+            required pattern="[A-Za-z]{1,}" placeholder="Flight Name " #fname="ngModel">
+            <span class="alert-warning" *ngIf="fname.touched && fname.invalid">Flight name is invalid</span></td>
+        </tr>
         <tr class="box">
             <td><label for="source" class="box1">From</label></td>
-            <td><select name="source" [(ngModel)]="flight.source"class="form-control"
-                required pattern="[A-Za-z]{3,}" placeholder="Source" #source="ngModel">
-            <span class="alert-warning" *ngIf="source.touched && source.invalid">Source is invalid</span>
-                <option selected>Choose...</option>
-                <option>Agartala,India</option>
-                <option>Agra,India</option>
-                <option>Ahmedabaad,India</option>
-                <option>Banglore,India</option>
-                <option>Delhi,India</option>
-                
-                <option>Mumbai,India</option>
-                <option>Patna,India</option>
-              </select></td>
+            <td><input type="text" class="form-control" name="source" [(ngModel)]="flight.fromCity"
+                required pattern="[A-Za-z]{3,}" placeholder="Destination" #source="ngModel">
+            <span class="alert-warning" *ngIf="source.touched && source.invalid">Source is invalid</span></td>
         </tr>
         <tr>
             <td><label for="destination" class="box1" >To</label></td>
-            <td><input type="text" class="form-control" name="destination" [(ngModel)]="flight.destination"
+            <td><input type="text" class="form-control" name="destination" [(ngModel)]="flight.toCity"
                 required pattern="[A-Za-z]{3,}" placeholder="Destination" #destination="ngModel">
             <span class="alert-warning" *ngIf="destination.touched && destination.invalid">Destination is invalid</span></td>
         </tr>
@@ -44,40 +41,47 @@
         </tr> -->
         <tr>
             <td><label for="dtime" class="box1">Departure</label></td>
-            <td><input type="text" class="form-control" name="dtime" [(ngModel)]="flight.depart"
+            <td><input type="text" class="form-control" name="dtime" [(ngModel)]="flight.departureTime"
                 required pattern="(1[012]|[1-9]):[0-5][0-9](\\s)(?i)(am|pm)" placeholder="Departure Time" #dtime="ngModel">
                 <span class="alert-warning" *ngIf="dtime.touched && dtime.invalid">Departure Time is invalid</span></td>
         </tr>
         <tr>
             <td><label for="arr_time" class="box1">Arrival</label></td>
-            <td><input type="text" class="form-control" name="arr_time" [(ngModel)]="flight.arrive"
+            <td><input type="text" class="form-control" name="arr_time" [(ngModel)]="flight.arrivalTime"
                 required pattern="(1[012]|[1-9]):[0-5][0-9](\\s)(?i)(am|pm)" placeholder="Arrival Time" #arr_time="ngModel">
                 <span class="alert-warning" *ngIf="arr_time.touched && arr_time.invalid">Arrival Time is invalid</span></td>
         </tr>
         <tr>
             <td><label for="duration" class="box1">Duration</label></td>
             <td><input type="text" class="form-control" name="duration" [(ngModel)]="flight.duration"
-                required pattern="[0-9]{1,}" placeholder="Duration" #duration="ngModel">
+                required pattern="[0-9]{1,}[a-z]{1,}" placeholder="Duration" #duration="ngModel">
             <span class="alert-warning" *ngIf="duration.touched && duration.invalid">Duration is invalid</span></td>
         </tr>
         <tr>
-            <td><label for="source" class="box1">Cabin</label></td>
-            <td><input type="text" class="form-control" name="source" [(ngModel)]="flight.cabin"
-            required pattern="[A-Za-z]{1,}" placeholder="cabin" #soruce="ngModel">
-            <span class="alert-warning" *ngIf="source.touched && source.invalid">Cabin is invalid</span></td>
+            <td><label for="cabin" class="box1">Cabin</label></td>
+            <td><input type="number" class="form-control" name="cabin" [(ngModel)]="flight.totalSeat"
+             required pattern="[0-9]{1,}" placeholder="e.g 20" #cabin="ngModel">
+            <span class="alert-warning" *ngIf="cabin.touched && cabin.invalid">Cabin is invalid</span></td>
         </tr>
+       
+        <tr>
+            <td><label for="fare" class="box1">Fare</label></td>
+            <td><input type="number" class="form-control" name="fare" [(ngModel)]="flight.fare"
+            required pattern="[0-9]{4,}" placeholder="price" #fare="ngModel">
+            <span class="alert-warning" *ngIf="fare.touched && fare.invalid">fare is invalid</span></td>
+        </tr>
+       
         <tr rowspan="2">
-            <td colspan="2"><button type="button" class="btn btn-primary">ADD</button></td>
+            <td colspan="2"><button type="button" class="btn btn-primary"(click)="addFlight()">ADD</button></td>
+            
         </tr>
     </table>
     </div>
     
     </form>
+    
   </div>
     </div>
 </div>
 </div>
 </div>
-<!--
-    <input type="text" class="form-control" name="source" [(ngModel)]="flight.source">
--->

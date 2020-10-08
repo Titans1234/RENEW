@@ -1,4 +1,4 @@
-import { Flight } from './flight.model';
+import { Flight } from './flight';
 
 describe('Flight', () => {
   it('should create an instance', () => {

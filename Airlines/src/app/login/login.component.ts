@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
         else{
         this.adminClientStatus=data.status;
          this.adminMessage=data.userName;  
-        this.router.navigate(['Add']);
+        this.router.navigate(['Admin']);
       }
 
     
