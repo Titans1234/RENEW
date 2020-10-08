@@ -13,22 +13,22 @@ export class SeatSelectComponent implements OnInit {
   fare: number = 0;
   totalFare: number = 0;
   seatDetails: SeatDetails = new SeatDetails();
-  s :SeatBookDetails[]=new Array<SeatBookDetails>();
-  seatBookDetails: SeatBookDetails;
+  s: SeatBookDetails[] = new Array<SeatBookDetails>();
+  seatBookDetails: SeatBookDetails = new SeatBookDetails();
   selected: boolean = false;
   selectSeats = new Array<string>();
   selectedSeatNumber: string;
   limitExceeds: string = "Cannot book more than 5 Seats."
   limit: boolean = false;
   economyFare: number = Number(sessionStorage.getItem('fare'));
-  
+
 
 
 
   constructor(private seatDetailservice: SeatDetailsService, private router: Router) { }
 
 
-  selectseat(idin: string) {
+  selectseat(idin: any) {
     console.log(idin);
     console.log(this.economyFare);
     console.log("inside select seats");
@@ -100,15 +100,16 @@ export class SeatSelectComponent implements OnInit {
 
 
     }
-    console.log(this.selectSeats.length);
+    console.log(this.selectSeats);
     console.log(this.totalFare);
     this.selectedSeatNumber = String(this.selectSeats);
+
   }
 
 
-   isChecked(elem) {
+  isChecked(elem) {
     elem.parentNode.style.color = (elem.checked) ? 'white' : '#2a1a25';
-}
+  }
 
 
   findIndex(id1) {
@@ -152,8 +153,16 @@ export class SeatSelectComponent implements OnInit {
 
   storeSeatDetails() {
     sessionStorage.setItem("seatsBooked", JSON.stringify(this.selectSeats));
-    sessionStorage.setItem("seatObjectList", JSON.stringify(this.s))
-    console.log(this.s);
+    var i;
+    for (i = 0; i < this.selectSeats.length; i++) {
+      this.seatBookDetails.seatNo = this.selectSeats[i];
+      this.s.push(this.seatBookDetails);
+      this.seatBookDetails = new SeatBookDetails();
+
+    }
+    sessionStorage.setItem('seatBookdetails', JSON.stringify(this.s));
+    // sessionStorage.setItem("seatObjectList", JSON.stringify(this.s))
+    // console.log(this.s);
     sessionStorage.setItem("totalFare", String(this.totalFare));
     this.router.navigate(['Passenger']);
   }

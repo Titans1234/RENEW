@@ -69,9 +69,12 @@ public class UserController {
 		// LocalDate journeyDate =
 		// LocalDate.parse(bookTicket.getTicketDetails().getDateOfJourney());
 		System.out.println("reached till controlla");
+		System.out.println(bookTicket.getCustomerDetails().getUserId());
 		System.out.println(bookTicket);
+		System.out.println(bookTicket.getCustomerDetails().getUserId());
 		return userServ.addTicketDetails(bookTicket.getCustomerDetails(), bookTicket.getTicketDetails(),
 				bookTicket.getPassengerDetails(), bookTicket.getSeatDetails());
+		
 	}
 
 	@PostMapping("/cancelTicket")

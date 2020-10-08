@@ -37,7 +37,7 @@ export class DashboardService {
   
   cancelTicket(cancelTicket:CancelLoggedTicket):Observable<any>
   {
-    return this.http.post("http://localhost:8181/loggedInCancel",cancelTicket);
+    return this.http.post("http://localhost:8181/cancelTicket",cancelTicket);
   }
 
 }

@@ -4,7 +4,7 @@ import { SeatBookDetails } from "./seatBookDetails.model";
 import { TicketDetails } from "./ticketDetails.model";
 export class BookTicket {
 
-    userDetails: UserDetails;
+    customerDetails: UserDetails;
     passengerDetails: PassengerDetails[];
     seatDetails: SeatBookDetails[];
     ticketDetails: TicketDetails;

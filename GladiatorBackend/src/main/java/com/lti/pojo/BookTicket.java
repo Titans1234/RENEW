@@ -4,11 +4,13 @@ import java.util.List;
 
 public class BookTicket {
 
+	private List<PassengerDetails> passengerDetails;
+	
 	private UserDetails customerDetails;
 
 	private TicketDetails ticketDetails;
 
-	private List<PassengerDetails> passengerDetails;
+	
 
 	private List<BookingSeatDetails> seatDetails;
 

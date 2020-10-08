@@ -13,14 +13,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  noOfpassenger = new Array<string>();
+  // noOfpassenger = new Array<string>();
+  noOfpassenger : string[] ;
   totalMembers: number;
-  userDetails: UserDetails = new UserDetails();
+  customer : UserDetails = new UserDetails() ;
 
   s: SeatBookDetails;
   p: PassengerDetails[] = new Array<PassengerDetails>();
   s1: SeatBookDetails[] = new Array<SeatBookDetails>();
-  seatbookdetails: SeatBookDetails[] = new Array<SeatBookDetails>();
+  // seatbookdetails: SeatBookDetails[] = new Array<SeatBookDetails>();
   ticketdetails: TicketDetails = new TicketDetails();
   passengerdetails: PassengerDetails = new PassengerDetails();
 
@@ -34,15 +35,17 @@ export class PaymentComponent implements OnInit {
 
     this.noOfpassenger = JSON.parse(sessionStorage.getItem("seatsBooked"));
     console.log(this.noOfpassenger);
-    for (let i = 0; i < this.noOfpassenger.length; i++) {
-      this.s.seatNo = String (this.noOfpassenger[i]);
-      this.seatbookdetails.push(this.s);
-      this.s = new SeatBookDetails();
-    }
-      console.log(this.seatbookdetails);
-      console.log(this.userDetails.userId);
-      this.seatbookdetails = JSON.parse(sessionStorage.getItem("seatsBooked"));
-      console.log(this.seatbookdetails);
+    // for (let i = 0; i < this.noOfpassenger.length; i++) {
+    //   this.s.seatNo = JSON.parse(this.noOfpassenger[i]);
+    //    this.seatbookdetails.push(this.s);
+    //     this.s = new SeatBookDetails();
+    //   console.log(JSON.stringify(this.noOfpassenger[i]));
+    // }
+     // console.log(this.seatbookdetails);
+      this.customer.userId= Number(sessionStorage.getItem("userId"));
+      console.log(this.customer);
+      this.s = JSON.parse(sessionStorage.getItem("seatsBooked"));
+      console.log(this.s);
       this.ticketdetails.flightId = Number(sessionStorage.getItem("flightId"));
       this.ticketdetails.dateOfJourney = sessionStorage.getItem("date")
       this.ticketdetails.fromCity = sessionStorage.getItem("fromCity");
@@ -50,7 +53,7 @@ export class PaymentComponent implements OnInit {
       this.ticketdetails.totalCost = Number(sessionStorage.getItem("totalFare"));
       this.ticketdetails.noOfSeatsBooked = this.noOfpassenger.length;
       this.p = JSON.parse(sessionStorage.getItem("passengerdetails"));
-      this.s1 = JSON.parse(sessionStorage.getItem("seatObjectList"));
+      this.s1 = JSON.parse(sessionStorage.getItem("seatBookdetails"));
 
     }
   
@@ -58,9 +61,12 @@ export class PaymentComponent implements OnInit {
 
     payNow()
     {
-      this.bookticket.userDetails = this.userDetails;
+      console.log(this.customer);
+
+      this.bookticket.customerDetails = this.customer;
+      console.log(this.bookticket.customerDetails);
       this.bookticket.passengerDetails = this.p;
-      this.bookticket.seatDetails = this.seatbookdetails;
+      this.bookticket.seatDetails = this.s1;
       this.bookticket.ticketDetails = this.ticketdetails;
       console.log(this.bookticket);
       this.flightDetails.bookMyticket(this.bookticket).subscribe(data => {
